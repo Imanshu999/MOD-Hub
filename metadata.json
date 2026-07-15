@@ -1,0 +1,6 @@
+{
+  "name": "MOD Hub",
+  "description": "A premium, responsive, and ultra-fast marketplace to download the best modified apps and games (MOD APK) with verified safety and zero ads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
