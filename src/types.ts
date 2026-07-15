@@ -25,6 +25,7 @@ export interface AppItem {
   tags: string[]; // e.g. ["MOD", "Gratis", "Premium", "Suscripción pagada"]
   isRecommendation?: boolean;
   isRecent?: boolean;
+  videoUrl?: string;
 }
 
 export interface CategoryItem {

@@ -42,7 +42,8 @@ const BASE_APPS_DATA: AppItem[] = [
     },
     tags: ["MOD", "Free", "No Watermark"],
     isRecommendation: true,
-    isRecent: true
+    isRecent: true,
+    videoUrl: "https://www.youtube.com/watch?v=A2Wp-Uv_M8M"
   },
   {
     id: "app-2",
@@ -72,7 +73,8 @@ const BASE_APPS_DATA: AppItem[] = [
     },
     tags: ["MOD", "Premium Unlocked", "Free"],
     isRecommendation: true,
-    isRecent: true
+    isRecent: true,
+    videoUrl: "https://www.youtube.com/watch?v=fXvXWz6N27Y"
   },
   {
     id: "app-3",
@@ -922,7 +924,8 @@ const BASE_APPS_DATA: AppItem[] = [
     },
     tags: ["Paid Subscription Unlocked", "Free", "MOD Menu"],
     isRecommendation: false,
-    isRecent: true
+    isRecent: true,
+    videoUrl: "https://www.youtube.com/watch?v=MmB9b5njVbA"
   },
   {
     id: "game-3",
@@ -952,7 +955,8 @@ const BASE_APPS_DATA: AppItem[] = [
     },
     tags: ["MOD", "Unlimited Gems", "Free"],
     isRecommendation: false,
-    isRecent: true
+    isRecent: true,
+    videoUrl: "https://www.youtube.com/watch?v=Nn_ZfPLaXz4"
   },
   {
     id: "game-4",

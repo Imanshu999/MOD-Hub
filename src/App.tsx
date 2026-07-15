@@ -264,6 +264,7 @@ export default function App() {
             app={activeAppDetail}
             darkMode={darkMode}
             onBack={handleCloseDetail}
+            onSelectApp={handleSelectApp}
           />
         ) : activeTab === 'blog' ? (
           <BlogSection 

@@ -1,27 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, Star, Download, ShieldCheck, ChevronLeft, ChevronRight, 
-  Info, CheckCircle2, RefreshCw, Terminal, Lock, Server, FileCheck2, Share2, Sparkles 
+  Info, CheckCircle2, RefreshCw, Terminal, Lock, Server, FileCheck2, Share2, Sparkles,
+  Play, X, Maximize2
 } from 'lucide-react';
 import { AppItem } from '../types';
+import { APPS_DATA } from '../data';
+import { AppCard } from './AppCard';
 
 interface AppDetailProps {
   app: AppItem;
   darkMode: boolean;
   onBack: () => void;
+  onSelectApp?: (slug: string) => void;
 }
+
+const getYoutubeEmbedUrl = (url?: string): string => {
+  if (!url) return '';
+  if (url.includes('embed/')) return url;
+  
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  
+  if (match && match[2].length === 11) {
+    return `https://www.youtube.com/embed/${match[2]}?autoplay=0&rel=0`;
+  }
+  return url;
+};
 
 export const AppDetail: React.FC<AppDetailProps> = ({
   app,
   darkMode,
   onBack,
+  onSelectApp,
 }) => {
-  const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(0);
+
   const [scanProgress, setScanProgress] = useState(0);
   const [scanState, setScanState] = useState<'idle' | 'scanning' | 'verified'>('idle');
   const [downloading, setDownloading] = useState(false);
   const [downloadCountdown, setDownloadCountdown] = useState(5);
   const [copied, setCopied] = useState(false);
+
+  // Reset screenshot index and scroll to top smoothly when app changes
+  useEffect(() => {
+    setLightboxIndex(0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [app.id]);
 
   // Start the security check scanner automatically when page loads
   useEffect(() => {
@@ -59,7 +87,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
       link.href = app.downloadUrl;
       link.setAttribute('download', `${app.slug}-modhub.apk`);
       document.body.appendChild(link);
-      // Let's print in console but keep user focused on UI
       console.log(`Starting real download of: ${app.downloadUrl}`);
       setTimeout(() => {
         setDownloading(false);
@@ -73,22 +100,92 @@ export const AppDetail: React.FC<AppDetailProps> = ({
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleNextScreenshot = () => {
-    setActiveScreenshotIdx((prev) => (prev + 1) % app.screenshots.length);
+  // Lightbox navigation
+  const handleNextLightbox = () => {
+    setLightboxIndex((prev) => (prev + 1) % app.screenshots.length);
   };
 
-  const handlePrevScreenshot = () => {
-    setActiveScreenshotIdx((prev) => (prev - 1 + app.screenshots.length) % app.screenshots.length);
+  const handlePrevLightbox = () => {
+    setLightboxIndex((prev) => (prev - 1 + app.screenshots.length) % app.screenshots.length);
+  };
+
+  // Keyboard navigation for Lightbox
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') {
+        handleNextLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        handlePrevLightbox();
+      } else if (e.key === 'Escape') {
+        setLightboxOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, app.screenshots.length]);
+
+  // Touch handlers for Lightbox swipe/drag to navigate or dismiss
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+    setTouchStartY(e.targetTouches[0].clientY);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    
+    // Horizontal swipe
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0) {
+          handlePrevLightbox();
+        } else {
+          handleNextLightbox();
+        }
+      }
+    } else {
+      // Vertical swipe/drag to close
+      if (Math.abs(diffY) > 80) {
+        setLightboxOpen(false);
+      }
+    }
+  };
+
+  // Context-aware related apps/games curated dynamically with seed shuffle for stable uniqueness
+  const getContextAwareRelated = () => {
+    const baseList = APPS_DATA.filter((item) => item.id !== app.id);
+    const sameTypeList = baseList.filter((item) => item.type === app.type);
+    
+    const sameCategory = sameTypeList.filter((item) => item.category === app.category);
+    const otherCategories = sameTypeList.filter((item) => item.category !== app.category);
+    
+    const combined = [...sameCategory, ...otherCategories];
+    
+    let seedNum = app.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    const shuffled = [...combined];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      seedNum = (seedNum * 9301 + 49297) % 233280;
+      const j = Math.floor((seedNum / 233280) * (i + 1));
+      const temp = shuffled[i];
+      shuffled[i] = shuffled[j];
+      shuffled[j] = temp;
+    }
+    
+    return shuffled.slice(0, 18);
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-5 animate-fade-in pb-10">
       
       {/* Back & Action Header */}
       <div className="flex items-center justify-between gap-4">
         <button
           onClick={onBack}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold border transition-all cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold border transition-all hover:scale-105 active:scale-95 cursor-pointer ${
             darkMode
               ? 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
               : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900'
@@ -100,7 +197,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
 
         <button
           onClick={handleShare}
-          className={`p-2 rounded-xl border transition-all cursor-pointer flex items-center gap-1.5 text-xs font-semibold ${
+          className={`p-2 rounded-xl border transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-1.5 text-xs font-semibold ${
             darkMode
               ? 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
               : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900'
@@ -164,10 +261,10 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             <button
               onClick={triggerDownload}
               disabled={downloading}
-              className={`w-full sm:w-auto flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-sm text-white transition-all shadow-lg cursor-pointer ${
+              className={`w-full sm:w-auto flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-sm text-white transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer ${
                 downloading 
                   ? 'bg-slate-800 cursor-not-allowed' 
-                  : 'bg-store-accent hover:bg-red-600 shadow-store-accent/20 hover:shadow-store-accent/35 active:scale-95'
+                  : 'bg-store-accent hover:bg-red-600 shadow-store-accent/20 hover:shadow-store-accent/35'
               }`}
             >
               <Download className="w-5 h-5 animate-bounce" />
@@ -208,10 +305,33 @@ export const AppDetail: React.FC<AppDetailProps> = ({
       {/* Description Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        {/* Left column: Overview, features, and screenshots */}
+        {/* Left column: Video, Screenshots, and long description */}
         <div className="lg:col-span-2 space-y-6">
           
-          {/* Screenshots Slider Container */}
+          {/* Video Trailer / Gameplay Section (Shown strictly if link exists) */}
+          {app.videoUrl && (
+            <div className={`p-5 rounded-2xl border ${
+              darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
+            }`}>
+              <h3 className={`text-base font-display font-bold mb-4 flex items-center gap-2 ${
+                darkMode ? 'text-slate-200' : 'text-slate-800'
+              }`}>
+                <Play className="w-4 h-4 text-store-accent fill-store-accent/20 animate-pulse" />
+                <span>Video Trailer / Gameplay</span>
+              </h3>
+              <div className="relative rounded-xl overflow-hidden aspect-video bg-black/80 border border-slate-800/60 shadow-inner">
+                <iframe
+                  src={getYoutubeEmbedUrl(app.videoUrl)}
+                  title={`${app.name} Video Trailer`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full border-0"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Screenshots Section with Horizontal scrolling and Lightbox Trigger */}
           <div className={`p-5 rounded-2xl border ${
             darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
           }`}>
@@ -219,44 +339,32 @@ export const AppDetail: React.FC<AppDetailProps> = ({
               darkMode ? 'text-slate-200' : 'text-slate-800'
             }`}>
               <Sparkles className="w-4.5 h-4.5 text-store-accent" />
-              <span>Screenshots</span>
+              <span>Screenshots Gallery</span>
             </h3>
 
-            {/* Screenshots Slider */}
-            <div className="relative rounded-xl overflow-hidden aspect-video bg-black/40 border border-slate-800">
-              <img 
-                src={app.screenshots[activeScreenshotIdx]} 
-                alt={`${app.name} ss-${activeScreenshotIdx}`} 
-                className="w-full h-full object-cover transition-opacity duration-300"
-                referrerPolicy="no-referrer"
-              />
-
-              {/* Slider Nav Controls */}
-              <button
-                onClick={handlePrevScreenshot}
-                className="absolute inset-y-0 left-0 px-3 bg-black/20 hover:bg-black/60 text-white transition-colors flex items-center justify-center"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={handleNextScreenshot}
-                className="absolute inset-y-0 right-0 px-3 bg-black/20 hover:bg-black/60 text-white transition-colors flex items-center justify-center"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-
-              {/* Indicator dots */}
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5">
-                {app.screenshots.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveScreenshotIdx(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === activeScreenshotIdx ? 'bg-store-accent w-4' : 'bg-white/40'
-                    }`}
+            {/* Scrolling Screenshots Strip */}
+            <div className="flex gap-3.5 overflow-x-auto pb-2 snap-x scroll-smooth no-scrollbar">
+              {app.screenshots.map((src, idx) => (
+                <div 
+                  key={idx} 
+                  onClick={() => {
+                    setLightboxIndex(idx);
+                    setLightboxOpen(true);
+                  }}
+                  className="w-64 sm:w-80 aspect-video rounded-xl overflow-hidden cursor-pointer shrink-0 snap-start border border-slate-200/10 dark:border-slate-800/60 transition-all hover:scale-105 hover:border-store-accent/50 group relative shadow-md"
+                >
+                  <img 
+                    src={src} 
+                    alt={`${app.name} screenshot ${idx + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
                   />
-                ))}
-              </div>
+                  {/* Hover magnifying visual */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-200 flex items-center justify-center">
+                    <Maximize2 className="w-7 h-7 text-white opacity-0 group-hover:opacity-100 transition-all scale-75 group-hover:scale-100" />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -414,6 +522,121 @@ export const AppDetail: React.FC<AppDetailProps> = ({
         </div>
 
       </div>
+
+      {/* Related Items Section - Placed immediately beneath technical blocks with zero extra gaps */}
+      {(() => {
+        const relatedItems = getContextAwareRelated();
+        if (relatedItems.length === 0) return null;
+
+        const relatedGroups: AppItem[][] = [];
+        for (let i = 0; i < relatedItems.length; i += 3) {
+          relatedGroups.push(relatedItems.slice(i, i + 3));
+        }
+
+        return (
+          <div className="mt-6 pt-5 border-t border-slate-200/50 dark:border-slate-850/80 space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-store-accent" />
+                <h3 className={`text-base sm:text-lg font-display font-bold tracking-tight ${
+                  darkMode ? 'text-slate-200' : 'text-slate-800'
+                }`}>
+                  {app.type === 'App' ? 'More Recommended Apps' : 'More Recommended Games'}
+                </h3>
+                <span className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full ${
+                  darkMode ? 'bg-slate-800 text-slate-400' : 'bg-slate-200/60 text-slate-600'
+                }`}>
+                  {relatedItems.length} curated
+                </span>
+              </div>
+            </div>
+
+            <div className="flex gap-4 overflow-x-auto pb-4 pt-1 px-1 snap-x no-scrollbar">
+              {relatedGroups.map((group, groupIdx) => (
+                <div 
+                  key={groupIdx} 
+                  className="w-[280px] xs:w-[320px] sm:w-[420px] md:w-[460px] shrink-0 snap-start flex flex-col gap-3"
+                >
+                  {group.map((item) => (
+                    <AppCard
+                      key={item.id}
+                      app={item}
+                      darkMode={darkMode}
+                      variant="list"
+                      onSelect={onSelectApp}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Immersive Lightbox Modal */}
+      {lightboxOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300"
+          onClick={() => setLightboxOpen(false)}
+        >
+          {/* Top Actions Floating Bar */}
+          <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-50">
+            <span className="text-white/60 font-mono text-xs bg-white/10 px-2.5 py-1 rounded-full backdrop-blur-sm">
+              {lightboxIndex + 1} / {app.screenshots.length}
+            </span>
+            <button
+              onClick={() => setLightboxOpen(false)}
+              className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:scale-110 active:scale-95 text-white transition-all cursor-pointer backdrop-blur-sm"
+              title="Close Lightbox (Esc)"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Screenshot presentation container */}
+          <div 
+            className="relative max-w-5xl w-full px-4 flex items-center justify-center h-full max-h-[80vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Left Nav Button */}
+            <button
+              onClick={handlePrevLightbox}
+              className="absolute left-4 md:left-8 z-50 p-3 rounded-full bg-white/5 hover:bg-white/15 text-white border border-white/10 hover:scale-110 active:scale-95 transition-all cursor-pointer backdrop-blur-sm hidden sm:flex items-center justify-center"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Main Interactive Screen with touch gestures */}
+            <div 
+              className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-300 scale-95"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <img 
+                src={app.screenshots[lightboxIndex]} 
+                alt={`${app.name} screenshot detail ${lightboxIndex + 1}`}
+                className="object-contain max-h-[75vh] w-auto max-w-full select-none rounded-xl"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
+            {/* Right Nav Button */}
+            <button
+              onClick={handleNextLightbox}
+              className="absolute right-4 md:right-8 z-50 p-3 rounded-full bg-white/5 hover:bg-white/15 text-white border border-white/10 hover:scale-110 active:scale-95 transition-all cursor-pointer backdrop-blur-sm hidden sm:flex items-center justify-center"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Swipe indicator tag */}
+          <div className="absolute bottom-6 left-0 right-0 text-center text-white/50 text-[11px] pointer-events-none select-none px-4">
+            <span className="bg-white/5 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/5">
+              Swipe left/right or use arrows • Swipe up/down or click outside to close
+            </span>
+          </div>
+        </div>
+      )}
 
     </div>
   );
