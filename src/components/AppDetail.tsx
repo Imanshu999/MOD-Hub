@@ -177,7 +177,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             {/* Green security verification tag */}
             <div className="flex items-center justify-center gap-1.5 text-xs text-emerald-400 font-medium py-1 bg-emerald-500/5 rounded-lg border border-emerald-500/15">
               <ShieldCheck className="w-4 h-4 fill-emerald-500/10" />
-              <span>SHA-256 Verified</span>
+              <span>SHA-256 Secured</span>
             </div>
           </div>
 
@@ -364,7 +364,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
               <div className="space-y-1.5">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span className="truncate">Original APK signature verified</span>
+                  <span className="truncate">Original APK signature secured</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -384,7 +384,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
                   <FileCheck2 className="w-4 h-4 text-emerald-400" />
                 </div>
                 <div>
-                  <h4 className={`text-xs font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>Verified Checksum Signature</h4>
+                  <h4 className={`text-xs font-bold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>Secure Checksum Signature</h4>
                   <p className="text-[10px] text-slate-500 font-mono mt-0.5 break-all">{app.security.checksum}</p>
                 </div>
               </div>

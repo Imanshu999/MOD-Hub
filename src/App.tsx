@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { APPS_DATA, CATEGORIES_DATA, BLOG_POSTS } from './data';
 import { Header } from './components/Header';
 import { SidebarDrawer } from './components/SidebarDrawer';
@@ -25,6 +25,7 @@ export default function App() {
   const [selectedAppSlug, setSelectedAppSlug] = useState<string | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
   
   // Glowing avatar state click feedback
   const [glowFlash, setGlowFlash] = useState<boolean>(false);
@@ -110,6 +111,15 @@ export default function App() {
 
   const filteredApps = getFilteredApps();
 
+  // Reset pagination to page 1 whenever search, tab, or category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, activeTab, selectedCategory]);
+
+  const itemsPerPage = 15;
+  const totalPages = Math.ceil(filteredApps.length / itemsPerPage);
+  const currentApps = filteredApps.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
   // Carousel specific lists
   const recentApps = APPS_DATA.filter(app => app.isRecent);
   const recommendedApps = APPS_DATA.filter(app => app.isRecommendation);
@@ -138,6 +148,77 @@ export default function App() {
       root.style.backgroundColor = '#f8fafc';
     }
   }, [darkMode]);
+
+  const getSectionData = (type: 'App' | 'Game', recommendedOnly: boolean) => {
+    const list = APPS_DATA.filter(app => app.type === type);
+    if (recommendedOnly) {
+      const recs = list.filter(app => app.isRecommendation);
+      if (recs.length >= 18) {
+        return recs.slice(0, 18);
+      }
+      const nonRecs = list.filter(app => !app.isRecommendation);
+      return [...recs, ...nonRecs].slice(0, 18);
+    }
+    return list.slice(0, 18);
+  };
+
+  const renderHorizontalSection = (
+    title: string, 
+    appsList: typeof APPS_DATA, 
+    viewAllTab: 'apps' | 'games',
+    sectionIcon: React.ReactNode
+  ) => {
+    // Chunk into groups of 3 (for slides containing 3 items each)
+    const groups: (typeof APPS_DATA)[] = [];
+    for (let i = 0; i < appsList.length; i += 3) {
+      groups.push(appsList.slice(i, i + 3));
+    }
+
+    return (
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            {sectionIcon}
+            <h4 className="text-base sm:text-lg font-display font-bold tracking-tight">
+              {title}
+            </h4>
+            <span className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full ${
+              darkMode ? 'bg-slate-800 text-slate-400' : 'bg-slate-200/60 text-slate-600'
+            }`}>
+              {appsList.length} updates
+            </span>
+          </div>
+          
+          <button
+            onClick={() => handleSelectTab(viewAllTab)}
+            className="text-xs font-semibold text-store-accent hover:underline flex items-center gap-1 cursor-pointer transition-colors"
+          >
+            <span>View All</span>
+            <span className="text-sm">→</span>
+          </button>
+        </div>
+
+        <div className="flex gap-4 overflow-x-auto pb-4 pt-1 px-1 snap-x no-scrollbar">
+          {groups.map((group, groupIdx) => (
+            <div 
+              key={groupIdx} 
+              className="w-[280px] xs:w-[320px] sm:w-[420px] md:w-[460px] shrink-0 snap-start flex flex-col gap-3"
+            >
+              {group.map((app) => (
+                <AppCard
+                  key={app.id}
+                  app={app}
+                  darkMode={darkMode}
+                  variant="list"
+                  onSelect={handleSelectApp}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   const activeAppDetail = selectedAppSlug 
     ? APPS_DATA.find(app => app.slug === selectedAppSlug) 
@@ -221,8 +302,8 @@ export default function App() {
             {/* Right Main Panel: Carousel and Grid Lists */}
             <section className="lg:col-span-3 space-y-8 min-w-0">
               
-              {/* If no filters selected, show top-level hero marketing promo and recently added carousel */}
-              {!selectedCategory && !searchTerm && (
+              {/* If no filters selected and on the Home tab, show top-level hero marketing promo and recently added carousel */}
+              {activeTab === 'all' && !selectedCategory && !searchTerm && (
                 <>
                   {/* Hero banner promotion block */}
                   <div className={`p-6 sm:p-8 rounded-3xl relative overflow-hidden border ${
@@ -261,86 +342,171 @@ export default function App() {
                     darkMode={darkMode}
                     onSelect={handleSelectApp}
                   />
-
-                  {/* Recommendations layout */}
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2">
-                      <div className="p-1 rounded-md bg-yellow-500/10 text-yellow-500">
-                        <Sparkles className="w-4 h-4 fill-current" />
-                      </div>
-                      <h3 className="text-lg font-display font-bold">Recommended</h3>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {recommendedApps.slice(0, 4).map((app) => (
-                        <AppCard
-                          key={app.id}
-                          app={app}
-                          darkMode={darkMode}
-                          variant="recommendation"
-                          onSelect={handleSelectApp}
-                        />
-                      ))}
-                    </div>
-                  </div>
                 </>
               )}
 
               {/* Grid Content List */}
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-display font-bold">
-                      {selectedCategory ? `Category: ${selectedCategory}` : 'Latest updates'}
-                    </h3>
-                    <span className={`text-xs font-mono font-semibold px-2 py-0.5 rounded-full ${
-                      darkMode ? 'bg-slate-800 text-slate-400' : 'bg-slate-200 text-slate-600'
-                    }`}>
-                      {filteredApps.length} available
-                    </span>
-                  </div>
+              {activeTab === 'all' && !selectedCategory && !searchTerm ? (
+                /* Home view: Show our 4 Horizontal scrolling sections (Apps - Games - Apps - Games) */
+                <div className="space-y-8 pt-4">
+                  {renderHorizontalSection(
+                    'Latest Apps', 
+                    getSectionData('App', false), 
+                    'apps',
+                    <Smartphone className="w-5 h-5 text-store-accent" />
+                  )}
 
-                  {(selectedCategory || searchTerm) && (
-                    <button
-                      onClick={handleClearAllFilters}
-                      className="text-xs text-store-accent font-semibold hover:underline"
-                    >
-                      Reset filters
-                    </button>
+                  {renderHorizontalSection(
+                    'Latest Games', 
+                    getSectionData('Game', false), 
+                    'games',
+                    <Gamepad2 className="w-5 h-5 text-store-accent" />
+                  )}
+
+                  {renderHorizontalSection(
+                    'Recommended Apps', 
+                    getSectionData('App', true), 
+                    'apps',
+                    <Sparkles className="w-5 h-5 text-store-accent" />
+                  )}
+
+                  {renderHorizontalSection(
+                    'Recommended Games', 
+                    getSectionData('Game', true), 
+                    'games',
+                    <Sparkles className="w-5 h-5 text-store-accent" />
                   )}
                 </div>
+              ) : (
+                /* Filtered or Inner View: Show full vertical paginated catalog */
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-display font-bold">
+                        {selectedCategory 
+                          ? `Category: ${selectedCategory}` 
+                          : activeTab === 'games' 
+                            ? 'All Mod Games' 
+                            : activeTab === 'apps' 
+                              ? 'All Mod Apps' 
+                              : 'Search Results'}
+                      </h3>
+                      <span className={`text-xs font-mono font-semibold px-2 py-0.5 rounded-full ${
+                        darkMode ? 'bg-slate-800 text-slate-400' : 'bg-slate-200 text-slate-600'
+                      }`}>
+                        {filteredApps.length} available
+                      </span>
+                    </div>
 
-                {/* If filtered apps are empty, render clean fallback */}
-                {filteredApps.length === 0 ? (
-                  <div className={`p-8 rounded-2xl text-center border ${
-                    darkMode ? 'bg-slate-900/20 border-slate-800' : 'bg-white border-slate-200'
-                  }`}>
-                    <AlertCircle className="w-10 h-10 text-slate-500 mx-auto mb-2" />
-                    <h4 className="font-bold text-sm">No results found</h4>
-                    <p className="text-xs text-slate-500 max-w-sm mx-auto mt-1">
-                      No MODs found matching the search "{searchTerm || selectedCategory}". Try searching for another term or request the app in the requests section.
-                    </p>
-                    <button
-                      onClick={handleClearAllFilters}
-                      className="mt-4 px-4 py-1.5 text-xs font-semibold bg-store-accent text-white rounded-lg hover:bg-red-600 cursor-pointer"
-                    >
-                      View entire catalog
-                    </button>
+                    {(selectedCategory || searchTerm) && (
+                      <button
+                        onClick={handleClearAllFilters}
+                        className="text-xs text-store-accent font-semibold hover:underline"
+                      >
+                        Reset filters
+                      </button>
+                    )}
                   </div>
-                ) : (
-                  /* Vertical dynamic updates list */
-                  <div className="flex flex-col gap-3">
-                    {filteredApps.map((app) => (
-                      <AppCard
-                        key={app.id}
-                        app={app}
-                        darkMode={darkMode}
-                        variant="list"
-                        onSelect={handleSelectApp}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
+
+                  {filteredApps.length === 0 ? (
+                    <div className={`p-8 rounded-2xl text-center border ${
+                      darkMode ? 'bg-slate-900/20 border-slate-800' : 'bg-white border-slate-200'
+                    }`}>
+                      <AlertCircle className="w-10 h-10 text-slate-500 mx-auto mb-2" />
+                      <h4 className="font-bold text-sm">No results found</h4>
+                      <p className="text-xs text-slate-500 max-w-sm mx-auto mt-1">
+                        No MODs found matching the search "{searchTerm || selectedCategory}". Try searching for another term or request the app in the requests section.
+                      </p>
+                      <button
+                        onClick={handleClearAllFilters}
+                        className="mt-4 px-4 py-1.5 text-xs font-semibold bg-store-accent text-white rounded-lg hover:bg-red-600 cursor-pointer"
+                      >
+                        View entire catalog
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      {/* Vertical dynamic updates list */}
+                      <div className="flex flex-col gap-3">
+                        {currentApps.map((app) => (
+                          <AppCard
+                            key={app.id}
+                            app={app}
+                            darkMode={darkMode}
+                            variant="list"
+                            onSelect={handleSelectApp}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Responsive Smart Pagination controls */}
+                      {totalPages > 1 && (
+                        <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 mt-6 border-t ${
+                          darkMode ? 'border-slate-900' : 'border-slate-100'
+                        }`}>
+                          <span className="text-xs text-slate-500 font-mono">
+                            Showing {((currentPage - 1) * itemsPerPage) + 1}-{Math.min(currentPage * itemsPerPage, filteredApps.length)} of {filteredApps.length} apps
+                          </span>
+
+                          <div className="flex items-center gap-1.5">
+                            {/* Previous page button */}
+                            <button
+                              disabled={currentPage === 1}
+                              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
+                                currentPage === 1
+                                  ? 'opacity-40 cursor-not-allowed border-transparent text-slate-500'
+                                  : darkMode
+                                    ? 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800'
+                                    : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                              }`}
+                            >
+                              Previous
+                            </button>
+
+                            {/* Dynamic Page Buttons */}
+                            <div className="flex items-center gap-1">
+                              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
+                                const isActive = pageNum === currentPage;
+                                return (
+                                  <button
+                                    key={pageNum}
+                                    onClick={() => setCurrentPage(pageNum)}
+                                    className={`w-8 h-8 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center justify-center border ${
+                                      isActive
+                                        ? 'bg-store-accent text-white border-store-accent shadow-[0_2px_8px_rgba(239,68,68,0.25)]'
+                                        : darkMode
+                                          ? 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800'
+                                          : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                                    }`}
+                                  >
+                                    {pageNum}
+                                  </button>
+                                );
+                              })}
+                            </div>
+
+                            {/* Next page button */}
+                            <button
+                              disabled={currentPage === totalPages}
+                              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
+                                currentPage === totalPages
+                                  ? 'opacity-40 cursor-not-allowed border-transparent text-slate-500'
+                                  : darkMode
+                                    ? 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800'
+                                    : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                              }`}
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              )}
 
             </section>
           </div>
@@ -359,7 +525,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1 text-emerald-400">
               <ShieldCheck className="w-4 h-4 fill-emerald-500/5" />
-              Verified by SSL
+              SSL Encrypted
             </span>
             <span>•</span>
             <span>© 2026 MOD Hub. All rights reserved.</span>

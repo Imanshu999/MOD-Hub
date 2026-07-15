@@ -101,7 +101,7 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
         }`}>
           <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-500">
             <ShieldAlert className="w-3.5 h-3.5 text-store-accent" />
-            <span>Verified by Takano3D</span>
+            <span>Takano3D Studio</span>
           </div>
           <div className="text-[9px] text-slate-600 mt-1">
             Copyright © 2026 - MOD Hub
