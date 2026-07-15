@@ -82,22 +82,71 @@ export const AppDetail: React.FC<AppDetailProps> = ({
       }, 1000);
       return () => clearTimeout(timer);
     } else if (downloading && downloadCountdown === 0) {
-      // Simulate real browser download trigger
-      const link = document.createElement('a');
-      link.href = app.downloadUrl;
-      link.setAttribute('download', `${app.slug}-modhub.apk`);
-      document.body.appendChild(link);
-      console.log(`Starting real download of: ${app.downloadUrl}`);
+      // Trigger background download via a hidden iframe.
+      // This is the optimal client-side method to download cross-origin files or start Mediafire downloads
+      // while preventing any top-level navigation and keeping the user 100% on our website.
+      try {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = app.downloadUrl;
+        document.body.appendChild(iframe);
+        setTimeout(() => {
+          document.body.removeChild(iframe);
+        }, 12000);
+        console.log(`Successfully queued secure background download for: ${app.downloadUrl}`);
+      } catch (error) {
+        console.error("Iframe download failed, using standard anchor fallback:", error);
+        const link = document.createElement('a');
+        link.href = app.downloadUrl;
+        link.setAttribute('download', `${app.slug}-modhub.apk`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
       setTimeout(() => {
         setDownloading(false);
       }, 2500);
     }
-  }, [downloading, downloadCountdown, app.downloadUrl]);
+  }, [downloading, downloadCountdown, app.downloadUrl, app.slug]);
+
+  const fallbackCopy = () => {
+    try {
+      const el = document.createElement('textarea');
+      el.value = window.location.href;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Clipboard copy fallback failed:", err);
+    }
+  };
 
   const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(window.location.href)
+          .then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+          })
+          .catch((err) => {
+            console.error("Clipboard API rejected operation, using fallback:", err);
+            fallbackCopy();
+          });
+      } else {
+        fallbackCopy();
+      }
+    } catch (e) {
+      console.error("Clipboard API access failed:", e);
+      fallbackCopy();
+    }
   };
 
   // Lightbox navigation
@@ -125,13 +174,16 @@ export const AppDetail: React.FC<AppDetailProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxOpen, app.screenshots.length]);
 
-  // Touch handlers for Lightbox swipe/drag to navigate or dismiss
+  // Touch handlers for Lightbox swipe/drag to navigate or dismiss with strict safe guards
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.targetTouches[0].clientX);
-    setTouchStartY(e.targetTouches[0].clientY);
+    if (e.targetTouches && e.targetTouches[0]) {
+      setTouchStartX(e.targetTouches[0].clientX);
+      setTouchStartY(e.targetTouches[0].clientY);
+    }
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!e.changedTouches || !e.changedTouches[0]) return;
     const touchEndX = e.changedTouches[0].clientX;
     const touchEndY = e.changedTouches[0].clientY;
     
@@ -541,7 +593,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
                 <h3 className={`text-base sm:text-lg font-display font-bold tracking-tight ${
                   darkMode ? 'text-slate-200' : 'text-slate-800'
                 }`}>
-                  {app.type === 'App' ? 'More Recommended Apps' : 'More Recommended Games'}
+                  {app.type === 'App' ? 'More Apps' : 'More Games'}
                 </h3>
                 <span className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full ${
                   darkMode ? 'bg-slate-800 text-slate-400' : 'bg-slate-200/60 text-slate-600'
