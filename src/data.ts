@@ -375,7 +375,7 @@ const BASE_APPS_DATA: AppItem[] = [
     category: "Social",
     type: "App",
     updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1611162616305-c6a5ae5d2efd?w=150&auto=format&fit=crop&q=80",
+    icon: "https://commons.wikimedia.org/wiki/File:Icon_instapro.png",
     description: "Download stories, HD videos, zoom posts, and hide read receipts in direct messages.",
     longDescription: "Enjoy Instagram without boundaries. Automatically view high-definition profile pictures, copy caption texts, disable read status in DM, and toggle high-resolution layout configurations easily.",
     downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Instagram_Rocket_v312_Mod.apk",
