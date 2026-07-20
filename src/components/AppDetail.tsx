@@ -231,16 +231,16 @@ export const AppDetail: React.FC<AppDetailProps> = ({
   };
 
   return (
-    <div className="space-y-5 animate-fade-in pb-10">
+    <div className="container mx-auto px-4 sm:px-6 space-y-5 animate-fade-in pb-10">
       
       {/* Back & Action Header */}
       <div className="flex items-center justify-between gap-4">
         <button
           onClick={onBack}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold border transition-all hover:scale-105 active:scale-95 cursor-pointer ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold border transition-all hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-md ${
             darkMode
-              ? 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
-              : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900'
+              ? 'bg-slate-900/70 border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+              : 'bg-white/70 border-slate-200 text-slate-600 hover:text-slate-900'
           }`}
         >
           <ArrowLeft className="w-4 h-4" />
@@ -249,20 +249,22 @@ export const AppDetail: React.FC<AppDetailProps> = ({
 
         <button
           onClick={handleShare}
-          className={`p-2 rounded-xl border transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-1.5 text-xs font-semibold ${
+          className={`p-2 rounded-xl border transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center gap-1.5 text-xs font-semibold backdrop-blur-md ${
             darkMode
-              ? 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
-              : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900'
+              ? 'bg-slate-900/70 border-slate-800 text-slate-300 hover:text-white'
+              : 'bg-white/70 border-slate-200 text-slate-600 hover:text-slate-900'
           }`}
         >
           <Share2 className="w-4 h-4 text-store-accent" />
-          <span>{copied ? 'Copied!' : 'Share'}</span>
+          <span className={`transition-all duration-200 ${copied ? 'scale-110 opacity-100' : 'scale-100 opacity-100'}`}>
+            {copied ? 'Copied!' : 'Share'}
+          </span>
         </button>
       </div>
 
       {/* Main App Hero Details */}
-      <div className={`p-5 sm:p-6 rounded-2xl border ${
-        darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
+      <div className={`p-5 sm:p-6 rounded-2xl border backdrop-blur-md ${
+        darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white/70 border-slate-200'
       }`}>
         <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
           
@@ -334,7 +336,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
 
         {/* Dynamic Download Dialog/Panel when downloading */}
         {downloading && (
-          <div className={`mt-5 p-4 rounded-xl border animate-pulse ${
+          <div className={`mt-5 p-4 rounded-xl border animate-pulse backdrop-blur-md ${
             darkMode ? 'bg-slate-950/60 border-slate-800' : 'bg-slate-50 border-slate-200'
           }`}>
             <h4 className="text-sm font-bold flex items-center gap-2 text-store-accent">
@@ -362,8 +364,8 @@ export const AppDetail: React.FC<AppDetailProps> = ({
           
           {/* Video Trailer / Gameplay Section (Shown strictly if link exists) */}
           {app.videoUrl && (
-            <div className={`p-5 rounded-2xl border ${
-              darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
+            <div className={`p-5 rounded-2xl border backdrop-blur-md ${
+              darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white/70 border-slate-100'
             }`}>
               <h3 className={`text-base font-display font-bold mb-4 flex items-center gap-2 ${
                 darkMode ? 'text-slate-200' : 'text-slate-800'
@@ -384,8 +386,8 @@ export const AppDetail: React.FC<AppDetailProps> = ({
           )}
 
           {/* Screenshots Section with Horizontal scrolling and Lightbox Trigger */}
-          <div className={`p-5 rounded-2xl border ${
-            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
+          <div className={`p-5 rounded-2xl border backdrop-blur-md ${
+            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white/70 border-slate-100'
           }`}>
             <h3 className={`text-base font-display font-bold mb-4 flex items-center gap-2 ${
               darkMode ? 'text-slate-200' : 'text-slate-800'
@@ -421,8 +423,8 @@ export const AppDetail: React.FC<AppDetailProps> = ({
           </div>
 
           {/* About / Long Description */}
-          <div className={`p-5 rounded-2xl border ${
-            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
+          <div className={`p-5 rounded-2xl border backdrop-blur-md ${
+            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white/70 border-slate-100'
           }`}>
             <h3 className={`text-base font-display font-bold mb-3 ${
               darkMode ? 'text-slate-200' : 'text-slate-800'
@@ -442,8 +444,8 @@ export const AppDetail: React.FC<AppDetailProps> = ({
         <div className="space-y-6">
           
           {/* Informacion Table Section */}
-          <div className={`p-5 rounded-2xl border ${
-            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
+          <div className={`p-5 rounded-2xl border backdrop-blur-md ${
+            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white/70 border-slate-100'
           }`}>
             <h3 className={`text-base font-display font-bold mb-4 flex items-center gap-2 ${
               darkMode ? 'text-slate-200' : 'text-slate-800'
@@ -485,8 +487,8 @@ export const AppDetail: React.FC<AppDetailProps> = ({
           </div>
 
           {/* Seguridad e Integridad Scanner */}
-          <div className={`p-5 rounded-2xl border ${
-            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
+          <div className={`p-5 rounded-2xl border backdrop-blur-md ${
+            darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white/70 border-slate-100'
           }`}>
             <h3 className={`text-base font-display font-bold mb-3 flex items-center gap-2 ${
               darkMode ? 'text-slate-200' : 'text-slate-800'
@@ -575,18 +577,13 @@ export const AppDetail: React.FC<AppDetailProps> = ({
 
       </div>
 
-      {/* Related Items Section - Placed immediately beneath technical blocks with zero extra gaps */}
+      {/* Related Apps Section - Premium horizontal scrolling */}
       {(() => {
         const relatedItems = getContextAwareRelated();
         if (relatedItems.length === 0) return null;
 
-        const relatedGroups: AppItem[][] = [];
-        for (let i = 0; i < relatedItems.length; i += 3) {
-          relatedGroups.push(relatedItems.slice(i, i + 3));
-        }
-
         return (
-          <div className="mt-6 pt-5 border-t border-slate-200/50 dark:border-slate-850/80 space-y-4">
+          <div className="mt-6 pt-5 border-t border-slate-200/50 dark:border-slate-800/80 space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-store-accent" />
@@ -603,21 +600,19 @@ export const AppDetail: React.FC<AppDetailProps> = ({
               </div>
             </div>
 
+            {/* Horizontal scrolling row of AppCards */}
             <div className="flex gap-4 overflow-x-auto pb-4 pt-1 px-1 snap-x no-scrollbar">
-              {relatedGroups.map((group, groupIdx) => (
-                <div 
-                  key={groupIdx} 
-                  className="w-[280px] xs:w-[320px] sm:w-[420px] md:w-[460px] shrink-0 snap-start flex flex-col gap-3"
+              {relatedItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="w-[280px] xs:w-[320px] sm:w-[340px] shrink-0 snap-start"
                 >
-                  {group.map((item) => (
-                    <AppCard
-                      key={item.id}
-                      app={item}
-                      darkMode={darkMode}
-                      variant="list"
-                      onSelect={onSelectApp}
-                    />
-                  ))}
+                  <AppCard
+                    app={item}
+                    darkMode={darkMode}
+                    variant="list"
+                    onSelect={onSelectApp}
+                  />
                 </div>
               ))}
             </div>
@@ -663,12 +658,19 @@ export const AppDetail: React.FC<AppDetailProps> = ({
               className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-300 scale-95"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
+              style={{
+                touchAction: 'pan-y pinch-zoom',
+                userSelect: 'none',
+              }}
             >
               <img 
                 src={app.screenshots[lightboxIndex]} 
                 alt={`${app.name} screenshot detail ${lightboxIndex + 1}`}
                 className="object-contain max-h-[75vh] w-auto max-w-full select-none rounded-xl"
                 referrerPolicy="no-referrer"
+                style={{
+                  touchAction: 'pan-y pinch-zoom',
+                }}
               />
             </div>
 
