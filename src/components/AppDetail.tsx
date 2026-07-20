@@ -42,7 +42,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
   const [scanProgress, setScanProgress] = useState(0);
   const [scanState, setScanState] = useState<'idle' | 'scanning' | 'verified'>('idle');
   const [downloading, setDownloading] = useState(false);
-  const [downloadCountdown, setDownloadCountdown] = useState(5);
   const [copied, setCopied] = useState(false);
 
   // Reset screenshot index and scroll to top smoothly when app changes
@@ -69,46 +68,24 @@ export const AppDetail: React.FC<AppDetailProps> = ({
     return () => clearInterval(interval);
   }, [app.id]);
 
-  // Handle simulated download triggers
+  // Direct download trigger (no fake loader)
   const triggerDownload = () => {
     setDownloading(true);
-    setDownloadCountdown(5);
-  };
-
-  useEffect(() => {
-    if (downloading && downloadCountdown > 0) {
-      const timer = setTimeout(() => {
-        setDownloadCountdown(prev => prev - 1);
-      }, 1000);
-      return () => clearTimeout(timer);
-    } else if (downloading && downloadCountdown === 0) {
-      // Trigger background download via a hidden iframe.
-      // This is the optimal client-side method to download cross-origin files or start Mediafire downloads
-      // while preventing any top-level navigation and keeping the user 100% on our website.
-      try {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = app.downloadUrl;
-        document.body.appendChild(iframe);
-        setTimeout(() => {
-          document.body.removeChild(iframe);
-        }, 12000);
-        console.log(`Successfully queued secure background download for: ${app.downloadUrl}`);
-      } catch (error) {
-        console.error("Iframe download failed, using standard anchor fallback:", error);
-        const link = document.createElement('a');
-        link.href = app.downloadUrl;
-        link.setAttribute('download', `${app.slug}-modhub.apk`);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-
-      setTimeout(() => {
-        setDownloading(false);
-      }, 2500);
+    try {
+      const link = document.createElement('a');
+      link.href = app.downloadUrl;
+      link.setAttribute('download', `${app.slug}-modhub.apk`);
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Download failed:", error);
+      // Fallback: open in new tab (for some mobile browsers)
+      window.open(app.downloadUrl, '_blank');
     }
-  }, [downloading, downloadCountdown, app.downloadUrl, app.slug]);
+    setTimeout(() => setDownloading(false), 800);
+  };
 
   const fallbackCopy = () => {
     try {
@@ -321,8 +298,8 @@ export const AppDetail: React.FC<AppDetailProps> = ({
                   : 'bg-store-accent hover:bg-red-600 shadow-store-accent/20 hover:shadow-store-accent/35'
               }`}
             >
-              <Download className="w-5 h-5 animate-bounce" />
-              <span>{downloading ? `Preparing (${downloadCountdown}s)...` : 'Download APK'}</span>
+              <Download className="w-5 h-5" />
+              <span>{downloading ? 'Starting download...' : 'Download APK'}</span>
             </button>
 
             {/* Green security verification tag */}
@@ -333,27 +310,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
           </div>
 
         </div>
-
-        {/* Dynamic Download Dialog/Panel when downloading */}
-        {downloading && (
-          <div className={`mt-5 p-4 rounded-xl border animate-pulse backdrop-blur-md ${
-            darkMode ? 'bg-slate-950/60 border-slate-800' : 'bg-slate-50 border-slate-200'
-          }`}>
-            <h4 className="text-sm font-bold flex items-center gap-2 text-store-accent">
-              <RefreshCw className="w-4 h-4 animate-spin" />
-              Generating Secure Download Link...
-            </h4>
-            <p className="text-xs text-slate-500 mt-1">
-              Your download will begin automatically in <strong className="text-store-accent">{downloadCountdown} seconds</strong>. MOD Hub protects your device by encrypting the download on high-fidelity redundant servers.
-            </p>
-            <div className="w-full bg-slate-800 rounded-full h-1.5 mt-3 overflow-hidden">
-              <div 
-                className="bg-store-accent h-full transition-all duration-1000"
-                style={{ width: `${(5 - downloadCountdown) * 20}%` }}
-              />
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Description Grid */}
