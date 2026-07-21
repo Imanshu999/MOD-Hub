@@ -16,9 +16,9 @@ const BASE_APPS_DATA: AppItem[] = [
   // ==================== APPS (30 Items) ====================
   {
     id: "app-1",
-    name: "CapCut Pro",
+    name: "CapCut Pro 2027",
     slug: "capcut",
-    developer: "ByteDance",
+    developer: "Imaanshu N",
     rating: "4.8",
     downloads: "100M",
     size: "95 MB",
@@ -26,14 +26,24 @@ const BASE_APPS_DATA: AppItem[] = [
     category: "Video Editor",
     type: "App",
     updatedAt: "11/07/2026",
-    icon: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Capcut.png",
     description: "All-in-one video editor with premium effects, modern filters, and professional-level transitions.",
     longDescription: "CapCut is the most downloaded all-in-one free video editor in the world. Designed specifically for content creators on TikTok, Instagram, and YouTube, it allows you to cut, reverse, and change the speed of your clips with absolute precision. This modified premium version (MOD) unlocks all VIP templates, cinematic transitions, advanced color filters, and video export in 4K resolution at 60 FPS without annoying watermarks.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/CapCut_v3.5.0_Mod.apk",
+    downloadUrl: "https://www.mediafire.com/file/fgfn3rkmvbpz6j4/CapCut+PRO+2027_signed_sign_sign_sign.apk/file",
     screenshots: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80"
+      "https://play-lh.googleusercontent.com/bVcUMymeJZIxp5p01Ttmc1FHp9Jy501K4lQHB3-OXXSVfNLE6tUa76PY1goZ-O_VBg",
+      "https://play-lh.googleusercontent.com/tc7WpgpN90ij7FFkefwBwntXqPdS5TBCk0895Lf5-jB7rPIyz0FdH6OefiWNGlfpDTs",
+      "https://play-lh.googleusercontent.com/WfwbtHi4g3vglzS6VgUxeRts_g_wgQ1tSa5DLQl91M4kOoTg8BQFsXi16J4FwIdIKTL_",
+      "https://play-lh.googleusercontent.com/6BR---l84afm3uDl0Is1feusM2KO2C_UKek4QNEd70rTRvIa7EgGtBPvl_HVdFyLXg",
+      "https://play-lh.googleusercontent.com/iv2O5J96YhJdfKNPZzafkGkrUqphn20Ivbjo0-sJzp6l-HJvrgJjmsknAHNft4DPjA",
+      "https://play-lh.googleusercontent.com/lPWAbB_jZycmQg67n7QXxZ2zJRKCZ2lEs7uTwRlRBZIjTuBhJ_9IVsvS85U2BTG3Mhs",
+      "https://play-lh.googleusercontent.com/kvAqso_fnZQyheK31RGHZvPhy9UwirOrToD6dYsKiGJo41gQ6OcpxanqB4dG3G2tAQ",
+      "https://play-lh.googleusercontent.com/1iL8DEs-fViIMwtJ98yru4PNVgbhK6ndVUe-KwBaC5WVosmk6U_WXYq2Mup0q9K4ZvE",
+      "https://play-lh.googleusercontent.com/x4jrQP9_Ev18Cv06R3jGe6pwzRQbL71dN59qnY9M6QYTX6DyEeFQ4LTE7ho6KuA-92L-",
+      "https://play-lh.googleusercontent.com/D6F2g22GL-4mRjwAtHLrPmDr64O-4-L_EMsxVxy_K7uZFtTGaEeQKysd3Sx7Y4hxDoM",
+      "https://play-lh.googleusercontent.com/V8hd0zQ3-gvG09fe_SijjDuOvhh4UIVox58CfVB-lwkc0RwvpAFLA3yvxTdOD5e3Nw",
+      "https://play-lh.googleusercontent.com/V14aFGQw0xuV975eZBiCJfumTJTGEjsOQQx8Gt3LM_cOXh8Pam0UV8lfJiyN5wYJu8cV",
+      "https://play-lh.googleusercontent.com/WwhB9aG1IzQoYH1ijHkZ_8z2hyWMc5r718Fm7VW56cvSRLQW9aHXhBjUe2fHfWrT_N_AOepkwBVG3GPsfE6Y"
     ],
     security: {
       checksum: "SHA-256: 9e107d9d372bb6826bd81d3542a419d6",
@@ -43,7 +53,7 @@ const BASE_APPS_DATA: AppItem[] = [
     tags: ["MOD", "Free", "No Watermark"],
     isRecommendation: true,
     isRecent: true,
-    videoUrl: "https://www.youtube.com/watch?v=A2Wp-Uv_M8M"
+    videoUrl: "https://youtu.be/13dMTwMmpQU?si=GDJ0cD4v9OIlrRkV"
   },
   {
     id: "app-2",
