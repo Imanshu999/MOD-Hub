@@ -29,7 +29,7 @@ const BASE_APPS_DATA: AppItem[] = [
     icon: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Capcut.png",
     description: "All-in-one video editor with premium effects, modern filters, and professional-level transitions.",
     longDescription: "CapCut is the most downloaded all-in-one free video editor in the world. Designed specifically for content creators on TikTok, Instagram, and YouTube, it allows you to cut, reverse, and change the speed of your clips with absolute precision. This modified premium version (MOD) unlocks all VIP templates, cinematic transitions, advanced color filters, and video export in 4K resolution at 60 FPS without annoying watermarks.",
-    downloadUrl: "https://www.mediafire.com/file/fgfn3rkmvbpz6j4/CapCut+PRO+2027_signed_sign_sign_sign.apk/file",
+    downloadUrl: "https://www.mediafire.com/file/7wgg623wh4lzmlv/CapCut_MOD_Hub+v27.0.0+(Imaanshu+N).apk/file",
     screenshots: [
       "https://play-lh.googleusercontent.com/bVcUMymeJZIxp5p01Ttmc1FHp9Jy501K4lQHB3-OXXSVfNLE6tUa76PY1goZ-O_VBg",
       "https://play-lh.googleusercontent.com/tc7WpgpN90ij7FFkefwBwntXqPdS5TBCk0895Lf5-jB7rPIyz0FdH6OefiWNGlfpDTs",
