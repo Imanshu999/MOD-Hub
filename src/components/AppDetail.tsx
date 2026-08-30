@@ -264,7 +264,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             />
           </div>
 
-          {/* Central Title Details — AB YAHAN SAB CENTER HAI */}
+          {/* Central Title Details */}
           <div className="flex-1 text-center min-w-0">
             <div className="flex flex-wrap items-center justify-center gap-2 mb-1.5">
               <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
@@ -367,6 +367,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             </div>
           )}
 
+          {/* Screenshots Gallery - FIXED WITH object-contain */}
           <div className={`p-5 rounded-2xl border ${
             darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
           }`}>
@@ -385,15 +386,15 @@ export const AppDetail: React.FC<AppDetailProps> = ({
                     setLightboxIndex(idx);
                     setLightboxOpen(true);
                   }}
-                  className="w-64 sm:w-80 aspect-video rounded-xl overflow-hidden cursor-pointer shrink-0 snap-start border border-slate-200/10 dark:border-slate-800/60 transition-all hover:scale-105 hover:border-store-accent/50 group relative shadow-md"
+                  className="w-44 sm:w-52 h-[340px] sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer shrink-0 snap-start border border-slate-200/10 dark:border-slate-800/60 transition-all hover:scale-[1.02] hover:border-store-accent/50 group relative shadow-md bg-black/40 flex items-center justify-center p-2"
                 >
                   <img 
                     src={src} 
                     alt={`${app.name} screenshot ${idx + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 rounded-xl select-none"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-200 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-200 flex items-center justify-center pointer-events-none">
                     <Maximize2 className="w-7 h-7 text-white opacity-0 group-hover:opacity-100 transition-all scale-75 group-hover:scale-100" />
                   </div>
                 </div>
@@ -598,6 +599,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
         );
       })()}
 
+      {/* Lightbox Modal */}
       {lightboxOpen && (
         <div 
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300"
@@ -628,14 +630,14 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             </button>
 
             <div 
-              className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-300 scale-95"
+              className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl transition-all duration-300 bg-black/60 p-2 flex items-center justify-center max-h-[75vh]"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
               <img 
                 src={app.screenshots[lightboxIndex]} 
                 alt={`${app.name} screenshot detail ${lightboxIndex + 1}`}
-                className="object-contain max-h-[75vh] w-auto max-w-full select-none rounded-xl"
+                className="object-contain max-h-[72vh] w-auto max-w-full select-none rounded-xl"
                 referrerPolicy="no-referrer"
               />
             </div>
