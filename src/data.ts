@@ -1664,6 +1664,41 @@ export const APPS_DATA: AppItem[] = [
     tags: ["MOD", "Free"],
     isRecommendation: false,
     isRecent: false
+  },
+    {
+    id: "48",
+    name: "Free Fire 2022",
+    slug: "free-fire-2022",
+    developer: "Imaanshu N",
+    rating: "3.8",
+    downloads: "300M",
+    size: "562.11 MB",
+    version: "1.70.4",
+    category: "Action",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://freefire2022download.com/assets/app-icon.webp",
+    description: "Free Fire 2022 is the version many players still look for because of its classic lobby, familiar menus, old events, and the gameplay style they remember. Visitors usually come here because they want the old experience back, not information about the newest update. If you miss the 2022 visuals, older interface, classic atmosphere, and memories of playing with friends, this page gives you a simple way to continue and get the game for your device.",
+    downloadUrl: "https://apkdownloader.cc/storage/files/2026/07/free.fire.2026.apk.v1.129.15.xapk",
+    videoUrls: [""], // Converted to array support
+    screenshots: [
+    "https://freefire2022download.com/assets/cover.webp",
+      "https://freefire2022.com/screenshots/screenshot-1.png",
+      "https://freefire2022.com/screenshots/screenshot-2.png",
+      "https://freefire2022.com/screenshots/screenshot-3.png",
+      "https://freefire2022.com/screenshots/screenshot-4.png",
+      "https://img.utdstc.com/screen/698/7dc/6987dc962742bcdfbc93e1071052dd12d39e8d42e36f3dc8e77badaabf2750d6:800",
+      "https://img.utdstc.com/screen/f7a/b29/f7ab29778114a71eb620cf4d35c390710bbf1ddb1b2c3d55026a9498c419ebab:300",
+      "https://img.utdstc.com/screen/bef/94c/bef94c17ceac0b54bc53f4bc4641749e085f300b83dbbde37b5cc351cb4a7af9:300",
+    ],
+    security: {
+      checksum: "SHA-256: FF-2022-full.82g29ge91ge8br8391.apk",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: false
   }
   
 ];
