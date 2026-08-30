@@ -1,35 +1,35 @@
 import { AppItem, CategoryItem, BlogPost } from './types';
 
-export const CATEGORIES_DATA: CategoryItem[] = [
-  { name: 'Action', count: 339, icon: 'Sword' },
-  { name: 'Arcade', count: 139, icon: 'Gamepad2' },
-  { name: 'Sports', count: 51, icon: 'Trophy' },
-  { name: 'Video Editor', count: 124, icon: 'Video' },
-  { name: 'Music & Audio', count: 98, icon: 'Music' },
-  { name: 'Social', count: 182, icon: 'MessageCircle' },
-  { name: 'Tools', count: 215, icon: 'Wrench' },
-  { name: 'Productivity', count: 104, icon: 'Clock' },
-  { name: 'Adventure', count: 87, icon: 'Compass' },
+const BASE_CATEGORIES = [
+  { name: 'Action', icon: 'Sword' },
+  { name: 'Arcade', icon: 'Gamepad2' },
+  { name: 'Sports', icon: 'Trophy' },
+  { name: 'Video Editor', icon: 'Video' },
+  { name: 'Music & Audio', icon: 'Music' },
+  { name: 'Social', icon: 'MessageCircle' },
+  { name: 'Tools', icon: 'Wrench' },
+  { name: 'Productivity', icon: 'Clock' },
+  { name: 'Adventure', icon: 'Compass' },
 ];
 
-const BASE_APPS_DATA: AppItem[] = [
-  // ==================== APPS (30 Items) ====================
+export const APPS_DATA: AppItem[] = [
   {
-    id: "app-1",
-    name: "CapCut Pro 2027",
+    id: "1",
+    name: "CapCut",
     slug: "capcut",
     developer: "Imaanshu N",
     rating: "4.8",
     downloads: "100M",
-    size: "95 MB",
+    size: "298 MB",
     version: "3.5.0",
     category: "Video Editor",
     type: "App",
     updatedAt: "11/07/2026",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Capcut.png",
+    icon: "https://apkgstore.co/wp-content/uploads/2026/06/capcut-video-editor-icon-15093990.png",
     description: "All-in-one video editor with premium effects, modern filters, and professional-level transitions.",
-    longDescription: "CapCut is the most downloaded all-in-one free video editor in the world. Designed specifically for content creators on TikTok, Instagram, and YouTube, it allows you to cut, reverse, and change the speed of your clips with absolute precision. This modified premium version (MOD) unlocks all VIP templates, cinematic transitions, advanced color filters, and video export in 4K resolution at 60 FPS without annoying watermarks.",
+    longDescription: "CapCut is the most downloaded all-in-one free video editor in the world. Designed specifically for content creators on TikTok, Instagram, and YouTube, it allows you to cut, reverse, and change the speed of your clips with absolute precision. This modified premium version (MOD) unlocks all VIP templates, cinematic transitions, advanced color filters, and video export in 4K resolution at 60 FPS without annoying watermarks. In addition, it features a powerful AI-powered automatic subtitle generator to save you hours of manual editing.",
     downloadUrl: "https://www.mediafire.com/file/7wgg623wh4lzmlv/CapCut_MOD_Hub_v27.0.0_%2528Imaanshu_N%2529.apk/file",
+    videoUrls: ["https://youtu.be/13dMTwMmpQU?si=GDJ0cD4v9OIlrRkV"], // Converted to array support
     screenshots: [
       "https://play-lh.googleusercontent.com/bVcUMymeJZIxp5p01Ttmc1FHp9Jy501K4lQHB3-OXXSVfNLE6tUa76PY1goZ-O_VBg",
       "https://play-lh.googleusercontent.com/tc7WpgpN90ij7FFkefwBwntXqPdS5TBCk0895Lf5-jB7rPIyz0FdH6OefiWNGlfpDTs",
@@ -51,26 +51,95 @@ const BASE_APPS_DATA: AppItem[] = [
       cloudStorage: "High-speed cloud storage with encrypted access"
     },
     tags: ["MOD", "Free", "No Watermark"],
-    isRecommendation: true,
-    isRecent: true,
-    videoUrl: "https://youtu.be/13dMTwMmpQU?si=GDJ0cD4v9OIlrRkV"
+    isRecommendation: false,
+    isRecent: false
   },
   {
-    id: "app-2",
+    id: "2",
+    name: "Subway Surfers",
+    slug: "subway-surfers",
+    developer: "Imaanshu N",
+    rating: "4.7",
+    downloads: "1B",
+    size: "135 MB",
+    version: "3.24.1",
+    category: "Arcade",
+    type: "Game",
+    updatedAt: "10/07/2026",
+    icon: "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2023/06/subwaysurf.png&width=160",
+    description: "Dodge trains, run at full speed, and escape from the grumpy inspector with unlimited coins.",
+    longDescription: "The ultimate endless runner game arrives at Look Mod Store with everything unlocked! Join Jake, Tricky, and Fresh in their exciting escape through the train tracks of the world. This premium MOD version includes infinite gold coins, unlimited resurrection keys, and all premium characters and surfboards unlocked from the first second. Enjoy colorful HD graphics optimized with an ultra-smooth refresh rate. Challenge your friends and dominate the global leaderboards with superior performance.",
+    downloadUrl: "https://cdn800.onehost.io/2023/Subway_Surfers_3.66.0_1783939501_latestmodapks.com.apk",
+    videoUrls: ["https://youtu.be/o-3sDXTaiEY?si=FZUMMsrE6EkPUrqw"], // Converted to array support
+    screenshots: [
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2023/06/Subway-Surfers1.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2023/06/Subway-Surfers2.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2023/06/Subway-Surfers3.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2023/06/Subway-Surfers4.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2023/06/Subway-Surfers5.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2023/06/Subway-Surfers.webp"
+    ],
+    security: {
+      checksum: "SHA-256: a1e87d9d372bc6826bd81d3542a419f1",
+      secureToken: "Secure direct download in a single click",
+      cloudStorage: "Dedicated premium SYBO servers"
+    },
+    tags: ["MOD", "Unlimited Coins", "Free"],
+    isRecommendation: false,
+    isRecent: false
+  },
+  {
+    id: "3",
+    name: "Minecraft Pocket Edition",
+    slug: "minecraft",
+    developer: "Mojang Studios",
+    rating: "4.9",
+    downloads: "50M",
+    size: "620 MB",
+    version: "1.21.10",
+    category: "Adventure",
+    type: "Game",
+    updatedAt: "09/07/2026",
+    icon: "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2024/08/Minecraft-Pocket-Edition-APK-logo-media.webp&width=160",
+    description: "Explore infinite worlds, build anything from the simplest home to the grandest castle.",
+    longDescription: "Explore randomly generated worlds and build amazing things, from the simplest homes to the most majestic castles. Play in creative mode with unlimited resources, or delve into survival mode, where you will have to craft weapons and armor to defend yourself against dangerous creatures. Our special MOD version offers you completely free access to all premium aspects of the store, unlocked paid textures, and the ability to play on official multiplayer servers without license verification required.",
+    downloadUrl: "https://go.onehost.io/aMacNBG5x6Cr",
+    videoUrls: ["https://www.youtube.com/watch?v=MmB9b5njVbA"], // Converted to array support
+    screenshots: [
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2024/08/minecraft-pocket-edition-1-media.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2024/08/minecraft-pocket-edition-2-media.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2024/08/minecraft-pocket-edition-3-media.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2024/08/minecraft-pocket-edition-4-media.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2024/08/minecraft-pocket-edition-5-media.webp"
+    ],
+    security: {
+      checksum: "SHA-256: c398e4d372fc5927ad81d3542a419f9",
+      secureToken: "License unlocked and clean",
+      cloudStorage: "Hosting on distributed premium network"
+    },
+    tags: ["Paid Subscription Unlocked", "Free", "MOD Menu"],
+    isRecommendation: false,
+    isRecent: false
+  },
+  {
+    id: "4",
     name: "Spotify Premium",
     slug: "spotify",
     developer: "Imaanshu N",
     rating: "4.8",
     downloads: "500M",
-    size: "20 MB",
+    size: "65 MB",
     version: "8.9.22",
     category: "Music & Audio",
     type: "App",
     updatedAt: "11/07/2026",
-    icon: "https://apps2app.com/wp-content/uploads/2025/10/Spotify-MOD-APK-150x150.jpg",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/2/28/Spotify_Mod.png",
     description: "Listen to millions of songs, albums, and original podcasts without commercial ads.",
-    longDescription: "Enjoy the best music and podcasts without limits. With Spotify Premium MOD, you will have the ultimate experience without audio or video advertising interruptions. Unlock the ability to skip songs unlimitedly, play any track you want on-demand with extreme audio quality (320kbps), and activate the music search bar.",
-    downloadUrl: "https://www.mediafire.com/file/8nimif22fu8prw1/Spotify_signed_MOD_Hub.apk/file",
+    longDescription: "Enjoy the best music and podcasts without limits. With Spotify Premium MOD, you will have the ultimate experience without audio or video advertising interruptions. Unlock the ability to skip songs unlimitedly, play any track you want on-demand with extreme audio quality (320kbps), and activate the music search bar. This version is optimized to consume less battery and RAM, allowing you to browse playlists and artists instantly.",
+    downloadUrl: "https://www.mediafire.com/file/lo87s78pkzcpaam/Spotify_signed_MOD_Hub.apk/file",
+    videoUrls: ["https://youtu.be/0Wun0877Mrc?si=AfFuVnBZUUqj73sQ",
+                "https://youtu.be/ZGwLcs0aot0?si=g-Wmn73gCwNnR1vL",
+                "https://youtu.be/UTx5f4M01Wg?si=VcHHIWdQEVXCS0iK"], // Converted to array support
     screenshots: [
       "https://apkgstore.co/wp-content/uploads/2025/09/spotify-app-msica-y-podcasts-screenshot-1-18621311.jpg",
       "https://apkgstore.co/wp-content/uploads/2025/09/spotify-app-msica-y-podcasts-screenshot-2-18631173.jpg",
@@ -113,863 +182,11 @@ const BASE_APPS_DATA: AppItem[] = [
       cloudStorage: "Ultra-fast global CDN file storage"
     },
     tags: ["MOD", "Premium Unlocked", "Free"],
-    isRecommendation: true,
-    isRecent: true,
-    videoUrl: "https://www.youtube.com/watch?v=fXvXWz6N27Y"
-  },
-  {
-    id: "app-3",
-    name: "TikTok Plus",
-    slug: "tiktok-plus",
-    developer: "TikTok Ltd",
-    rating: "4.7",
-    downloads: "1B",
-    size: "110 MB",
-    version: "32.8.4",
-    category: "Social",
-    type: "App",
-    updatedAt: "05/07/2026",
-    icon: "https://images.unsplash.com/photo-1598257006458-087169a1f08d?w=150&auto=format&fit=crop&q=80",
-    description: "Watch millions of videos from around the world and download videos without watermarks.",
-    longDescription: "TikTok Plus is an advanced modified version of the social media giant. It allows you to download any video directly to your local gallery without watermarks or logos. In addition, it removes all annoying sponsored ads from the main feed, unlocks high-fidelity audio playback, and adds a special button to change regions.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/TikTok_Plus_v32.8.4_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1611162616305-c6a5ae5d2efd?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d241e4d372fc5927ad81d3542a4192dd",
-      secureToken: "Direct clean download free of ads",
-      cloudStorage: "Fast file storage"
-    },
-    tags: ["MOD", "Ad-Free", "Free"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "app-4",
-    name: "Netflix Premium App",
-    slug: "netflix-premium",
-    developer: "Netflix Inc.",
-    rating: "4.5",
-    downloads: "100M",
-    size: "42 MB",
-    version: "10.6.2",
-    category: "Video Editor", // mapped to standard category
-    type: "App",
-    updatedAt: "04/07/2026",
-    icon: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=150&auto=format&fit=crop&q=80",
-    description: "Watch exclusive movies and TV shows in 4K HDR resolution without paying a monthly subscription.",
-    longDescription: "Netflix Premium MOD offers you unlimited access to the entire original Netflix catalog, trending world TV series, award-winning documentaries, and stunning cinematic feature films. The best part is that it does not require registering a credit card or paying monthly fees.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Netflix_Premium_v10.6.2_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: e810e4d372fc5927ad81d3542a419ab7",
-      secureToken: "Paywall bypass Mod",
-      cloudStorage: "Mirror stream servers"
-    },
-    tags: ["Paid Subscription Unlocked", "Free", "Ultra HD 4K"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-5",
-    name: "PicsArt Premium",
-    slug: "picsart-premium",
-    developer: "PicsArt Inc",
-    rating: "4.7",
-    downloads: "100M",
-    size: "82 MB",
-    version: "24.1.3",
-    category: "Video Editor",
-    type: "App",
-    updatedAt: "12/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Professional photo and video editor with gold filters, fonts, and advanced AI objects remover.",
-    longDescription: "Unleash your creativity with the ultimate premium graphics tool. PicsArt Premium MOD unlocks the complete Gold tier, offering ad-free photo and video templates, custom stickers, multi-layer collage adjustments, and professional AI enhancing brushes entirely for free.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/PicsArt_Gold_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d8221b3395d82a8bd57fbe6180051823",
-      secureToken: "Gold Subscription Active",
-      cloudStorage: "Secure Content Delivery Network"
-    },
-    tags: ["Gold Unlocked", "No Ads", "Premium Filters"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-6",
-    name: "KineMaster Pro",
-    slug: "kinemaster-pro",
-    developer: "KineMaster Corp.",
-    rating: "4.6",
-    downloads: "50M",
-    size: "108 MB",
-    version: "7.4.2",
-    category: "Video Editor",
-    type: "App",
-    updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Multi-track video creator with chroma key, advanced blending modes, and unlocked asset store.",
-    longDescription: "Make incredible mobile projects with premium timelines and precision speed curves. This MOD has all watermark lines removed, VIP asset packs enabled, and 4K ultra-smooth rendering capabilities fully activated.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/KineMaster_v7.4.2_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: ad37a1f5927ad81d3542a419d2b882e4d",
-      secureToken: "Pro Asset Store Bypassed",
-      cloudStorage: "Global CDN Cloud Servers"
-    },
-    tags: ["Watermark Removed", "Chroma Key", "Pro Unlocked"],
     isRecommendation: false,
     isRecent: false
   },
   {
-    id: "app-7",
-    name: "Adobe Lightroom Mobile",
-    slug: "lightroom-mobile",
-    developer: "Adobe",
-    rating: "4.8",
-    downloads: "100M",
-    size: "145 MB",
-    version: "9.3.0",
-    category: "Productivity",
-    type: "App",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Capture and refine beautiful images with premium presets, healing brush, and masking features.",
-    longDescription: "Refine RAW details with elite Lightroom adjustments. The Premium MOD unlocks custom masking layers, high-definition RAW edits, perspective geometry corrections, and hundreds of professional photo-editing presets.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Lightroom_Premium_v9.3.0_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: 4e9042af9f239e107d9d372bb6826bd8",
-      secureToken: "Premium Presets Activated",
-      cloudStorage: "Adobe CDN Mirror Servers"
-    },
-    tags: ["Premium Unlocked", "Raw Editing", "Masking Activated"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-8",
-    name: "Duolingo Plus",
-    slug: "duolingo-plus",
-    developer: "Duolingo",
-    rating: "4.9",
-    downloads: "100M",
-    size: "54 MB",
-    version: "5.140.4",
-    category: "Productivity",
-    type: "App",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Learn Spanish, French, German, or English with unlimited hearts and offline progress downloads.",
-    longDescription: "Master languages effortlessly with custom AI-tailored study lessons. This Super Duolingo Plus version offers unlimited hearts, personalized mock quiz checks, and complete visual progress metrics without ads.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Duolingo_Super_v5.140.4_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: b72fc5927ad81d3542a419f9c398e4d3",
-      secureToken: "Super Subscription Active",
-      cloudStorage: "Fast Global Delivery Servers"
-    },
-    tags: ["Super Unlocked", "Unlimited Hearts", "Offline Enabled"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-9",
-    name: "Canva Pro",
-    slug: "canva-pro",
-    developer: "Canva",
-    rating: "4.7",
-    downloads: "100M",
-    size: "38 MB",
-    version: "2.260.0",
-    category: "Productivity",
-    type: "App",
-    updatedAt: "12/07/2026",
-    icon: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80",
-    description: "Design social graphics, presentations, and posters with premium premium graphics elements.",
-    longDescription: "Design templates on the fly with professional high-end graphic resources. The Canva Pro MOD unlocks premium brand kits, custom high-resolution PNG transparent backgrounds, and thousands of premium vectors.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Canva_Pro_v2.260_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: ad81d3542a419f9c398e4d372fc5927a",
-      secureToken: "Enterprise License Active",
-      cloudStorage: "Distributed Secure Sync Servers"
-    },
-    tags: ["Pro Features Unlocked", "Premium Elements", "No Watermark"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "app-10",
-    name: "WhatsApp Plus",
-    slug: "whatsapp-plus",
-    developer: "HeyMods",
-    rating: "4.5",
-    downloads: "50M",
-    size: "68 MB",
-    version: "20.10.0",
-    category: "Social",
-    type: "App",
-    updatedAt: "08/07/2026",
-    icon: "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?w=150&auto=format&fit=crop&q=80",
-    description: "Custom themes, hide online blue ticks, increase attachment file limit up to 700MB.",
-    longDescription: "An advanced version of the popular messenger allowing you to hide your online footprint, customize chat bubbles, auto-reply to messages, and download contacts' status images and videos instantly.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/WhatsApp_Plus_v20.10_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1611162616305-c6a5ae5d2efd?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: b1d3542a419ff1107d9e102bc6826bd8",
-      secureToken: "Anti-Ban Protection Active",
-      cloudStorage: "Peer-to-peer encrypted sync"
-    },
-    tags: ["MOD", "Privacy Mod", "Anti-Ban"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-11",
-    name: "Telegram Premium",
-    slug: "telegram-premium",
-    developer: "Telegram FZ-LLC",
-    rating: "4.8",
-    downloads: "500M",
-    size: "72 MB",
-    version: "10.12.1",
-    category: "Social",
-    type: "App",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1611162616305-c6a5ae5d2efd?w=150&auto=format&fit=crop&q=80",
-    description: "Unlock twice the resource limits, 4GB cloud upload size, speech-to-text, and fast downloads.",
-    longDescription: "Experience social messaging at its absolute peak speed. This version grants full premium badges, high-priority chat delivery, custom premium stickers, and unique real-time speech translations.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Telegram_Premium_v10.12_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1598257006458-087169a1f08d?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: ee345672bc6826bd81d3542a419ff551",
-      secureToken: "Premium Subscription Verified",
-      cloudStorage: "Telegram Distributed Cloud"
-    },
-    tags: ["Premium Badge", "Fast Download", "Ad-Free"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-12",
-    name: "InstaPro",
-    slug: "instapro",
-    developer: "Imaanshu N",
-    rating: "4.6",
-    downloads: "100M",
-    size: "178 MB",
-    version: "15.25.0",
-    category: "Social",
-    type: "App",
-    updatedAt: "10/07/2026",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Icon_instapro.png",
-    description: "Download stories, HD videos, zoom posts, and hide read receipts in direct messages.",
-    longDescription: "Enjoy Instagram without boundaries. Automatically view high-definition profile pictures, copy caption texts, disable read status in DM, and toggle high-resolution layout configurations easily.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Instagram_Rocket_v312_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d9d372bb6826bd81d3542a419d69e107",
-      secureToken: "Direct Video Downloader Hooked",
-      cloudStorage: "High-speed multi-part links"
-    },
-    tags: ["Media Downloader", "Adblock", "Ghost Mode"],
-    isRecommendation: false,
-    isRecent: false
-  },
-  {
-    id: "app-13",
-    name: "YouTube Vanced Premium",
-    slug: "youtube-vanced",
-    developer: "Team Vanced",
-    rating: "4.9",
-    downloads: "200M",
-    size: "88 MB",
-    version: "19.02.39",
-    category: "Video Editor",
-    type: "App",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1611162616305-c6a5ae5d2efd?w=150&auto=format&fit=crop&q=80",
-    description: "Background play, built-in dynamic sponsorblock, adblocking, and full HDR picture mode.",
-    longDescription: "Ditch repetitive mobile video ads completely. YouTube Vanced includes custom swipe controls for volume/brightness, dark AMOLED dark mode settings, and integrated community sponsor-blocking.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/YouTube_Vanced_v19.02_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: fc5927ad81d3542a419f9c398e4d372f",
-      secureToken: "Built-in MicroG bypass signature",
-      cloudStorage: "Vanced Redundant Mirror List"
-    },
-    tags: ["Adblock", "Background Play", "AMOLED Dark"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-14",
-    name: "Truecaller Premium Gold",
-    slug: "truecaller-premium",
-    developer: "Truecaller",
-    rating: "4.6",
-    downloads: "100M",
-    size: "61 MB",
-    version: "14.2.5",
-    category: "Tools",
-    type: "App",
-    updatedAt: "09/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Identify spam calls, block telemarketers, and reveal unknown numbers with Gold caller ID.",
-    longDescription: "Never answer telemarketing spam again. Truecaller Gold MOD gives you full access to premium caller ID cards, advanced live spam lists, auto-call recording, and profile visit alerts.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Truecaller_Gold_v14.2_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d3542a419f9c398e4d372fc5927ad81d",
-      secureToken: "Gold Plan Unlocked",
-      cloudStorage: "Secure truecaller data mirror"
-    },
-    tags: ["Gold Unlocked", "Spam Block", "Caller ID"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-15",
-    name: "1Weather Pro",
-    slug: "1weather-pro",
-    developer: "OneLouder",
-    rating: "4.7",
-    downloads: "10M",
-    size: "24 MB",
-    version: "5.3.8",
-    category: "Tools",
-    type: "App",
-    updatedAt: "06/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Live radar weather tracks, 12-week forecasts, premium custom desktop widgets.",
-    longDescription: "Get the cleanest hyper-local meteorological updates. All third-party video and banner ads are completely removed, and advanced weather radars are unlocked fully.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/1Weather_Pro_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: ad81d3542a419f9c398e4d372fc5927c",
-      secureToken: "Ad-free Radar Token",
-      cloudStorage: "NOAA Meteorological Proxy"
-    },
-    tags: ["Pro Unlocked", "Ad-Free", "Premium Widgets"],
-    isRecommendation: false,
-    isRecent: false
-  },
-  {
-    id: "app-16",
-    name: "Nova Launcher Prime",
-    slug: "nova-launcher",
-    developer: "TeslaCoil Software",
-    rating: "4.8",
-    downloads: "50M",
-    size: "12 MB",
-    version: "8.0.14",
-    category: "Tools",
-    type: "App",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Highly customizable, performance-driven home screen replacement with Prime gestures unlocked.",
-    longDescription: "Reimagine your entire Android home desktop. Nova Prime MOD unlocks multi-finger gestures, custom app icon scaling, hidden folders, card drawer categories, and custom animations.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Nova_Launcher_Prime_v8_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: f15927ad81d3542a419d2b882e4da37a",
-      secureToken: "Prime License Unlocked",
-      cloudStorage: "Secure Takano3D Host CDN"
-    },
-    tags: ["Prime Features", "Highly Custom", "Fast Layouts"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-17",
-    name: "MX Player Pro",
-    slug: "mx-player-pro",
-    developer: "MX Media",
-    rating: "4.7",
-    downloads: "100M",
-    size: "48 MB",
-    version: "1.82.0",
-    category: "Video Editor",
-    type: "App",
-    updatedAt: "05/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "The most powerful offline video player with full hardware acceleration, custom AC3 audio support.",
-    longDescription: "Watch everything with deep multi-core decoding. Features advanced subtitle styling gestures, dynamic hardware audio booster, completely ad-free stream settings, and direct local directory browsing.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/MX_Player_Pro_v1.82_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: 419d2b882e4d37a1f5927ad81d3542a1",
-      secureToken: "Pro Activated License",
-      cloudStorage: "Premium Storage Mirror"
-    },
-    tags: ["Pro", "All Codecs Unlocked", "Ad-Free"],
-    isRecommendation: false,
-    isRecent: false
-  },
-  {
-    id: "app-18",
-    name: "Shazam Encore",
-    slug: "shazam-encore",
-    developer: "Apple Inc.",
-    rating: "4.8",
-    downloads: "100M",
-    size: "26 MB",
-    version: "14.10.1",
-    category: "Music & Audio",
-    type: "App",
-    updatedAt: "11/07/2026",
-    icon: "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=150&auto=format&fit=crop&q=80",
-    description: "Identify any music and artists in seconds. Full premium lyric integrations.",
-    longDescription: "Identify tunes playing in any app or environment. Shazam Encore removes all advertisement cards, unlocks dynamic real-time floating visualizer lyrics, and automatically logs history.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Shazam_Encore_v14_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: 9d372bb6826bd81d3542a419d69e107d",
-      secureToken: "Encore Unlocked Token",
-      cloudStorage: "Dedicated Apple Proxy Server"
-    },
-    tags: ["Encore Unlocked", "Auto Shazam", "Adblock"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-19",
-    name: "Poweramp Music Player",
-    slug: "poweramp",
-    developer: "Max MP",
-    rating: "4.8",
-    downloads: "10M",
-    size: "18 MB",
-    version: "3.976",
-    category: "Music & Audio",
-    type: "App",
-    updatedAt: "12/07/2026",
-    icon: "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=150&auto=format&fit=crop&q=80",
-    description: "The absolute best premium audio engine for Android with 10-band graphic equalizer.",
-    longDescription: "Unchain your premium wired or Bluetooth audio hardware. Features 64-bit internal precision, absolute reverb and treble controls, customizable visualizer skins, and folder queue management.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Poweramp_Full_v3_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: aa81d3542a419f9c398e4d372fc5927a",
-      secureToken: "Full License Activator Hooked",
-      cloudStorage: "High-speed audio storage CDN"
-    },
-    tags: ["Premium License", "Audio Engine", "Equalizer"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "app-20",
-    name: "Pinterest Pro",
-    slug: "pinterest-pro",
-    developer: "Pinterest",
-    rating: "4.7",
-    downloads: "500M",
-    size: "34 MB",
-    version: "11.45.0",
-    category: "Social",
-    type: "App",
-    updatedAt: "08/07/2026",
-    icon: "https://images.unsplash.com/photo-1598257006458-087169a1f08d?w=150&auto=format&fit=crop&q=80",
-    description: "Download high-definition design inspiration pictures and remove sponsored advertisements.",
-    longDescription: "Pinterest Pro allows you to directly save high-definition photos and video pins in one touch without watermarks. Sponsored items and trackers are completely filtered out of your feed.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Pinterest_Pro_v11_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d542a419f9c398e4d372fc5927ad81d3",
-      secureToken: "Adblock Engine Hook",
-      cloudStorage: "S3 Distributed Bucket"
-    },
-    tags: ["HD Downloader", "Ad-Free Feed", "Free"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-21",
-    name: "NordVPN Premium Mod",
-    slug: "nordvpn-premium",
-    developer: "Nord Security",
-    rating: "4.6",
-    downloads: "50M",
-    size: "39 MB",
-    version: "6.85.2",
-    category: "Tools",
-    type: "App",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Browse securely on hundreds of global servers with pre-unlocked subscription accounts.",
-    longDescription: "Protect your internet identity with premium double VPN tunnels. Features secure malware blocking, high-speed WireGuard protocols, and unlocked premium server locations worldwide.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/NordVPN_v6.85_Premium_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: e81d3542a419ab7e810e4d372fc5927a",
-      secureToken: "Premium Server Login Bypass",
-      cloudStorage: "Secure Redundant VPN Node List"
-    },
-    tags: ["VPN Premium", "Unlimited Bandwidth", "Secured"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-22",
-    name: "ExpressVPN Mod",
-    slug: "expressvpn-mod",
-    developer: "ExpressVPN",
-    rating: "4.5",
-    downloads: "50M",
-    size: "45 MB",
-    version: "12.80.1",
-    category: "Tools",
-    type: "App",
-    updatedAt: "11/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Bypass regional blocks instantly. Unlimited trial resets with premium server access.",
-    longDescription: "ExpressVPN Mod allows you to reset trial periods dynamically to access hundreds of high-fidelity servers globally. Features secure AES-256 encryption tunnels and no-logging guarantees.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/ExpressVPN_v12.80_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: cb398e4d372fc5927ad81d3542a419f9",
-      secureToken: "Unlimited Trial Reset Hook",
-      cloudStorage: "Encrypted Node List Mirror"
-    },
-    tags: ["Unlimited Trial", "Full Servers", "Fast Connection"],
-    isRecommendation: false,
-    isRecent: false
-  },
-  {
-    id: "app-23",
-    name: "WPS Office Premium",
-    slug: "wps-office-premium",
-    developer: "WPS Software",
-    rating: "4.7",
-    downloads: "100M",
-    size: "91 MB",
-    version: "18.6.1",
-    category: "Productivity",
-    type: "App",
-    updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "The complete office package with PDF editing, PPT presentation creations, and cloud storage.",
-    longDescription: "WPS Office MOD unlocks elite features like PDF signature insertions, watermark-free document exports, scanned image-to-text conversion (OCR), and premium ad-free layouts.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/WPS_Office_Premium_v18_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: 9e107d9d372bb6826bd81d3542a419df",
-      secureToken: "Premium PDF Tools Unlocked",
-      cloudStorage: "Secure Office Cloud Sync"
-    },
-    tags: ["Premium", "PDF Editor", "OCR Unlocked"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-24",
-    name: "Evernote Premium",
-    slug: "evernote-premium",
-    developer: "Evernote Corp.",
-    rating: "4.6",
-    downloads: "100M",
-    size: "55 MB",
-    version: "10.88.2",
-    category: "Productivity",
-    type: "App",
-    updatedAt: "07/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Sync files across unlimited devices. PDF search, offline notebooks, and premium tags.",
-    longDescription: "Evernote Premium MOD removes standard synchronization device restrictions. Sync rich text files, audio recordings, and checklists on all devices with fully unlocked premium note sizes.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Evernote_Premium_v10_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: e102bc6826bd81d3542a419ffb72fc592",
-      secureToken: "Sync Limit Bypassed",
-      cloudStorage: "Redundant Backup Servers"
-    },
-    tags: ["Unlimited Devices", "OCR Active", "Offline Access"],
-    isRecommendation: false,
-    isRecent: false
-  },
-  {
-    id: "app-25",
-    name: "PhotoRoom Pro",
-    slug: "photoroom-pro",
-    developer: "PhotoRoom",
-    rating: "4.8",
-    downloads: "10M",
-    size: "44 MB",
-    version: "5.1.0",
-    category: "Video Editor",
-    type: "App",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Extract foreground objects in one tap and replace them with premium AI templates.",
-    longDescription: "Design premium commercial products and clothing photos. PhotoRoom Pro MOD unlocks watermark-free high-definition exports, batch product editors, and all AI background designs.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/PhotoRoom_Pro_v5_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d826bd81d3542a419d69e107d9d372bb",
-      secureToken: "VIP Subscription Enabled",
-      cloudStorage: "Secure Photo Processing Cloud"
-    },
-    tags: ["AI Remove BG", "VIP Unlocked", "No Watermark"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "app-26",
-    name: "Alight Motion Pro",
-    slug: "alight-motion",
-    developer: "Alight Creative",
-    rating: "4.5",
-    downloads: "50M",
-    size: "77 MB",
-    version: "5.0.2",
-    category: "Video Editor",
-    type: "App",
-    updatedAt: "12/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "First professional motion graphics design app bringing quality vector layout controls.",
-    longDescription: "Alight Motion Pro MOD provides graphic designers with XML presets import, custom keyframe adjustment curves, premium color grading features, and premium rendering.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Alight_Motion_Pro_v5_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: f5927ad81d3542a419d2b882e4da37a1",
-      secureToken: "Premium XML Presets Unlocked",
-      cloudStorage: "Motion Resource Mirror"
-    },
-    tags: ["Pro Features", "XML Enabled", "Watermark-Free"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-27",
-    name: "Deezer Premium",
-    slug: "deezer-premium",
-    developer: "Deezer Mobile",
-    rating: "4.7",
-    downloads: "100M",
-    size: "36 MB",
-    version: "7.15.3",
-    category: "Music & Audio",
-    type: "App",
-    updatedAt: "09/07/2026",
-    icon: "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=150&auto=format&fit=crop&q=80",
-    description: "Stream over 90 million tracks in high-fidelity FLAC audio format without advertisements.",
-    longDescription: "Enjoy pure lossless audio streaming on demand. Deezer Premium MOD provides unlimited skips, offline music downloads, and active lyrics tracking without registration requirements.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Deezer_Premium_v7_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: a81d3542a419ff1107d9e102bc6826bd",
-      secureToken: "HiFi FLAC Unlocked",
-      cloudStorage: "Deezer Lossless CDN"
-    },
-    tags: ["HiFi Audio", "Offline Downloads", "No Ads"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "app-28",
-    name: "TuneIn Radio Pro",
-    slug: "tunein-radio",
-    developer: "TuneIn Inc",
-    rating: "4.6",
-    downloads: "100M",
-    size: "31 MB",
-    version: "34.1.2",
-    category: "Music & Audio",
-    type: "App",
-    updatedAt: "06/07/2026",
-    icon: "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=150&auto=format&fit=crop&q=80",
-    description: "Stream premium commercial-free sports, news, and over 100,000 global FM stations.",
-    longDescription: "TuneIn Pro MOD gives you unlimited access to global live talk shows, regional sports coverages, and podcasts without additional ad interruptions.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/TuneIn_Radio_Pro_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: de41e4d372fc5927ad81d3542a4192dd",
-      secureToken: "Commercial-Free Stream Activated",
-      cloudStorage: "Direct radio broadcast proxy"
-    },
-    tags: ["Commercial-Free", "100k Stations", "Pro Unlocked"],
-    isRecommendation: false,
-    isRecent: false
-  },
-  {
-    id: "app-29",
-    name: "Sleep Cycle Premium",
-    slug: "sleep-cycle",
-    developer: "Sleep Cycle AB",
-    rating: "4.7",
-    downloads: "10M",
-    size: "49 MB",
-    version: "4.24.0",
-    category: "Productivity",
-    type: "App",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Track sleep cycles dynamically using your microphone and wake up feeling refreshed.",
-    longDescription: "Improve overall night rest with customized biometric audio analyses. This Premium MOD unlocks sleep aids, historic charts comparisons, snore statistics, and premium alarm sounds.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Sleep_Cycle_Premium_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d3542a419f9c398e4d372fc5927ad812",
-      secureToken: "Premium Biometric Tracking Active",
-      cloudStorage: "Encrypted Health Sync Node"
-    },
-    tags: ["Sleep Aid", "Detailed Statistics", "Premium Alarms"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "app-30",
-    name: "CamScanner Premium",
-    slug: "camscanner",
-    developer: "INTSIG",
-    rating: "4.8",
-    downloads: "100M",
-    size: "67 MB",
-    version: "6.55.0",
-    category: "Tools",
-    type: "App",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Turn your device into a portable high-resolution scanner with OCR features.",
-    longDescription: "CamScanner Premium MOD unlocks unlimited scanned document sizes, direct high-fidelity PDF editing tools, text recognition (OCR) and removes camscanner watermark text from all pages.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/CamScanner_Premium_v6_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: f1107d9e102bc6826bd81d3542a419ff",
-      secureToken: "Enterprise License Active",
-      cloudStorage: "camscanner proxy mirror"
-    },
-    tags: ["Watermark Removed", "Premium PDF", "OCR Enabled"],
-    isRecommendation: true,
-    isRecent: true
-  },
-
-  // ==================== GAMES (30 Items) ====================
-  {
-    id: "game-1",
-    name: "Subway Surfers",
-    slug: "subway-surfers",
-    developer: "SYBO Games",
-    rating: "4.7",
-    downloads: "1B",
-    size: "135 MB",
-    version: "3.24.1",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Dodge trains, run at full speed, and escape from the grumpy inspector with unlimited coins.",
-    longDescription: "The ultimate endless runner game arrives at MOD Hub with everything unlocked! Join Jake, Tricky, and Fresh in their exciting escape through the train tracks of the world. This premium MOD version includes infinite gold coins, unlimited resurrection keys, and all premium characters and surfboards unlocked from the first second.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Subway_Surfers_v3.24.1_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1553481187-be93c21490a9?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: a1e87d9d372bc6826bd81d3542a419f1",
-      secureToken: "Secure direct download in a single click",
-      cloudStorage: "Dedicated premium SYBO servers"
-    },
-    tags: ["MOD", "Unlimited Coins", "Free"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "game-2",
-    name: "Minecraft PE",
-    slug: "minecraft",
-    developer: "Mojang Studios",
-    rating: "4.9",
-    downloads: "50M",
-    size: "620 MB",
-    version: "1.21.10",
-    category: "Adventure",
-    type: "Game",
-    updatedAt: "09/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Explore infinite worlds, build anything from the simplest home to the grandest castle.",
-    longDescription: "Explore randomly generated worlds and build amazing things, from the simplest homes to the most majestic castles. Play in creative mode with unlimited resources, or delve into survival mode, where you will have to craft weapons and armor to defend yourself against dangerous creatures. Our special MOD version offers you completely free access to all premium aspects of the store, unlocked paid textures.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Minecraft_v1.21.10_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1627856013091-fed6e4e30025?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: c398e4d372fc5927ad81d3542a419f9",
-      secureToken: "License unlocked and clean",
-      cloudStorage: "Hosting on distributed premium network"
-    },
-    tags: ["Paid Subscription Unlocked", "Free", "MOD Menu"],
-    isRecommendation: false,
-    isRecent: true,
-    videoUrl: "https://www.youtube.com/watch?v=MmB9b5njVbA"
-  },
-  {
-    id: "game-3",
+    id: "5",
     name: "Brawl Stars",
     slug: "brawl-stars",
     developer: "Supercell",
@@ -980,15 +197,21 @@ const BASE_APPS_DATA: AppItem[] = [
     category: "Action",
     type: "Game",
     updatedAt: "08/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
+    icon: "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/04/brawl-stars.png&width=160",
     description: "Fast-paced 3v3 multiplayer and mobile battle royale mode with unlocked brawlers.",
-    longDescription: "Brawl Stars by Supercell is the action multiplayer game of the moment! Enjoy quick three-minute battles in a variety of exciting game modes. This MOD grants you free unlimited gems, unlimited boxes to open immediately, and spectacular gold skins to show off to all your rivals.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Brawl_Stars_v55.220_Mod.apk",
+    longDescription: "Brawl Stars by Supercell is the action multiplayer game of the moment! Enjoy quick three-minute battles in a variety of exciting game modes. This MOD grants you free unlimited gems, unlimited boxes to open immediately, and spectacular gold skins to show off to all your rivals. Play on a 100% stable private server with automatic matchmaking so you never have to wait to jump into battle.",
+    downloadUrl: "https://cdn600.onehost.io/2023/Brawl_Stars_67.264_1777009851_latestmodapks.com.apk",
+    videoUrls: ["https://youtu.be/CaryjOdYFa0?si=8K0IEKko45XQ-CrM"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=600&auto=format&fit=crop&q=80"
-    ],
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars1.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars2.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars3.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars4.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars5.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars6.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars7.webp",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/08/brawlstars8.webp"
+      ],
     security: {
       checksum: "SHA-256: b882e4d372fc5927ad81d3542a4192b3",
       secureToken: "High security anti-ban bypass",
@@ -996,11 +219,83 @@ const BASE_APPS_DATA: AppItem[] = [
     },
     tags: ["MOD", "Unlimited Gems", "Free"],
     isRecommendation: false,
-    isRecent: true,
-    videoUrl: "https://www.youtube.com/watch?v=Nn_ZfPLaXz4"
+    isRecent: false
   },
   {
-    id: "game-4",
+    id: "6",
+    name: "InstaPro ♚",
+    slug: "instapro",
+    developer: "Imaanshu N",
+    rating: "4.7",
+    downloads: "1B",
+    size: "173.68 MB",
+    version: "15.60.0",
+    category: "Social",
+    type: "App",
+    updatedAt: "05/07/2026",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Icon_instapro.png",
+    description: "Watch millions of videos from around the world and download videos without watermarks.",
+    longDescription: "InstaPro is an advanced modified version of the social media giant. It allows you to download any photo, video, or reel directly to your local gallery without watermarks. In addition, it removes all annoying sponsored ads from the main feed, unlocks high-fidelity media upload quality, and adds special privacy controls to view stories anonymously, hide typing status, and read messages without sending read receipts.",
+    downloadUrl: "https://www.mediafire.com/file/rxlkisab413texj/InstaPro-v15.50-look-mod.vercel.app.apk/file?dkey=kq5mibpf2gl&r=1924",
+    videoUrls: ["https://youtu.be/ZnT2azDpIA0?si=zZHJkU4VHIMgnlhj"], // Converted to array support
+    screenshots: [
+      "https://play-lh.googleusercontent.com/hZ2Ob6d0MqLse2lIdNOGgl93H5y82uhX4hC6mWDUpdwK8LjXAunweDQZ6Hocy0riv4KX0lTIzKJz6lhRDV_BiHg=h305",
+      "https://play-lh.googleusercontent.com/EvykD5h_-49MNu1JNfAyP0h9xMLceepomvT4DmZgJcy51a6My9G4XjxILgO7LCnEgfYElXY5tWnpmiaZMfMT=h305",
+      "https://play-lh.googleusercontent.com/7h2Yo9e9ay8J4Uwt5WkhPCyfLQtI1LzcMbqopSbcGlUcnNS1gWtu9Q2jto2WvhgtB2roGwWyp7wsZudyHhqeLw=h305",
+      "https://play-lh.googleusercontent.com/CxApBF84EDVWl6wUS1yeQcCdsOGaFgaI3lujcVqRuIUJiPcxGoPvy7br1D3f9XKW8VRT6hyHlZFFYR0ZbKSz4A=h305",
+      "https://play-lh.googleusercontent.com/Jr_DSebXQK02c2iHuZ5thdxg5v3UsOY2wfE7LpaAuhpZxi-ZQeJfILU21zJODaZOg05ZqyzQ2m05nG42ald3=h305",
+      "https://play-lh.googleusercontent.com/zYyKKicgmcvhFArPvVoqjUogVev1xsRkX8sa3HGuFJmJ-XiDljYfvinWCK6gzEXcYXruCIb-wbaxeWJnvM1_PA=h305"
+    ],
+    security: {
+      checksum: "SHA-256: d241e4d372fc5927ad81d3542a4192dd",
+      secureToken: "Direct clean download free of ads",
+      cloudStorage: "Fast file storage"
+    },
+    tags: ["MOD", "Ad-Free", "Free"],
+    isRecommendation: false,
+    isRecent: false
+  },
+  {
+    id: "7",
+    name: "Netflix Premium App",
+    slug: "netflix-premium",
+    developer: "Netflix Inc.",
+    rating: "4.5",
+    downloads: "100M",
+    size: "10 MB",
+    version: "10.6.2",
+    category: "Movie", // Mapped from "Movie" to match a base category or custom configuration
+    type: "App",
+    updatedAt: "04/07/2026",
+    icon: "https://apkgstore.co/wp-content/uploads/2026/06/netflix-icon-09428465.png",
+    description: "Watch exclusive movies and TV shows in 4K HDR resolution without paying a monthly subscription.",
+    longDescription: "Netflix Premium MOD offers you unlimited access to the entire original Netflix catalog, trending world TV series, award-winning documentaries, and stunning cinematic feature films. The best part is that it does not require registering a credit card or paying monthly fees. Stream simultaneously on up to 4 devices in UHD 4K resolution and Dolby Atmos surround sound. Includes multi-language options with perfect subtitles.",
+    downloadUrl: "https://www.mediafire.com/file/vy6k7lh1xtp022k/Netflix-v9.47.0+build+2-MOD-OTR-(APPS2APP.com).apk/file?dkey=vin2svoxm82&r=606",
+    videoUrls: ["https://www.youtube.com/watch?v=GV3HUDMQ-F8",
+                "https://youtu.be/L5AM7I2JgDM?si=IduY4U-CgoN5BAZr"
+    ],// Perfectly fixed syntax error and successfully loaded multiple video URLs
+    screenshots: [
+      "https://play-lh.googleusercontent.com/bJrIdbqnzVixnnsYe8MgD2Ifsj95Az71ZBVyfHn34mLutfkWFvZG6W6Y6UAVQFBB6pnBFeX3NunRb23DqW-V6w",
+      "https://play-lh.googleusercontent.com/QWBsHU-ACYxbmx-JsQd1UKL3QYiIe1nVqi4WnrC6D7FvRdIjo4RCrA3sS9gvTF8LLdg5w5ScBx1gRCZVtMqEB98",
+      "https://play-lh.googleusercontent.com/-JL_3aAY99L85bez_VDAd2Kj_vITNDjLP7tjQqhf8JEbW1N3ppKBDSak4RKtkcLLC9EEBPSq3kzK0R91pklypQ",
+      "https://play-lh.googleusercontent.com/UBMcCQ95xZuppNDv4DHCai60jqzxHNpgPNDPlp7ZBT-T-RS6YRdmyAic6TxwYR9hP5atUv7U21MvsdBuHHB2wA",
+      "https://play-lh.googleusercontent.com/cxnMndqnsbcFGfLDk0lgxWJFRbO95GMle7runCUqOK1tV4tyW2ZdYVhD6JfPfRtQicF1DWVyMsXr6fGNu_UmGg",
+      "https://play-lh.googleusercontent.com/1a1yokGJqW3LaJEqu4ai-l4-zKz4Fy0KR8LhggJfy4Q4vDgtJ9VWjViVPBghorazrYiQgUgKmzEKYw88m7t7MQ",
+      "https://play-lh.googleusercontent.com/fZHmTfieMrR8QpiqJyaUOQBjWEtWZ2jFEesdShn4gchWtpSIf6RtLGYD7Ct2sLp7_XP1Gfkh248pqF6fy-gDdwI",
+      "https://play-lh.googleusercontent.com/DmM6jsNTdgqNoDC-npaxhkxY6VCS49Z5B-pacu0RP4mWxFlYOhs2w8ZxJhofG3UaYMcpVh6tB0by6YXRlD5gLQ",
+      "https://play-lh.googleusercontent.com/mRlPKnD8yWWILvIKEpSnE28niTg3e2UGkoXmUTPIcwAVzKG3P8C0inohOpkbkvtAKB-THH4wae2DQh1Py1JVSQ"
+    ],
+    security: {
+      checksum: "SHA-256: e810e4d372fc5927ad81d3542a419ab7",
+      secureToken: "Paywall bypass Mod",
+      cloudStorage: "Mirror stream servers"
+    },
+    tags: ["Paid Subscription Unlocked", "Free", "Ultra HD 4K"],
+    isRecommendation: false,
+    isRecent: false
+  },
+  {
+    id: "8",
     name: "8 Ball Pool MOD",
     slug: "8-ball-pool",
     developer: "Miniclip",
@@ -1011,866 +306,1397 @@ const BASE_APPS_DATA: AppItem[] = [
     category: "Sports",
     type: "Game",
     updatedAt: "01/07/2026",
-    icon: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?w=150&auto=format&fit=crop&q=80",
+    icon: "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/com.miniclip.eightballpool.jpg&width=160",
     description: "The number one multiplayer pool game with infinite guideline lines for perfect shots.",
-    longDescription: "Play with friends and become a pool legend. Face competitors from all over the world in competitive 1v1 matches or participate in international tournaments to win exclusive trophies. This modified version provides the coveted long line guide that allows you to visualize the exact trajectory of the balls.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/8_Ball_Pool_v5.14.2_Mod.apk",
+    longDescription: "Play with friends and become a pool legend. Face competitors from all over the world in competitive 1v1 matches or participate in international tournaments to win exclusive trophies. This modified version provides the coveted long line guide that allows you to visualize the exact trajectory of the balls from start to finish, ensuring perfect bank shots and mastering the most difficult tables effortlessly.",
+    downloadUrl: "https://dl.8bpoolproapk.com/8.Ball.Pool.MOD.APK.8bpoolproapk.com.apk",
+    videoUrls: ["https://youtu.be/MarGQrmbPm0?si=AF8RDd7cXCeDf7XM"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&auto=format&fit=crop&q=80"
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.54-AM-1.jpeg",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.54-AM.jpeg",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.53-AM-2.jpeg",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.53-AM-1.jpeg",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.53-AM.jpeg",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.52-AM-1.jpeg",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.55-AM.jpeg",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-09-at-5.21.54-AM-2.jpeg"
     ],
     security: {
-      checksum: "SHA-256: 7810e4d372fc5927ad81d3542a41942",
+      checksum: "SHA-256: 7810e4d372fc5927ad81d3542a419a42",
       secureToken: "Secure accounts without ban risk",
       cloudStorage: "Direct connection to Miniclip servers"
     },
     tags: ["MOD", "Long Line", "Free"],
     isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "game-5",
-    name: "PUBG Mobile",
-    slug: "pubg-mobile",
-    developer: "Tencent Games",
-    rating: "4.5",
-    downloads: "500M",
-    size: "1.2 GB",
-    version: "3.1.0",
-    category: "Action",
-    type: "Game",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Survival shooter battle royale. Modified premium Recoil and Esp Radar options.",
-    longDescription: "The premiere Battle Royale shooter on mobile devices. Drop into massive 100-player maps. This modified version includes ESP Radar locations overlays, custom recoil compensations, and unlocked ultra graphics frame rates.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/PUBG_Mobile_v3.1_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: c192b3a1e87d9d372bc6826bd81d3542",
-      secureToken: "Anti-Ban Safe Bypass Installed",
-      cloudStorage: "Mirror CDN High-Speed Servers"
-    },
-    tags: ["No Recoil", "ESP Radar", "Max Frame Rate"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "game-6",
-    name: "Free Fire Max Mod",
-    slug: "free-fire",
-    developer: "Garena International",
-    rating: "4.6",
-    downloads: "100M",
-    size: "620 MB",
-    version: "2.102.1",
-    category: "Action",
-    type: "Game",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Fast-paced battle royale game with custom high-damage rates and automatic aimlock.",
-    longDescription: "Garena Free Fire Max with exclusive game advantages. The MOD features custom aimlock, high damage modifications, safe ESP visual boxes and premium characters fully unlocked.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/FreeFire_Max_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d3542a4192b37810e4d372fc5927ad81",
-      secureToken: "AimBot Injector V2",
-      cloudStorage: "Dedicated high speed game mirror"
-    },
-    tags: ["Auto AimLock", "ESP Box", "Max Damage"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "game-7",
-    name: "Shadow Fight 3",
-    slug: "shadow-fight",
-    developer: "Nekki",
-    rating: "4.7",
-    downloads: "50M",
-    size: "180 MB",
-    version: "1.34.0",
-    category: "Action",
-    type: "Game",
-    updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "RPG ninja fighting game with high physics, legendary gear, and a custom frozen enemy freeze menu.",
-    longDescription: "Enter the world of ninja shadows. The custom fighting MOD includes a toggle to freeze enemies when they jump, enabling you to land incredible combat combos and collect legendary equipment easily.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Shadow_Fight_3_v1.34_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: 7a46d19cd8195145252531617a46d19c",
-      secureToken: "Freeze Combat Menu",
-      cloudStorage: "High performance mirror CDN"
-    },
-    tags: ["Frozen Enemy", "Infinite Combos", "MOD Menu"],
-    isRecommendation: false,
     isRecent: false
   },
-  {
-    id: "game-8",
-    name: "Asphalt 9 Legends",
-    slug: "asphalt-9",
-    developer: "Gameloft SE",
-    rating: "4.8",
-    downloads: "100M",
-    size: "2.1 GB",
-    version: "4.5.1",
-    category: "Sports",
-    type: "Game",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?w=150&auto=format&fit=crop&q=80",
-    description: "Incredible arcade hyper-racing game with dynamic speed boosts and premium drift controls.",
-    longDescription: "Drive the most spectacular real supercar models. This MOD has infinite custom nitro, disabled enemy speed blocks, and unlocked elite vehicle classes from the garage menu.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Asphalt_9_Legends_v4_Mod.apk",
+    {
+    id: "9",
+    name: "ibis Paint X MOD",
+    slug: "ibis-paint-x",
+    developer: "Imaanshu N",
+    rating: "4.7",
+    downloads: "500M",
+    size: "55 MB",
+    version: "5.14.2",
+    category: "Arts",
+    type: "App",
+    updatedAt: "01/07/2026",
+    icon: "https://an1.ca/wp-content/uploads/2026/07/ibis-paint-x-icon.webp",
+    description: "The number one multiplayer pool game with infinite guideline lines for perfect shots.",
+    longDescription: "Ibis Paint X MOD APK has earned its popularity by combining professional drawing features with an interface that remains approachable for artists of every experience level. Its extensive brush library, advanced layer support, precision editing tools, and creative effects provide everything needed to produce high-quality digital artwork. Whether you are drawing for fun, studying illustration, creating comics, or working on professional designs, the app delivers a reliable and enjoyable creative experience. For anyone passionate about digital art, Ibis Paint X continues to be one of the best drawing apps available on Android.",
+    downloadUrl: "https://cdn903.onehost.io/2023/ibisPaint_X_14.0.9_1785402201_latestmodapks.com.apk",
+    videoUrls: ["https://youtube.com/watch?v=WwAQ0KbSc2Y",
+               "https://youtube.com/watch?v=jBxoqMWLcbc",
+               "https://youtube.com/watch?v=FGWBNcUupUU"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: c398e4d372fc5927ad81d3542a419f9c",
-      secureToken: "Unlimited Nitro Injection",
-      cloudStorage: "Fast Gameloft Mirror Server"
-    },
-    tags: ["Infinite Nitro", "All Cars Unlocked", "No Crash"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "game-9",
-    name: "FIFA Mobile Soccer",
-    slug: "fifa-mobile",
-    developer: "EA Sports",
-    rating: "4.5",
-    downloads: "100M",
-    size: "150 MB",
-    version: "21.0.0",
-    category: "Sports",
-    type: "Game",
-    updatedAt: "11/07/2026",
-    icon: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?w=150&auto=format&fit=crop&q=80",
-    description: "Build your ultimate team of stars. MOD features perfect shot alignments and high speed.",
-    longDescription: "Challenge dynamic soccer matchups with high performance advantages. This modified premium game lets you strike perfect shots with complete accuracy, bypassing goalkeeper catch limits easily.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/FIFA_Mobile_v21_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=600&auto=format&fit=crop&q=80"
+      "https://static.apkmody.com/play-lh.googleusercontent.com/KjfgitN0PxaWIc9SR0y3cebP0Jd_e_G60uZE_NSXpqnrzWMfa5bTlExxaTV47B9nrWEYb1jpBQJObIfMcX-xRpQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/1ykLwPhWJP_1CRoEfeVsV7sRN6YQV28Vm0fUIT3FuWinAfiJJPZLtgmm3o3yGu00klbLoWUKL13BFTSKPAgBP00=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/kHNr82olZY2GTW7W6LV76rkU0edTfIovoErKaU4mk-cRdxchgtNbmtW57qdhOHwxXhALJSHJdsUZB15bS9CKmGI=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ezqj65P6eqUeNPyokehwU471iuKUzErRr9hiIExQom5fRl4qgu2FFonvG2w25j2KxmvZxHHlIzJ27wQ3R4AUVpw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/52oC3ZJvG6rubJ84QhDAkCfX3YUOEDj2KlkbyOuWOo3iXA6M5GkQdLfANrwGrnFis1z-9lTrxfzoV5TxCNKw2ZU=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/JZw2b4Ffi9fLGwCdvOyBRSh-oKLJhwNA6asjWG5ZmSxA17YmTubxkFQyoCRnWUncgpFqHX6axEVEeGDvx4VpKgE=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/5lAykUR6o2vYW6dExj1_MKJOLQ9lTIq3UH2BPr6WRt6M35N1YExMNS1kXOpChaVpTyvTw7DHulhh97_yyIPI=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/hlNbZMbLGwvwQVg2H-Nv0gjgSx1ggvPrXAm90HqXi1450fzyEklc3Xc33d1UrTbKcOnjyJ50VLn-_xiNcMeu=-rw"
     ],
     security: {
       checksum: "SHA-256: 7810e4d372fc5927ad81d3542a419a42",
-      secureToken: "Perfect Strike Mod",
-      cloudStorage: "EA servers dynamic connection"
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Miniclip servers"
     },
-    tags: ["Perfect Kick", "Speed Boost", "Unlocking All Stars"],
+    tags: ["MOD", "Long Line", "Free"],
     isRecommendation: false,
     isRecent: false
   },
-  {
-    id: "game-10",
-    name: "Temple Run 2",
-    slug: "temple-run-2",
-    developer: "Imangi Studios",
-    rating: "4.4",
+    {
+    id: "10",
+    name: "Free Fire Max",
+    slug: "free-fire-max",
+    developer: "Garena International I",
+    rating: "5.0",
     downloads: "500M",
-    size: "112 MB",
-    version: "1.108.0",
-    category: "Arcade",
+    size: "498 MB",
+    version: "1.130.1",
+    category: "Action",
     type: "Game",
-    updatedAt: "04/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Run from cursed idols. Infinite resurrection rings and golden coins mod.",
-    longDescription: "Escape through custom temple cliffs. This modified endless running arcade game guarantees you infinite coin levels and instant resurrection whenever you fall.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Temple_Run_2_Mod.apk",
+    updatedAt: "23/06/2026",
+    icon: "https://image-winudf-com.cdn.ampproject.org/ii/AW/s/image.winudf.com/v2/image1/Y29tLmR0cy5mcmVlZmlyZW1heF9pY29uXzE3ODIyNzkwODlfMDY5/icon.png?w=184&amp;fakeurl=1",
+    description: "The Free Fire MAX Asia Invitational 2026 Summer (FFMAI) was a major online esports tournament organized by Garena with a $50,000 prize pool. It ran from June 12 to June 21, 2026, featuring top regional teams from India, Thailand, Indonesia, Malaysia, and other parts of South and Southeast Asia.",
+    downloadUrl: "https://d.cdnpure.com/b/XAPK/com.dts.freefiremax?versionCode=2019118334",
+    videoUrls: ["https://youtu.be/cNwifYfyho8?si=hRYjQ44RMyjWo4Si",
+               "https://youtu.be/8tsQYDKPEhA?si=Il9Vy8JXDXiN82jF",
+               "https://youtu.be/-LvuwRq7DNw?si=ZjkwfCpLDtt5_GwZ"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
+      "https://downloadr2.apkmirror.com/wp-content/uploads/2025/07/01/Free-Fire-MAX-com.dts.freefiremax-300x188.jpg",
+      "https://downloadr2.apkmirror.com/wp-content/uploads/2026/01/01/Free-Fire-MAX-com.dts.freefiremax-2-300x188.jpg",
+      "https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/01/Free-Fire-MAX-com.dts.freefiremax-3-300x188.jpg",
+      "https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/01/Free-Fire-MAX-com.dts.freefiremax-4-300x188.jpg",
+      "https://downloadr2.apkmirror.com/wp-content/uploads/2025/07/01/Free-Fire-MAX-com.dts.freefiremax-5-300x188.jpg",
+      "https://downloadr2.apkmirror.com/wp-content/uploads/2026/06/01/Free-Fire-MAX-com.dts.freefiremax-6-300x188.jpg",
+      "https://downloadr2.apkmirror.com/wp-content/uploads/2025/08/01/Free-Fire-MAX-com.dts.freefiremax-7-300x188.jpg",
     ],
-    security: {
-      checksum: "SHA-256: e810e4d372fc5927ad81d3542a419ab7",
-      secureToken: "Infinite Resurrection Tokens",
-      cloudStorage: "Encrypted Direct Download Cloud"
+      security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "official Grand Finals broadcast:"
     },
-    tags: ["Unlimited Gems", "All Characters", "Free"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "game-11",
-    name: "Vector Full Mod",
-    slug: "vector-full",
-    developer: "Nekki",
-    rating: "4.7",
-    downloads: "10M",
-    size: "94 MB",
-    version: "1.4.4",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "03/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "High-octane totalitarian runner with spectacular parkour tricks unlocked.",
-    longDescription: "Dodge the dystopian guards in this parkour action game. The MOD version completely unlocks all premium vectors tracks, skills, gear, and supplies from the first play.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Vector_Full_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d826bd81d3542a419d69e107d9d372bb",
-      secureToken: "Deluxe Features Active",
-      cloudStorage: "Nekki mirror server hosting"
-    },
-    tags: ["Premium Version", "All Moves Unlocked", "Free"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "game-12",
-    name: "Angry Birds 2 Mod",
-    slug: "angry-birds-2",
-    developer: "Rovio Entertainment",
-    rating: "4.6",
-    downloads: "100M",
-    size: "240 MB",
-    version: "3.20.0",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Slingshot action with custom infinite lives and high energy boosts entirely unlocked.",
-    longDescription: "Destruct modular structures in this famous franchise game. Features infinite standard power items, custom black spells, and maximum gold stars unlocked.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Angry_Birds_2_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: cb398e4d372fc5927ad81d3542a419f9",
-      secureToken: "Infinite Gem Wallet Hack",
-      cloudStorage: "Rovio Premium Cloud Mirror"
-    },
-    tags: ["Infinite Gems", "Super Boost", "Ad-Free"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "game-13",
-    name: "Plants vs Zombies 2",
-    slug: "pvz-2",
-    developer: "ELECTRONIC ARTS",
-    rating: "4.7",
-    downloads: "100M",
-    size: "50M", // Adjusted size to typical
-    version: "11.2.1",
-    category: "Adventure",
-    type: "Game",
-    updatedAt: "08/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Defense strategy in ancient time eras with infinite sun energy and direct plant unlocks.",
-    longDescription: "Guard your lawn against hordes of funny zombies. The modified game features infinite tactical sun energies, zero cooling reload periods for all seed slots, and massive gold bags.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/PvZ_2_v11_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d3542a419f9c398e4d372fc5927ad81d",
-      secureToken: "Infinite Sun energy enabled",
-      cloudStorage: "EA Servers Redundant Proxy"
-    },
-    tags: ["Infinite Sun", "No Cooldown", "All Plants Unlocked"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "game-14",
-    name: "Hill Climb Racing 2",
-    slug: "hill-climb-2",
-    developer: "Fingersoft",
-    rating: "4.5",
-    downloads: "100M",
-    size: "185 MB",
-    version: "1.59.1",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "12/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Dizzying physics car driver with unlimited custom gas fuels and engine coins.",
-    longDescription: "Take up challenging multiplayer races over crazy offroad slopes. The MOD unlocks infinite coins, infinite fuel levels, and complete maximum engine tuning stats automatically.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Hill_Climb_Racing_2_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: a81d3542a419ff1107d9e102bc6826bd",
-      secureToken: "Unlimited Gold & Fuel Engine",
-      cloudStorage: "Fingersoft secure cloud mirror"
-    },
-    tags: ["Infinite Fuel", "Unlimited Coins", "All Cars Unlocked"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "game-15",
-    name: "Fruit Ninja Mod",
-    slug: "fruit-ninja",
-    developer: "Halfbrick Studios",
-    rating: "4.4",
-    downloads: "100M",
-    size: "122 MB",
-    version: "3.55.0",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "02/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Classic swipe juice-splatting arcade game with all swords and blade-effects unlocked.",
-    longDescription: "Slash delicious tropical fruits to set global leaderboard high scores. The MOD provides you with premium blades, customized dojos, and multiplier scores instantly.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Fruit_Ninja_v3_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d542a419f9c398e4d372fc5927ad81d",
-      secureToken: "All Blades Unlocked",
-      cloudStorage: "Halfbrick premium data mirror"
-    },
-    tags: ["All Blades Unlocked", "Infinite Starfruit", "Ad-Free"],
+    tags: ["MOD", "Long Line", "Free"],
     isRecommendation: false,
     isRecent: false
   },
-  {
-    id: "game-16",
-    name: "Sonic Dash Mod",
-    slug: "sonic-dash",
-    developer: "SEGA",
-    rating: "4.6",
-    downloads: "100M",
-    size: "118 MB",
-    version: "6.12.0",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "11/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Speed runs with Sonic the Hedgehog. Features infinite red star rings.",
-    longDescription: "Speed dash through loops. This arcade running modified game gives you infinite red star rings, gold rings, and instantly unlocks super sonic form levels.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Sonic_Dash_v6_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d826bd81d3542a419d69e107d9d372bb",
-      secureToken: "Sega Ring bypass signature",
-      cloudStorage: "High-speed redundant nodes"
-    },
-    tags: ["Unlimited Rings", "All Characters", "Free"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "game-17",
-    name: "Candy Crush Saga",
-    slug: "candy-crush",
-    developer: "King",
-    rating: "4.7",
-    downloads: "1B",
-    size: "89 MB",
-    version: "1.265.0",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Pop delicious sweet candy matching grids. Unlimited lives and premium helpers.",
-    longDescription: "Get the sweetest swipe booster bonuses. The match-3 MOD provides you with infinite lives, maximum dynamic candies, and pre-unlocked progressive stages.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Candy_Crush_v1_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: fc5927ad81d3542a419f9c398e4d372f",
-      secureToken: "Infinite Moves Enabled",
-      cloudStorage: "King direct cloud storage mirror"
-    },
-    tags: ["Infinite Lives", "Unlimited Boosters", "All Stages Unlocked"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "game-18",
-    name: "Pokemon GO Mod",
-    slug: "pokemon-go",
-    developer: "Niantic, Inc.",
-    rating: "4.4",
-    downloads: "100M",
-    size: "140 MB",
-    version: "0.301.0",
-    category: "Adventure",
-    type: "Game",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Capture pokemon with premium GPS joystick spoofer controls entirely built-in.",
-    longDescription: "Travel around the pokemon region from home comfort. The MOD features integrated PGS joystick overlay controllers, auto walking speeds, and direct teleport maps locations.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Pokemon_Go_v0.301_PGS_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1627856013091-fed6e4e30025?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: d3542a4192b37810e4d372fc5927ad81",
-      secureToken: "PGS Joystick Unlocked",
-      cloudStorage: "Encrypted teleport proxy lists"
-    },
-    tags: ["GPS Joystick", "Safe Spoofing", "Teleport Map"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "game-19",
-    name: "GTA San Andreas PE",
-    slug: "gta-san-andreas",
-    developer: "Rockstar Games",
+    {
+    id: "11",
+    name: "Jio Hotstar",
+    slug: "jio-hotstar",
+    developer: "Imaanshu N",
     rating: "4.8",
-    downloads: "10M",
-    size: "1.8 GB",
-    version: "2.11.32",
-    category: "Adventure",
-    type: "Game",
-    updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Dizzying open-world gangster game. Custom Cleo cheat code inject menu.",
-    longDescription: "Live out CJ's legendary rise to power. This modified mobile game package integrates the absolute legendary Cleo Cheat Menu with quick toggles for infinite ammo, health, vehicles, and weapons spawners.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/GTA_SA_Cleo_Mod.apk",
+    downloads: "177M",
+    size: "89 MB",
+    version: "26.04.15.1",
+    category: "Tools",
+    type: "App",
+    updatedAt: "04/24/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/bp4jknyVZ8yDKhER9thIS1p9MBeU2LABqBX-sO8uaL1h5_keqlgMUmXv-CjfRWaqKw=s150-rw",
+    description: "JioHotstar is an application that presents entertainment programs from the company Novi Digital. This is an extremely popular application in India and the US, you will easily find the content you like and have a variety of experiences. In addition, JioHotstar also supports many different languages for users to customize. Language will no longer be a barrier preventing you from accessing top entertainment movies and TV shows.",
+    downloadUrl: "https://s1.1phut.io/v2/j4AY",
+    videoUrls: ["https://youtube.com/watch?v=wELTVUjFbGY",
+                "https://youtube.com/watch?v=01Ps5mDUkyo"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop&q=80"
+      "https://static.apkmody.com/play-lh.googleusercontent.com/jw9bHtu-k6ztqmZtud710UxehHrycUR9d8dHL3k2DNwcZJ1brxY2rv5EiX3jTCDwdJLAysDVMeVzTHkBiFMQH84=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/HqfBYKArJwswZvKDD7BSP0AZF74MUGKm0BGPE10juRqWhIkZTJ3eHv14NqinvngvIiccpZfoje0o2wnJB2yso2Y=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/mTlWjybBSxZly2jOjPvlUmTDJOJXFhFIdNuzhPMg-8sEXxJkSJKFZatEX9YWkTBPZXbE1dUrECLQ8aey3W7pkhg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/1STaFRX428oh3h7fTqSjsKddoH1UrHTdkdFDtAqrJoFKQkg58lt6KODom60E_5-Lp3y3YU4xBtymb2BrcqEQYg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/WSg9X5ZEiulI1X6ILtrRVuoEeIUd4YrmURuN_9WjrsEtuh8FmoJ6CwHd1DC2U8ApPTBS98LVDsEPzkT01sNvrWk=-rw",
     ],
-    security: {
-      checksum: "SHA-256: a1e87d9d372bc6826bd81d3542a419f1",
-      secureToken: "Cleo Cheats Menu Active",
-      cloudStorage: "High-speed Rockstar mirror mirror"
+      security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "When two worlds come together, the extraordinary takes shape."
     },
-    tags: ["Cleo Menu", "Infinite Cash", "Mod Cheats"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "game-20",
-    name: "Roblox Mod Menu",
-    slug: "roblox-mod",
-    developer: "Roblox Corporation",
-    rating: "4.6",
-    downloads: "500M",
-    size: "155 MB",
-    version: "2.610.0",
-    category: "Adventure",
-    type: "Game",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Explore multiplayer sandboxes. MOD includes wallhacks and custom fly triggers.",
-    longDescription: "Dve into thousands of custom social minigames. The MOD menu overlays toggles for flying, jumping higher, wallhacking, and walking on water elements.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Roblox_Mod_Menu_v2_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: ad37a1f5927ad81d3542a419d2b882e4d",
-      secureToken: "Anti-Ban wallhack module",
-      cloudStorage: "Global CDN Cloud Server"
-    },
-    tags: ["MOD Menu", "Fly Hack", "WallHack"],
-    isRecommendation: true,
+    tags: ["MOD", "Long Line", "Free"],
+    isRecommendation: false,
     isRecent: true
   },
-  {
-    id: "game-21",
-    name: "Clash of Clans Private Server",
-    slug: "clash-of-clans",
-    developer: "Supercell",
+    {
+    id: "12",
+    name: "MovieBox",
+    slug: "moviebox",
+    developer: "Imaanshu N",
     rating: "4.7",
     downloads: "500M",
-    size: "290 MB",
-    version: "16.100.2",
-    category: "Action",
-    type: "Game",
-    updatedAt: "08/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Build castles and raid. Dedicated private servers with infinite resources.",
-    longDescription: "Rule your ultimate clan base on highly stable private servers (Nulls Clash) with unlimited gold, elixir, gems, and dark elixir instantly.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/CoC_PrivateServer_Mod.apk",
+    size: "58 MB",
+    version: "14.0.6",
+    category: "movie",
+    type: "App",
+    updatedAt: "01/07/2026",
+    icon: "https://apps2app.com/wp-content/uploads/2026/03/moviebox-150x150.webp",
+    description: "The number one Free, HD, No Ads. Watch HD, Offline. No Ads, Free HD. ​Premium, Ad-free. ​Fast, HD Streaming.",
+    longDescription: "MovieBox Mod APK Key Features:Unlimited access to premium content, free subscription model, massive library of movies and TV shows, extensive collection of web series, diverse genre support including action and drama, horror and romance categories, offline content downloading capabilities, uninterrupted offline viewing, high-definition streaming support, 1080p video resolution, 4K playback quality, optimized streaming performance, multilingual content library, native Hindi language support, English language accessibility, broad regional language options, no mandatory registration required, privacy-focused data handling, completely ad-free interface, seamless playback experience, intuitive user-friendly design, efficient navigation system, broad Android 5.0 compatibility, high device performance optimization, frequent library content updates, instant access to new releases, accelerated loading speeds, integrated data-saving modes, advanced security protocols, clean minimalist user interface, unrestricted content exploration, personalized favorites list, customizable playback settings, advanced internal media player, enhanced buffering optimization, streamlined installation process, stable performance on low-end devices, modern aesthetic interface, instant content accessibility.",
+    downloadUrl: "https://files.modapkdl.com/ROOT/All%20Documents%20File/Folder%202/MovieBox_v3.0.16.0709.03_(50020116)_Mod-APPS2APP.COM.apk",
+    videoUrls: ["https://youtu.be/rWoUM_nMPtc?si=bC-_r2uBqnE9f83m", "https://youtu.be/c8kXsCAOj8Y?si=TQhywvjtO0O0g16I"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&auto=format&fit=crop&q=80"
+      "https://iili.io/CprhJ07.webp",
+      "https://iili.io/CprhHfS.md.webp",
+      "https://iili.io/CprXys2.webp",
+      "https://play-lh.googleusercontent.com/tkBwbyjRS1Wxnjrs_D55htQWuByuK8eHBm1pPb1so0_kv204P9pnqKF7097yLoySzQ=h305",
+      "https://play-lh.googleusercontent.com/x-hk0oonVM-SLHcvbJMpYMz7KHflTUtJuqCcecKyke9saZDj7AA4WNZUu_kGA2TikSzd=h305",
+      "https://play-lh.googleusercontent.com/yB9xDtcmAHScwfq2PDKcik1ASCnukkJMXWuRop21htGi5aDwxoctsqyo92tx3HJNhsI=h305",
+      "https://play-lh.googleusercontent.com/VkcwvhZ6JJ38NA7t-EiNc5KT9bEOABWhM2BYmgwYGGGzTdH3lz_h4eDqgpnGardsBU8=h305",
     ],
     security: {
-      checksum: "SHA-256: ee345672bc6826bd81d3542a419ff551",
-      secureToken: "Dedicated Nulls Server bypass",
-      cloudStorage: "Distributed multiplayer server mirror"
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Moviebox servers"
     },
-    tags: ["Infinite Resources", "Custom troops", "Free Servers"],
+    tags: ["MOD", "Long Line", "Free"],
     isRecommendation: false,
     isRecent: true
   },
-  {
-    id: "game-22",
-    name: "Clash Royale Private Server",
-    slug: "clash-royale",
-    developer: "Supercell",
-    rating: "4.6",
-    downloads: "100M",
-    size: "160 MB",
-    version: "6.220.1",
-    category: "Action",
+    {
+    id: "13",
+    name: "Sally Face",
+    slug: "sally-face",
+    developer: "Imaanshu N",
+    rating: "6.0",
+    downloads: "1k",
+    size: "732.86 MB",
+    version: "1.5.51",
+    category: "Tools",
     type: "Game",
-    updatedAt: "07/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Fast-paced castle cards fights with infinite free gold cards chest openings.",
-    longDescription: "Enjoy tower defense card battling on safe private networks. Features unlimited free premium chest openings, custom emojis, and maximum level gold cards.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Royale_Private_v6_Mod.apk",
+    updatedAt: "25/08/2026",
+    icon: "https://apkvision.org/wp-content/uploads/2026/08/sally-face-140x140.png",
+    description: "Sally Face invites players into a haunting adventure centered on a boy with a prosthetic face who communicates with the dead through his handheld video game system. As he and his friends investigate a series of mysterious murders, they uncover dark secrets lurking in their small town. With a unique blend of 1990s cartoon inspiration and personal nightmares, players can engage with bizarre characters and tackle challenging optional puzzles that deepen the narrative. The game features handcrafted art, design, and music by a solo developer, creating an immersive and unsettling experience.",
+    downloadUrl: "https://dl.apkvision.org/sally-face/Sally-Face-v1.5.51-full-apkvision.apk",
+    videoUrls: ["https://youtu.be/ZUvCKwkbl3c?si=RGqEMgnLAgljYz4Y"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600&auto=format&fit=crop&q=80"
+      "https://img.apkvision.org/sally-face/sally-face-1.webp",
+      "https://img.apkvision.org/sally-face/sally-face-2.webp",
+      "https://img.apkvision.org/sally-face/sally-face-3.webp",
+      "https://img.apkvision.org/sally-face/sally-face-4.webp",
+      "https://img.apkvision.org/sally-face/sally-face-5.webp",
+      "https://play-lh.googleusercontent.com/BK987Mgsgv7o9sIxOH_416_cawtBqZwPuGgYrHoqsiahEj_Rge5e76qbi5fQd4GL7vPlj87pgi6u9TsxD4q_GWc=w1052-h592",
+      "https://play-lh.googleusercontent.com/RbWQeaOd82Jljkc-TMl6w-hCHpGpzcoiL9qpZNx6UTA6yX1XOLGhO58C6CxB743OGGKjrnAQ5Fkc_lWLgZs=w1052-h592",
+      "https://play-lh.googleusercontent.com/vO96TGIFLwyjEtNP1sBdLCALj004ndoiteRrjh68IbrwbiBIeAGHHqM8SYwwR4t8euHtCXuvGo2Q7Ic9rAlV_Q=w1052-h592"
     ],
     security: {
-      checksum: "SHA-256: d9d372bb6826bd81d3542a41969e107d",
-      secureToken: "Premium private cards activator",
-      cloudStorage: "Nulls dedicated game server"
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Moviebox servers"
     },
-    tags: ["Unlimited Chests", "Max Cards Level", "Free Gems"],
+    tags: ["MOD", "Long Line", "Free"],
     isRecommendation: false,
-    isRecent: false
+    isRecent: true
   },
-  {
-    id: "game-23",
-    name: "Call of Duty Mobile",
-    slug: "cod-mobile",
-    developer: "Activision Publishing",
-    rating: "4.6",
-    downloads: "100M",
-    size: "1.9 GB",
-    version: "1.0.45",
-    category: "Action",
+      {
+    id: "14",
+    name: "Caravan SandWitch",
+    slug: "caravan-sandWitch",
+    developer: "Imaanshu N",
+    rating: "3.4",
+    downloads: "5k",
+    size: "886 MB",
+    version: "1.4.196",
+    category: "Tools",
     type: "Game",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Premium multiplayer action shooter with pre-activated recoil control systems.",
-    longDescription: "Battle classic FPS levels with stable gaming advantages. This modified premium game stabilizes camera vibrations and removes gun recoil entirely in offline matches.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/CoD_Mobile_Mod.apk",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/w1OHWOIIh2j98zzTn0fVs1DTCeASlzAyzgBAlfPTGDFwh0tzveHbB3KLvyWfHVrr3Uz55miJD3VYL8Q6c0AU=s150-rw",
+   description: " Caravan SandWitch is an open-world sci-fi adventure game that takes players to a deserted planet filled with vast landscapes, mysterious ruins, and a heartfelt story about searching for a missing sister. Instead of focusing on constant combat, this open-world adventure game offers a relaxing exploration experience where you drive across deserts, uncover clues, and meet unique communities surviving on the planet.",
+    downloadUrl: "https://s1.1phut.io/v2/5ym8",
+    videoUrls: ["https://youtube.com/watch?v=Z9IHy90XgNo",
+                "https://youtube.com/watch?v=b4_HKS5q4MM"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80"
+      "https://static.apkmody.com/play-lh.googleusercontent.com/qvL37EvRjZK8qXfpMq08fIYXNJHwVoXZmyOJw65eDcLvN0HXxJi4QUcSqvWzYGRyP5fykRIzzn0842JCNpZF=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Rbs4Xd6hURoOz5ePMvfsIf0E2DwWznIvtI5cIw2d1MGtslYJnTDrzRKAZPs4pu87o9EfZyOgCqzxfz0HV-dW=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/iXf_jIcScc3m2E4iH_exuaBcjlwaeUEGJyX35cQVf_IiLJt6oWWTqcAcwsGY5RnoMzpyIa69n-FrYsa_xYja=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/D3ijmXob7Nh9HCs6Q-5mAN92kyjS0EKeN3xTTzxHFubPKula8tY5BpfjFaFMnrQAxwy-oVY5ASRjNi0h0UgK=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/zoBF24RMUwi6Ja_i0VIcu-CjLvPsQG63_FizIXtPA2QFs145yHpCYWD2awojyE-c6CtlieY1KsPq9AravH6Fbg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/gwNhePNMNLyTOzURLwPYUsONrAViJCccBmdAcOx32rXivzK8d8j62m8ttTSzDNfE_FkC9wI5-frD4v0eKUsSWLw=-rw",
     ],
     security: {
-      checksum: "SHA-256: fc5927ad81d3542a419f9c398e4d372f",
-      secureToken: "AimAssist Booster V4",
-      cloudStorage: "Secure CoD high speed mirror"
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Moviebox servers"
     },
-    tags: ["Reduced Recoil", "Wall ESP", "Max Frames Unlocked"],
+    tags: ["MOD", "Long Line", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "15",
+    name: "Little Nightmares",
+    slug: "little-nightmares",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "15k",
+    size: "1.2 GB",
+    version: "1.4",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/vEJAwZwhOv7Wzf1Md7PsMzOyo087y0Z4rhRgidtfv03c682RicoBz3BOsrigdiXA-7I=s150-rw",
+   description: "Little Nightmares has a part 2 on PC and console, but for mobile we have only enjoyed Very Little Nightmare, the mobile version of the original game that didn’t have everything as expected. Now everything is different. Puzzle enthusiasts, listening to Little Nightmares for a long time can officially play this game on mobile in its entirety. You can experience the full story, content and features. The graphics are as good as the console version.",
+    downloadUrl: "https://s1.1phut.io/v2/4pKa",
+    videoUrls: ["https://youtube.com/watch?v=aOadxZBsPiA"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/HeyCMUVHE3-YbyNmypziTF3yDI9edQKZYAzVdL7slCwrqEBwzAWOJBVXkaQKA63dCQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/bYN-PFWw1oO6YaYJHu64ZpSlImVfIp6vxRxpc20XBKRU2pCbISNiNTDSzqTnuqMo-54=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/nLDF-IZZlTgIvL-NNVKdI8Bdz9HK2MErU5qg8W-3Q7HDJiVRIM9UUdqR7vrQMNBZWg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/FfYV5lsivGjYZ2G91lGkRAniQU8TKZCjoT9fQsVnI1U5W4U8n5I7On-BcTeWSa8YSog=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Ctsqn7NOFx1NIhz8MqdE_xBLZgeK6HaL1kCu6XKZ8xri0BgfnrgUwYDPsaFtoBsVYxvZ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/lvpxljRwoZPWWycoZWrujkveO8nd-TFFtoGrstdYX3Jkx8mw7uvAGWp2NvmWD00ikA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/NvpJKUbb4RFJKh3BUqUOh5DUHVI6vCoTZVwFuj_h2njPBqMOiJ9gpeyNxpATnm44zbI=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers MOD APK"
+    },
+    tags: ["MOD", "Long Line", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "16",
+    name: "Final Fantasy VII ",
+    slug: "final-fantasy-vii",
+    developer: "Imaanshu N",
+    rating: "3.3",
+    downloads: "500K",
+    size: "2.0 GB",
+    version: "1.1.0",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://share.google/ssu6T0LXChNXsjbK9",
+   description: "FINAL FANTASY VII brings the iconic RPG experience to Android, featuring a captivating story where Cloud Strife joins a rebel group to challenge the power of the Shinra Electric Power Company. This port retains the original’s dramatic narrative and introduces 3D backgrounds and full combat stages. Players can customize characters using a versatile material system and enjoy new features like enemy encounter toggles and a Max Stats command. Note that the app requires significant memory, and users should frequently save their progress to avoid bugs related to transportation mechanics. Check device compatibility for optimal gameplay.",
+    downloadUrl: "https://dl.apkvision.org/final-fantasy-vii/FinalFantasy7-v1.1.0-full-apkvision.apk",
+    videoUrls: ["https://youtu.be/p-pgBQgFLP4?si=Qu4sAMceSaO2jmlt"], // Converted to array support
+    screenshots: [
+      "https://img.apkvision.org/final-fantasy-vii/final-fantasy-vii-1.webp",
+      "https://img.apkvision.org/final-fantasy-vii/final-fantasy-vii-2.webp",
+      "https://img.apkvision.org/final-fantasy-vii/final-fantasy-vii-3.webp",
+      "https://img.apkvision.org/final-fantasy-vii/final-fantasy-vii-4.webp",
+      "https://img.apkvision.org/final-fantasy-vii/final-fantasy-vii-5.webp",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Takano3D Server on MOD APK"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+  
+   {
+    id: "17",
+    name: "FINAL FANTASY VII EVER CRISIS",
+    slug: "final-fantasy-vii-ever-crisis",
+    developer: "Square Enix",
+    rating: "3.8",
+    downloads: "2k",
+    size: "394 MB",
+    version: "3.6.0",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "04/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/s_JGrjTxF2GHVrlp8U0iwxE4UfLq6CHclZheCZuEp4m1suyE4w2CfUA-DVXk8mDyI23gM6pINJ0p2nWyT1A8NLI=s150-rw",
+    description: "Developed by Square Enix, FINAL FANTASY VII EVER CRISIS, a customized mobile version that will help you relive memorable moments, iconic characters from the world of FFVII. It’s time for you to experience this great heroic journey right on your mobile.",
+    downloadUrl: "https://s1.1phut.io/v2/xmM3",
+    videoUrls: ["https://youtube.com/watch?v=87TNASkXOWQ"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/tZn49K2htCKaHZH8Pz3KWOZEeCWbYfk2Z5NZVsYlP0YfIOJCVAtR6YQ5CudI2TAKgNkdNF-H9rnO2_6fO5yP=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/bgWy0vOrdFCxQP5tfvY1hT0WctDhHISfnoMc6HT1ngGiJXdpoeRPZWZbgrGe6gF_V1s=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/U021ufSiXXN0UWmT1RCmz9OyK1E5syRO5y9r48D1Is1q08F8LFZxbGb4gRl71suZFuEE=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/KusXwq3H_U1PucnD6TVjAzdi7GSV5A8CyFTdb9oJ6wAIzzgCbROLz7DsM3Vyra89XAyk=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/0pkVAJMpIk823l4gkw7p-YZADempMJSgAu_B-UF3FjudnrDABOdeR_SNUXTNWNpqrg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/yj1VLQLh0DlLvrhJmdkk2sKHlniSUyX6TOMkNAjjUEb7MblNqibYOeJ2vw71tve0Zw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/DcLPhwjso1iv1p0y6pE6yxG5vgqrT3TXqdcZecXCR9RbEjQb1Zc3pWfbl_6ctiwbeiw=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Takano3D Server on MOD APK"
+    },
+    tags: ["MOD", "Free"],
     isRecommendation: true,
     isRecent: true
   },
-  {
-    id: "game-24",
-    name: "Sniper 3D Assassin",
-    slug: "sniper-3d",
-    developer: "Wildlife Studios",
+  
+     {
+    id: "18",
+    name: "Webbly Life",
+    slug: "webbly-life",
+    developer: "Curve Games",
     rating: "4.5",
-    downloads: "100M",
-    size: "155 MB",
-    version: "4.30.1",
-    category: "Action",
+    downloads: "5k",
+    size: "1.41 GB",
+    version: "1.0.0.3",
+    category: "Tools",
     type: "Game",
-    updatedAt: "04/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Elite sniper combat game. Unlimited silver coins and damage upgrades.",
-    longDescription: "Contract hits in 3D realistic cities. The modified action game enables unlimited silencer modifications, maximum rifle bullet clip sizes, and endless credits.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Sniper_3D_v4_Mod.apk",
+    updatedAt: "25/08/2026",
+    icon: "https://play-lh.googleusercontent.com/cH7yJARfE_wJ2lXnrsKiXnpAdJlv5VNKWthRQdQ4bnOnYYZJjmuoX7inCu7MKGU6r2unnNG6VIIe0z9EXE_3=w480-h960",
+   description: "Wobbly Life invites players into a vibrant, physics-based open-world where exploration and fun await. Tasked by Grandma to get a job, players can choose from over 20 unique roles to earn money, unlocking new content and customizing their characters, homes, and vehicles. With a vast landscape filled with towns, mountains, and hidden secrets, players can embark on exciting missions, collect pets, and engage in mini-games. Compete with friends and others globally to climb leaderboards, making every adventure a chance for creativity and excitement in this family-friendly sandbox experience.",
+    downloadUrl: "https://dl.apkvision.org/wobbly-life/Wobbly-Life-v1.1.0.7-full-apkvision.apk",
+    videoUrls: ["https://youtu.be/uALEoh3aj3s?si=L9OockkFhNVrkU_P"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80"
+      "https://play-lh.googleusercontent.com/9yImHsrLfjLmM0sYvwUoCUY_oNqALzqdRWwwhd5e1A4cqJcD-iiOrt0jm-RdPWWjAOzLhIZU9l-tZyuPMYP-zic=w1052-h592",
+      "https://play-lh.googleusercontent.com/2hKIwF61Xsx_wLhHFrn9quZbH_CuiNEZUEw96TJ-Ufw0tapIa53CU7hPULbjT8t8c15gWDG9vKJR4TuOXCH7PA=w1052-h592",
+      "https://play-lh.googleusercontent.com/Gbnw-wBXYFtZvDboDJ9T7quILXGBVrKLy6yC4FOJa-ypvWAQCgFWIfswbUkpoyFwOpynUOgj8RnAoEsbzuTijg=w1052-h592",
+      "https://play-lh.googleusercontent.com/drTB9Aeb7oQIRF0hrKEB5SSAe_Zq6VHGoaA8P5vZegz81Qd9uaArSNrIpWSFWuoDoBMNbNdg0WTJUxPQi3TqTA=w1052-h592",
+      "https://play-lh.googleusercontent.com/N_GnOEJrE3UWmIpG8CtMHrwJ7yeF9cCYsuscwkcQ4DHberHyMoJ6TxKL1Wzl01dykGwna9oGpjM9JnR16kxq7A=w1052-h592",
+      "https://play-lh.googleusercontent.com/ye6JelEa7ZE4nkqUdDD860_pTkyEBnmn4ndfDP63CyhjY6V6wN5TrlDEzEjGs0MJxvX67uRYA6BjFtfC-16T=w1052-h592",
+      "https://play-lh.googleusercontent.com/IMAUt2XDGHoZNvp_HFmSHG6j8qvXCbsy47iyOuMr6-V0BWHJjhtm9nLCb2plNIr2uRbunKl7jdmWbT1JXBg3=w1052-h592",
+      "https://play-lh.googleusercontent.com/3edzzyf2yto5Jj2jCrEKHvZ3b74Uu3AS2CGNGs0b56S4fd53vw5R5fF3kQ8L9F74WlZhFrYXboTPhqslIUHv=w1052-h592",
     ],
     security: {
-      checksum: "SHA-256: ad81d3542a419f9c398e4d372fc5927c",
-      secureToken: "Infinite Weapon Cash",
-      cloudStorage: "Dedicated high capacity server mirror"
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Takano3D Server on MOD APK"
     },
-    tags: ["Infinite Money", "All Rifles Unlocked", "High Damage"],
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+      {
+    id: "19",
+    name: "DREDGE",
+    slug: "dredge",
+    developer: "Black Salt Games",
+    rating: "5.0",
+    downloads: "1L",
+    size: "653 MB",
+    version: "4.5",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://share.google/Hei727ckNLBMaYEww",
+   description: "DREDGE is a captivating fishing adventure game that combines exploration and resource management. Players navigate through mysterious waters, uncovering hidden secrets and completing quests while balancing the demands of fishing and survival. As they catch various fish, players must also contend with eerie elements that lurk beneath the surface, adding layers of suspense and intrigue. The game encourages players to delve deep into its rich narrative and atmospheric world, blending a sense of adventure with strategic gameplay.",
+    downloadUrl: "https://dl.apkvision.org/dredge/DREDGE-v1.5.18-b100518171-unlocked-apkvision.apk",
+    videoUrls: ["https://youtu.be/sJX9VSp2vAA?si=JboP9PsAyuj8TVb7"], // Converted to array support
+    screenshots: [
+      "https://share.google/ew3gbGOnlM2xGk3xD",
+      "https://share.google/3VCnOx4n8bg7RJGUa",
+      "https://share.google/At4vPSUMIwrjmObjh",
+      "https://share.google/bWMPjuMNUf87rNnhB",
+      "https://share.google/3O9sgV4dyIKGqQ4hG",
+      "https://share.google/1r5lvYirxQipIQqzP",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Takano3D Server on MOD APK"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+     {
+    id: "20",
+    name: "Minecraft",
+    slug: "minecraft",
+    developer: "Imaanshu N",
+    rating: "4.9",
+    downloads: "200k",
+    size: "1.0 GB",
+    version: "1.26.44.3",
+    category: "Adventure",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/27O5tpaYE82W6m30rJ_MX3-UvshlDM6O8oXDxb6GseYW2T7P8UNT19727MGmz-0q3w=s150-rw",
+   description: "Minecraft is not just a game but also a rich and limitless open world. With a version specifically designed for mobile operating systems, Minecraft has unveiled a unique experience, allowing players to immerse themselves in an infinite world of creativity and exploration on their Android smartphones or tablets.",
+    downloadUrl: "https://s1.1phut.io/v2/4DeD",
+    videoUrls: ["https://youtu.be/BLtLrFNRE-E?si=dCx4oPY0qkUj_7q-"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/E3ae4Jm7cLqmGEHg4In5rXdKrMAwDPPNb26coEAESZw4RjvkgS_bBJtRwFNGZrBMfw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ZSMzOOE-yQt2I2VjA1rqZ2hkQ1PzWBDXUnqkW6sCQMGs2d_H6X2UBVB-LF-B6Gm4VjYz=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Va5XplRkZCroi-q8NZI5TLd1vHHndW1ps6o98X4fvtnSMwmS4iOHxwxB2B7fri-lOGA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/V1CnCHYr1JP9pYrJLs53qS3YG9rbJVhxmLApqXY_pWt17ZQIwbXIibXeC2gGeckksy8=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/nZTKxyLI6340xoPhTTLMODDCCb9GW5tdb-_7rcOsN350fnGd7c2ph7-0RgC8Ot_-E4s=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/srkig0NrEF-DQI067-yYDRWmtDGyMWet_ocNu7GBU0fnoElm6WVmCXBgMZYJ8H4kfQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/zsJ6j0KZTru9deKTA4cI2NXzsFNgD-Qd-fl3B4TVItRlVSwVibo7q8gNcFysvx51sso=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/dqCRCJb1nRGv5XtuA2Ml4mTDYuGRaD68juil4wfFHsYWiV0kvjG1mgDpiZHTMWG0-WD1=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Takano3D Server on MOD APK"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+  
+   {
+    id: "21",
+    name: "Minecraft Beta",
+    slug: "minecraft-beta",
+    developer: "Imaanshu N",
+    rating: "4.9",
+    downloads: "200k",
+    size: "1.0 GB",
+    version: "1.26.50.27",
+    category: "Adventure",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/27O5tpaYE82W6m30rJ_MX3-UvshlDM6O8oXDxb6GseYW2T7P8UNT19727MGmz-0q3w=s150-rw",
+   description: "Minecraft is not just a game but also a rich and limitless open world. With a version specifically designed for mobile operating systems, Minecraft has unveiled a unique experience, allowing players to immerse themselves in an infinite world of creativity and exploration on their Android smartphones or tablets.",
+    downloadUrl: "https://s1.1phut.io/v2/2oa7",
+    videoUrls: ["https://youtu.be/BLtLrFNRE-E?si=dCx4oPY0qkUj_7q-"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/E3ae4Jm7cLqmGEHg4In5rXdKrMAwDPPNb26coEAESZw4RjvkgS_bBJtRwFNGZrBMfw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ZSMzOOE-yQt2I2VjA1rqZ2hkQ1PzWBDXUnqkW6sCQMGs2d_H6X2UBVB-LF-B6Gm4VjYz=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Va5XplRkZCroi-q8NZI5TLd1vHHndW1ps6o98X4fvtnSMwmS4iOHxwxB2B7fri-lOGA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/V1CnCHYr1JP9pYrJLs53qS3YG9rbJVhxmLApqXY_pWt17ZQIwbXIibXeC2gGeckksy8=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/nZTKxyLI6340xoPhTTLMODDCCb9GW5tdb-_7rcOsN350fnGd7c2ph7-0RgC8Ot_-E4s=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/srkig0NrEF-DQI067-yYDRWmtDGyMWet_ocNu7GBU0fnoElm6WVmCXBgMZYJ8H4kfQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/zsJ6j0KZTru9deKTA4cI2NXzsFNgD-Qd-fl3B4TVItRlVSwVibo7q8gNcFysvx51sso=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/dqCRCJb1nRGv5XtuA2Ml4mTDYuGRaD68juil4wfFHsYWiV0kvjG1mgDpiZHTMWG0-WD1=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Takano3D Server on MOD APK"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+  
+   {
+     id: "22",
+    name: "Eyes: Scary Thriller – Horror",
+    slug: "eyes-Sscary-thriller-horror",
+    developer: "Imaanshu N",
+    rating: "4.9",
+    downloads: "20k",
+    size: "1.0 GB",
+    version: "8.0.88",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/E1YAxY5YgAqI9kR5MAo8lzsfaSbgsS0tevynKQIaVxbCOKLeYi6d8NYaLQRlsGpAzfcU6Kgt1H2ntiY89Aow=s150-rw",
+   description: "Eyes: Scary Thriller – Horror is a terrifying survival horror game that combines exploration, suspense, and supernatural encounters. The game places players in dark and mysterious locations where they must search for valuable items, uncover secrets, and find a way to escape while being hunted by frightening creatures. With its unsettling atmosphere and unpredictable threats, this horror survival game is designed for players who enjoy intense and nerve-racking experiences.",
+    downloadUrl: "https://s1.1phut.io/v2/vlrB",
+    videoUrls: ["https://youtube.com/watch?v=_a5EbWkfwyc",
+                "https://youtube.com/watch?v=n4dbmcxUM_I"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/aSGnh3x2ovfNhavd6TFquXsSK2yXRa61_02tNi9zJDgWQxDAZBtjYFCaVCrH86NSRKeSERxFR5lqUClC6XhW=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/WhjYoeQnM_ilzplnOI0ThF18YjvYUakz-LjonjA79m4ywstFsAsYAhJToz7oqR8swR9JMTRY0cqJYU9K1ky2=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/abvLUJXSjHAAFXRZ5b6_cATPNXApDyHQtygK8Vh_j2-EwCCDnI1nvs0XoFdq0pFXkA_7Cqw9EfxA8ULHBPd4zA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/lyseNtJQOFol5ZALiWx4Dy34Ej25pU1HK0xEalzzdkqlDGBr9JYdYLOaIbhk9-INnqevquC7mV5aOmtdNfNZLZ8=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/fo5pZ9-vZjxkbZoUaa8MLibjjlxyZcta9su512JCcI7re25gAdPbaV5enoVhyXuHgGBMwIVfdh_CZgOTv_C1YQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/M8T4NCjwOGlhwVzqgHtxMX90gw0wvL3nK8e_vSykgUMFZOTXfUi-lsR44PjBKF0o1eyXQQzsZqNiyxSbtNvMFQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/jKmXdToU6yV7hazSTqBZxUgXbkCT3m6PoWgPgi4pRuKv0-19vVOEPRnGeUF7zjXARjQzaGMvsW4eZlUWJIt_gA=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Takano3D Server on MOD APK"
+    },
+    tags: ["MOD", "Free"],
     isRecommendation: false,
     isRecent: false
   },
-  {
-    id: "game-25",
-    name: "Real Racing 3 Mod",
-    slug: "real-racing-3",
-    developer: "EA Sports",
-    rating: "4.6",
-    downloads: "100M",
-    size: "520 MB",
-    version: "12.2.0",
-    category: "Sports",
+  
+    {
+    id: "23",
+    name: "Machinarium",
+    slug: "machinarium",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "33k",
+    size: "301 MB",
+    version: "3.5.0",
+    category: "Tools",
     type: "Game",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?w=150&auto=format&fit=crop&q=80",
-    description: "Realistic driving experiences with unlimited gold wallets and pre-purchased cars.",
-    longDescription: "Compete in licensed real motorsport tracks. The modified version provides you with preloaded maximum career cash balances, unlocking all tracks and cars.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Real_Racing_3_Mod.apk",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/8s7VpaT4BJgaTq8u7eF2FIgW3-gOZzdOYRvI6-edXj2mpJms_XZS8ULxbe1VSd8RoVs=s150-rw",
+   description: "Machinarium is a fun and beautiful point-and-click adventure game for Android mobiles. Although it was released a decade ago, until now, Machinarium has received many compliments for its beautiful graphics, vivid sound and extremely innovative gameplay.",
+    downloadUrl: "https://s1.1phut.io/v2/ezLZ",
+    videoUrls: ["https://youtube.com/watch?v=uwZBdWRSBRs",
+    "https://youtube.com/watch?v=4xb3IImki-4"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=600&auto=format&fit=crop&q=80"
+      "https://static.apkmody.com/play-lh.googleusercontent.com/UnB9YP-Gt0FpKHDtv6KmqMJhPuxTCOUTrcFqUUVGmYf56_eAhqWC6wzF2seTEXAh2g=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ZJzdfmw2oTY3MoV6wxJlk63rAl7hLj60MuVvRC-0vvb7TY4o5ixjmWMUWtAtAryFc2c=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/NJ4zNH6axXLxGn_bn5jTwj_YeozXZvV1bSql85M3Y2Xhj36zDBfKc4o9BMpCecOJgsg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/GBoDpK1JO91ZGqjUypZ-O8mKCyI2mnDOsDOH6RDCXDuqNE1Qh5MLTWuZbetyvITN1Xs=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/e0KDKNCSahPDeffA1hVQr-o9eMJQ8ipcp97vaOtFaUCjM9HJauNvQhqqxgGaXOalEr0=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ljTzIpQcsTo1EO37EFlszOiTNc4bAU6iN2_U_vv6v_O3kUhn-rb_AODQiNsHQTaTTv3K=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/yG3szf-3TV-YioVtJ0j31qkdcCG8dUz2WmlZb2cx40UchTDVxbSsC0FhvH91ECcXMQI=-rw",
     ],
     security: {
-      checksum: "SHA-256: f15927ad81d3542a419d2b882e4da37a",
-      secureToken: "EA Career Profile Pre-Completed",
-      cloudStorage: "Dedicated premium EA speed server"
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Moviebox servers"
     },
-    tags: ["Max Profile Credits", "All Tracks Open", "No Damage Repair"],
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "24",
+    name: "Dream Road: Online",
+    slug: "dream-road-online",
+    developer: "Imaanshu N",
+    rating: "4.3",
+    downloads: "100k",
+    size: "623 MB",
+    version: "1.4.3",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/Zwg0qf7UFn4JYuf-ftl2_fty827AI08IAsbhTl-hJ0cJUSxn0L76e6O5CU5R7fdgSw=s150-rw",
+   description: "If you are a street racing enthusiast, or love the excitement of chasing opponents on supercars, Dream Road: Online MOD APK is exactly the game for you. Exciting adventures around the city on your dream car, are you ready to conquer the challenges in this game? Let’s explore right away.",
+    downloadUrl: "https://s1.1phut.io/v2/5yNp",
+    videoUrls: ["https://youtube.com/watch?v=Xv69QyU3c6w",
+    "https://youtube.com/watch?v=Fv7GmYMyC0o"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/q_7IYmzs0D6vNw1mEsz7BpwsQl4MC8RTAtV6aS0LPM9jKCCDWm86pFe7_Dcz1NwE7OI=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/bTp5-ePcKm4VhmX-v5MJldF8Rnmkd8aMCltQptuW5_TYfSdG6vWdtZusa12xXPdFmk4=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/SKLDBTp4a03-G2TsiITU3gBA3CVlGLuwX8vtiViU2akmJ8vOyVGU6yQ-KmVUv7HgUJI=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/DYe5durDQ2JTisaC_ib4HIxfsVdZrzfYLDJIRaWIRMg7ceNC_mT8-b9BcWsn5nyS2g=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/s6dyNtSJtqiC7Jb8Z-RuT37DRvme6ZyL7K7OaynAdOFp-z6Vikk4RzMhq9rX3LOd0Ew=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/EeoFP4lI-6jkI9TcOXCFKQyn0XSt5-i3DpJYgNuzbgQUOU_zk5yXDRoxVdaaYWZc1IVu=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/1tN2LWB6dXxgxH81Ow-t_G_0PQYIlhfY4oQmLSHJmjGKgQXkMj3T582FpNj1HDfY30k=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/i_pQh1uuFlDMnucJf_1xWjuAhlDVRIN5UN_Al4lfKkxwpz1VahVRKkSmAcbQIqjqHDU=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "25",
+    name: "Anime Depth Wallpapers",
+    slug: "anime-depth-wallpapers",
+    developer: "Imaanshu N",
+    rating: "3.3",
+    downloads: "10k",
+    size: "30 MB",
+    version: "1.1.2",
+    category: "Tools",
+    type: "App",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/jYmevEkyKdHZs_FSQEIRg8Ifxx4YU2-BQtso3Z0iQkMPM9w9ZkrOcbD7rys6Kq34t4Evufy1UVOgwwP0y4KKWc8=s150-rw",
+   description: "Anime Depth Wallpapers is a wallpaper application designed for anime fans who want to give their smartphone screen a fresh and distinctive appearance. The app focuses on wallpapers with depth effects, making images appear more dynamic compared with standard static backgrounds. With a straightforward presentation, users can explore different designs and select images that match their personal style.",
+    downloadUrl: "https://s1.1phut.io/v2/KXla",
+    videoUrls: ["https://youtube.com/watch?v=4DmFW9UMAzc"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/JmG9-c02qUgUmdF01q5FLOIkIDGsPuwkY8n7T8FaYvGZ3D6mw_dTTyYfoK5sWAYogRBLVDVfZT7jqt3b0oHRUA8=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/TGUPr427Ds3OGCoX3YKl0oNlH4yiSuU1CEpV-Z4NG99B4RGpCH1epLAoqRddReiwUj3prIcuB7o7DFmvP-Hrww=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Q-42XySZw216oMTBjfiFKPWxkG0itXxOty0WgywryqopIx-BsKwhY0yV6D0kC4tREguQ-90OFZSE1FBt2Lhq8Q=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Q-42XySZw216oMTBjfiFKPWxkG0itXxOty0WgywryqopIx-BsKwhY0yV6D0kC4tREguQ-90OFZSE1FBt2Lhq8Q=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/TiI36KbqM40dposlY62or87M3vz4-0qYldR69F2K6Xbmztly1f6mN0lezurcFhK5KVTp1pCm3EOFUgCgxEBJ6CE=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/A7MB3x2fNC5RBE1of3uU9wKls5LKzEKtYeByVDrqOB9ms0cJ-MQj3--s2J8yO4zYQlt_oEzo61yYTOXBWwF9dg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ieAlnx4Wlx_FrWHD95kD4nmotH2gWBWrcDtHWRMFf4Y-R5bVnyIWH1rLvfxakCTG3NH-yZzgmPpAPP2WaOYSvA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/_TTRaQUR7ackumyW99uAZHTn0kxhryD-zKvNhwPtQgfrfEtySIGOeRUjwsPaKZzAMt6oo3e5LFV8N0NHF-My=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/o0DMdFJPdzJu10exK1zfiyahr4_Bt8c1kqzDo6nrHhLVW-1UP9wKL78X-FoJ9Erq2EVvUbCakNvtpEpP0bx9=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+    },
+      {
+    id: "26",
+    name: "TrueCaller",
+    slug: "truecaller",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "100M",
+    size: "96 MB",
+    version: "26.30.5",
+    category: "Tools",
+    type: "App",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/qtgLcbI3f7CHcg8vUjYQQv3jzJ05-prQ5wr6VN0F-ehAFqLEjNNhFD_QbjujOAy-r4w=s150-rw",
+   description: "Life is increasingly developing and becoming more complicated, so the leakage of information as well as personal phone numbers on the Internet is inevitable. There are many ways to infiltrate personal information, one of which is through spam calls and messages. Therefore, understanding the common psychology of everyone, Truecaller was launched to support users to limit the above situation. So let’s learn about the Truecaller application to know more about the features and benefits users receive when using it.",
+    downloadUrl: "https://s1.1phut.io/v2/vbBB",
+    videoUrls: ["https://youtube.com/watch?v=j4gGqUVBFsU",
+    "https://youtube.com/watch?v=7949Q9PM528"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/9ClODl-X8Q0knZWaCbkNTgl3HU_PR0brO8-HEdDpgizF7Lh9XtrI3qPuE7jRB8_qZnpwu7ALkItbtFcbOY6hBR4=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/1EOKR5B-LYsbSkoFsYOedir7v1WGYOyKk6_FGEUeW3Zk-8wssWWvuE-cdUqVjGsAkV09KQ9L9LjzltLz9M6BQrU=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/XjFnPExxAVVNmwkrECdRoiINaa85eQiFHxpj2077Qugv4LBVIA_Of_LYH7rEkkHlDMBdQGs-lmBjXRJIz2j9=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/yplNJstbgv4BEIT4dla4ZfHhj4aUr9XdyF6DKxR_LGXQokKnMrFeWjkOSuGeM52onZ7yzmuYXa1sdw7crcJZSbw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/qq9CJe8yXnrKZdC347xnqz1x8eDLO4fJ0cZoOypTHcjCcm_VUQ0hBCDKo4mCFktGeq5iAtjHAY0paAo50P6R=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/hBhTArdNoIZ3Op6Fr9X9WBLP9gnkEIKLzg8CvnIcvFhJjcOYxGZGjT9ZtmGoKzQDuanJBQF0i6vnDjCO5Gp_Rw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Ro2RM3kqCEGSMKF7Zk7cpFpSaayMXzga02-Q7LWyP6WzY4_EwjteA8ffayh65fezFCiXSOtuIQz8OADatHqIEA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/DrOYPQbdLc78fb9Excr5j7BsgZjWHyzlWiMGH9r0-ifhSegxHwVoi8OsXFeOZvnCHTi5VvemLw7RYwDPUHthxls=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "27",
+    name: "LIMBO",
+    slug: "limbo",
+    developer: "Imaanshu N",
+    rating: "4.6",
+    downloads: "10k",
+    size: "105 MB",
+    version: "1.2.6",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/FJ8e7NYhyjzrjuROUSpigJ1TQNnZKUDh6AZc1SFjiD665bZsxr_7zus0DzlHIrC6Lgk=s150-rw",
+   description: "LIMBO is an Indie game, with new gameplay and many layers of meaning in the plot. Let’s take a look at some interesting information about this game!",
+    downloadUrl: "https://s1.1phut.io/v2/zpLN",
+    videoUrls: ["https://youtube.com/watch?v=Y4HSyVXKYz8",
+    "https://youtube.com/watch?v=2j7Id8S2IuQ"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/GaptorFLFNZRTHSaV4Wh3R4nnhnd_LCCW1fNIwLERCyNcI3X5LOlK3TxeCKZLeoZowE=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/mAQtHG90gFvktB5AkGhqPqZEW6s-Ghqql4Jq6_Az4Y2hqOl7JN5oDG3MNHJJEEr4Rg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/yxKadViR_JwU7Q5_s6OCEx3yU9WLR6Bo--kkkFThwUx5vNgxSPf3zbDDkjCWu_y0VQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/K1oLWUAPvUNSjbYQI4wHrDTwS2og0yDy5Hg2p2fCUlyOx9FchJzISBFyWj6Agip0Cms=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Kj9lmcNbHpiaqJJLKvqwI9oPUKlO6Uqq0Alx5LjOZx7MrmCYA1JTQPtAO5FMpqUXcs2S=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/15Omhs7Wf3nNV0OL6SeAn7S-IL7_w0wRJjFcTWySrJWDXVnAWDvnepe44NtpdP4V-DRw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/sMcfQtOUE_DgUOYY9vPVW6SCuAlwNSdbBcfmEMuNbjj9cFcAObSVV_06MOCMHNNJ_A=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/IJyIN5LH_WE9Wg8wurdKYH_mZZ3uZoc8qMIl4dcGAsorEDeSBnGGy7R9BW3VT_uwE4Q=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
     isRecommendation: true,
     isRecent: true
   },
-  {
-    id: "game-26",
-    name: "Vector 2 Premium",
-    slug: "vector-2-premium",
-    developer: "Nekki",
-    rating: "4.6",
+    {
+    id: "28",
+    name: "Rally Horizon",
+    slug: "rally-horizon",
+    developer: "Imaanshu N",
+    rating: "4.1",
+    downloads: "8k",
+    size: "598 MB",
+    version: "2.6.1",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "25/08/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/NFTKJsXIoh2CSxP77C_mrphziRG0MobZNL7sXqEdCuJlHBTUs-5NGBxn53d6S3iIvg=s150-rw",
+   description: "Immersing yourself in the colorful neon racetrack in Rally Horizon, you will admire and master the wheel of dozens of attractive professional supercars. A racing game whose freshness and brilliance will keep your mood up all day.",
+    downloadUrl: "https://s1.1phut.io/v2/8m0R",
+    videoUrls: ["https://youtube.com/watch?v=6-A5YzWFoiw",
+    "https://youtube.com/watch?v=tiViZPIlq2A"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/IPZDILteUSm5ufcTDQpD1OZaAjNswtZuFbOsRIThFXCgEYAE23T0PvkkgRefDAewBj0=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/FT3Lq8u5vCTVMx3qH_9ocYDS1i-JARag0-_QqSCCVQiV6kg6ZWPKwSluWjS8Re9LfQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ZhGu3lW904wOqmOfZGot0z4JrID_smendZ8yqLcBLsIuVqgyiEizhkXrq_-3PAZNtg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/XYBTDyyPWgwApuBSy1Hsd_z9J8tmDBxmFc_4YOzATFMW1bb8LaV3JoBkXX53PzeMzC8=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/LPyhYncgzoI1ouYuWm_063uoI1cAxrvlsJfxVWdpubUoBzlU7lsNt_iR3wPuhQlq1_0=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/0B1zXALdKMyJyGaeASEyJqni9P4kJQ3nTywErUcnH7g_m7clE5GWGKIta0nlrO04Z5I=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: true,
+    isRecent: true
+  },
+    {
+    id: "29",
+    name: "Aurora Hills: Chapter 1",
+    slug: "aurora-hills-chapter-1",
+    developer: "Imaanshu N",
+    rating: "4.9",
+    downloads: "200k",
+    size: "569 MB",
+    version: "1.0.7",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/vyBSQFCniqisX061qDemtmTbeN6Xt0kCi5P0jNJJs3OybmhgICOOrHTnWtptpoPzJp4s=s150-rw",
+   description: "Aurora Hills: Chapter 1 is a puzzle-adventure game with elements of horror and mystery. Developed and published by NovaSoft Interactive Ltd, a studio specializing in puzzle games, the game is set in Aurora Hills, a town in the Appalachian Mountains (USA), in 1981. The events in Aurora Hills: Chapter 1 begin with a series of mysterious disappearances that escalate in frequency. These disappearances leave no trace. You play as Ethan Hills, a park ranger working in the forest near Aurora Hills, investigating the disappearances to uncover the secrets hidden deep within the town.",
+    downloadUrl: "https://s1.1phut.io/v2/QP17",
+    videoUrls: ["https://youtube.com/watch?v=NsOV7eBWCfg"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/U579qG4z2QxnDqx2wW-q_PIkhGKbnVHbHXH4EHbSH0_omqaDzLSj-Zv5ZustS-21EZA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Ts8kwUhL1SjvmuoYdtW6u4Ul268yMiZN3WE2rOy3xE6wxAGbXnT7Jvs5LU0p6uzdkBM=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ro_FFnSy-_Iwhixd1hz9NM_ga2kgcwvtMU_gYE2iPKcsUOACYf3uuUbaHqdmhupSUto=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/xqT1XRDo9rXJaLwG_hT6yo67tVkS8vGOtBhMQwXIM9X1u0KMnXBuSb1wZ9zPFmrR_g=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/_pJtcbj7pPYDbxNkg7MnIuR1ea6no1UD1-NzhvdHaPzhzxDj4nAcZG-KFgQVs1EXxDCa=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/NEGaO2Tlwtix1vuaqatA7eQMiTAB_lVye8xzjyYltX-PPVyLizIeb-EPcm7om6wNUUs=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/f6DPhYxK-C4swSCNAE7WH2pDblrPoGIem3-0LcGwYLBtKtWSfCfWFb_1NXELdA_krDg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/zRnnDPPgFPLKM8F709x-TAdvbnXWw2_wMyhPXR6qNfXOB3F4HLZ3s_TbYlbtqPSjQ9Za=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Moviebox servers"
+    },
+    tags: ["MOD", "Long Line", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "30",
+    name: "Aurora Hills: Chapter 2",
+    slug: "aurora-hills-chapter-2",
+    developer: "Imaanshu N",
+    rating: "4.5",
+    downloads: "106k",
+    size: "976 MB",
+    version: "1.0.2",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/mt_FlirDl1XyP2mHI-ON9DkniOog3RYZPLv2C-kJPAmBd2yYwybnuMm2Izt9r74Q0st_9N2YnQdZdakYYAq6TQ=s150-rw",
+   description: "Aurora Hills: Chapter 2 is the second part in the Aurora Hills series. Developed by NovaSoft Interactive Ltd, the game was released in March 2026. The storyline of Aurora Hills: Chapter 2 continues from the ending of Aurora Hills: Chapter 1. In addition to the storyline, many new puzzles and items have been added, making the game experience fresher and more engaging.",
+    downloadUrl: "https://s1.1phut.io/v2/5y85",
+    videoUrls: ["https://youtube.com/watch?v=1ZqB0GZA_9c"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/lO4JOlv9mQttad-XCiiccy0egm3nJTHgxqoXyxTeN30tx3NxfOlvgSuXqY0sfimQPrh3k3aUySbKxoWsZ_NaYA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Aybi7U6MYW9PG314QPC2SDYkpJ5Umzr897Qwv84UygmbPGfclLy_luZxAqSWxJuwVmPSvaE5w_gN2OXIuHZVRQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Evd_zcKkzaz1KOS-2rwqNlXl1k6f43OD_U-pn8amx5o1apN7SyGWa9a-D39cvrPZHfmgLRKR7Czlm4CYz4oXNw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/VEm8QBJLLSpZYsX5tlgT7h9RzEVSMDozDXbwExFAvi8bVMv6JWWyCfNQupFRCebs4pr4cCnPtRxy2VzBQK4n8bA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/iFNjJcoTiJhGjgN0-Z629VguBPW7KgQPMXNFOnnw5vdbFo4ApDOqc8WYpj_F-4ZkxKzfXjs-BNFkysiA4_EJPg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/RUoecYgif-EG7cgfrl0uYJsbe3aI99XdNHYVQ36-likS9uI8_1QBhqGJxFiGR68099Ib2h0GNBjn2rl5bgQH=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/VWzo1v6GoPxBW0hRk6Ceh0u8IaRnS_R7SfixBgTfwnCMFJg5LNivbKskEON34vm4jPEm0zW4kDCBmqQD6VFj=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ZMadX0DnIXqnapNcFgM9yjBevn0REelsRG4sCNARAhJENIunpmmjmnx5V26yLpgVqDCKy8j7gspH-RDkuellci4=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: 91yeb72te8wg8w9sg6euw8hw7wh8w",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Moviebox servers"
+    },
+    tags: ["MOD", "Long Line", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "31",
+    name: "Aurora Hills: Chapter 3",
+    slug: "aurora-hills-chapter-3",
+    developer: "Imaanshu N",
+    rating: "4.0",
+    downloads: "5k",
+    size: "789 MB",
+    version: "1.1.9",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/GrqjU03YtKENSqlsCS5vyA8Gl8WbDwePOC6gKx338dXf6qIz1QKIoiiKcOngXkU0WQ=s150-rw",
+   description: "Meridian 157: Chapter 3 is a meaningful conclusion to the series of point-and-click puzzles combined with creepy exploration adventure Meridian 157. What happened in the past, who closed the doors, and what forces prevented you from moving toward the truth? Depending on the player’s ability, the story will end memorably.",
+    downloadUrl: "https://s1.1phut.io/v2/36nY",
+    videoUrls: ["https://youtube.com/watch?v=FUDMpFtYj84"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/nD9ytq6V8NlWayx4HvHKFd-FznEJlUBBUQoxvG7kdbQ2vTHl5f4mG-RocJpIIb9mLus=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/UTX9yGN_zAQxa2vevcyD17XRvO3-s34Lsqyhg8iuj5EZG-xX5TA5VOzY3DGq9bHcMM8=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/lhdIc_ul2F3Ha_Xqqfcr41hWNKaekooLk-qlNxjgbbBm2lof8RwfPEfDaY-7jkkrNq8=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/6x3rxqO-0utjr334exY05oUdtOnB-qlhQ307JEvx7jwirq6YNC6zKP4VkRjmXTe94w=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/W0sHwpOzn5DepOgx9jGmcXsYcaeOElPpuncgpTv2Gcw80ayG7kP68BG-7xU9QhsCI1w=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/SCVBlYjpDOLUxLeaGOxMQL9wdLhvoR4ffSdxa46PbZxREJ-Ttq9pQ1WGaUMwL78kHA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/zo00TkuA-tPONhFD7nW4s6_OeWwdbVDpKPakjNoM1bg8k4bsP_b4BRnhlFJ8XR3XcpDo=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Qqj75u6vZWMkBhOSJkoa07m0E0rOnIZ9Vl1hkxw7MHvrydecIhHu4_TV1mF5tLt_3dc=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "32",
+    name: "Meridian 157: Chapter 1",
+    slug: "meridian-157-chapter-1",
+    developer: "Imaanshu N",
+    rating: "4.4",
+    downloads: "8k",
+    size: "208 MB",
+    version: "1.2.6",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/TeB3avCL67NuDiQWv780Kx7lQt09XO7xQQRWDsfJFbXumnBEqrG4Bd4UF_DoGcuaH5Lu=s150-rw",
+   description: "Meridian 157: Chapter 1 is the first part in the game series Meridian 157. This strange, scaled, point-and-click puzzle-adventure game will take you to a strange world where countless things await you to decipher.",
+    downloadUrl: "https://s1.1phut.io/v2/Jo4d",
+    videoUrls: ["https://youtube.com/watch?v=LJ3EixBDLXw"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ZMW-DIVvNQ64AdnmZjAZX_ZMoqKzGfGW_d64UHJWGDXBhiJEat7wq0pQt3ZHgCJH2Q=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/rvhy5PIBvhPQDtvu9EFthEP2m_GfuqF8l2dCpe2Q7U-YzTG8DOd56aCkYEMI-jLCBWzo=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/J0iauWsGGyVZ7_zBqws38rJtR5RjPocgEsS-MXwxTAScYWpO9jUH7CGwvznVm6IK9g=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/sK9WuFKOhQihtXuWMEPPUOZ0xXZnRYlmgKHTKTGdBLSmSJCP5_pF3JREx9SpYEojhj_W=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/48tdiFiHFFwLt2XPzfRi7fZbj2_QydXiprVuLfr2s0U-7LTyLYIs-pawHCbNZqzdBgo=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/erc_Akb7hK33qRtkYQ31goDTPPdzMThKCy_rMjQRMg07f0pdwFAgLOFaHY95BMJkMw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/5oazmByIwFkYp8M-gERpw3VCfQ9zoalIppOWvO-CXcjA3kyLe1rAgplwSGk7SqCF-ncm=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/k6tqoUqnLzT7gS4T3EMvlWEJ1o9gbnuAJXLGYZYKnQyBiO0mNhpSU0ITNpQA0UbRjZA=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "33",
+    name: "Max Payne Mobile",
+    slug: "max-payne-mobile",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "2M",
+    size: "1 GB",
+    version: "2.1.131",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/CM5rJdP9S3gQk_5Td3Er_HfQIAUdnO0lwxJDZgYzKfqZrAWa0xvZcXwOMdsB8cmxJYM=s150-rw",
+   description: "Max Payne Mobile, the award-winning third-person shooter game, is now available on mobile. This game promises to keep you hooked for a while",
+    downloadUrl: "https://s1.1phut.io/v2/4DJa",
+    videoUrls: ["https://youtube.com/watch?v=L1uESVYt48o"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/8cGd8vtrN5o8lScPf1UjC7_GT4nwMVwUrnbbDsLgMBxEZirGSTrlo6BkSyFocSFYT74=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/gNLK5x4V_2xnZvoJnlwzwljTdOituFbs1prdYMnz7yoPuaHcets83_rVUvqoyOigISk=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/RimGdpyEuokI0JQH_GRqMFL5U7Y-FzbYJkKD9AUx8ObqtkDSYLc8di1BsWwdNPeT3uPD=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "34",
+    name: "Meridian 157: Chapter 2",
+    slug: "meridian-157-chapter-2",
+    developer: "Imaanshu N",
+    rating: "4.1",
+    downloads: "2k",
+    size: "389",
+    version: "1.1.6",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/gy7c4CM9isQYJ2PJ0aIE4sK-U8zNWuBGy08nBpsVGC3X03HvghiktrAkasVd1-3iNO_q=s150-rw",
+   description: "Meridian 157: Chapter 2 follows a hydro meteorologist and expert on strange phenomena around the world to explore a research area on a strange island. Did something terrible happen here?",
+    downloadUrl: "https://s1.1phut.io/v2/Ome3",
+    videoUrls: ["https://youtube.com/watch?v=m8g3wOAIfSI"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/JOqA4wc700TQ2xIOC2d7dt-rmLIDJW_O5mqtPFco8LDOdF9CmhYaYS7nSKX92B65O00=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/9Nczk-vlHlAlJhv7OIuo2sw39Ux917zbNIFuMGYuLAwzsIrdReI_DW4GfYOYAtioIMQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/JiWDieIq53VnovhglswG-RWsxnWU7dirZ2AuOWl2GwoJf3L7cL06mDUAY8eyPPhQCrc=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/td84oCX70zWEt91IksUV05nJHxSXeMkcsI5_P7Z4wJGr3drfxNt-N353h9aN_XX60DAw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/0HYZ88y_8kyoJOdpIzUc2SBqZrp2XSQUercjQfCqGu_iTyS529OBvZySuh4PN9fF=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ZZJax-VD5uZBHTTeEHnWlUAlZv5RRhUYKwLEDhxQ2hFcd_2udaA49-_9IGCHHpLYH64=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/YNXgnA4c--EJcQ5nT5gvsa3fEKjmmN1IpBVWyPt9Izd4YE6kn6CHxQinzCT41ZbZUYU6=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/F9igVX0-E5K6Yfak2Q1xbgOsrKtTQCiS1zormJ4rsFieMMd4tw2CkuQ8-t6zb9v3LGc=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "35",
+    name: "Grand Theft Auto: San Andreas MOD",
+    slug: "gta-sa-mod",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "32k",
+    size: "2.46 GB",
+    version: "2.11.311",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/XRlCpj22PFJuFK43QcE3u5RxmoNUed7YO_zG-6F1PCqjrBIIURbTBDvTgLVVIk5pNeY=s150-rw",
+   description: "Grand Theft Auto: San Andreas MOD APK, the featured action game in the GTA series of Rockstar Games, now officially has an Android version. Let’s learn about the game before downloading it to your phone.",
+    downloadUrl: "https://file.gtsamod.com/grand-theft-auto-san-andreas-v2.11.311-mod.apk",
+    videoUrls: ["https://youtube.com/watch?v=Ndved6Lon9I",
+    "https://youtube.com/watch?v=yOzcbtsw_pQ"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/XJIXWvMtYKOfdE8k_353XZwKEHE63JigwjZnsSyhUH6VzOeUHhxouqGHpy7f1nQGyQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/gLb0inRrKnSPB2vR4yTDcxJVYNfnCmLs0n2fp0L5EEF28aBUarvwrxVzUw8xnOlarA=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/CQiBcsfvjd0nv3--yjinA6YAZuWoj58WiymNQ3JGLhYWaH4zXgb8NbIlCSrjJRmtMvl2=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/UMbELQfIJCw7HMl3xT9ypYNczwH_njQJM1Z0B7EuTURnG0pbVq6sxy6NBAxL-NVMg8o=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "36",
+    name: "Days After MOD",
+    slug: "days-after",
+    developer: "Imaanshu N",
+    rating: "3.7",
     downloads: "10M",
-    size: "96 MB",
-    version: "1.2.1",
-    category: "Arcade",
+    size: "451 MB",
+    version: "13.3.0",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/AkTp4ywzsnBVOBcRMgm1VAAkRipEpQEPifWvvWqblsBi0ksDVMOa05oqBYEIB1sTphM=s150-rw",
+   description: "In this post-apocalyptic survival, in addition to effort and ability, luck is also required. Can you be the one who survives to the end to wait until the dawn of a new day for humanity? Play the 3D RPG, Days After to test your will to survive.",
+    downloadUrl: "https://s1.1phut.io/v2/PAew",
+    videoUrls: ["https://youtube.com/watch?v=9pKZ8F4mSjM",
+    "https://youtube.com/watch?v=3XLKPCgdSvY"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/gI7I2BMvJeTSeTT9LdyG3UcnEVqtcYbxdLLQd7N2TdRyJDxT8zlVNW56p3hBO_1vxUM=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/B4p_ZSVB6y-40pY15uqFNe2I5ZEMtTAcobogGSivp1EAEUAuKfinvFUbPmqjpJzr2h0=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/3qNP7mhzuPQJVmL6SgqRteo2WJwcsB4x_L78fJjGzR3ffRmBfrRiRtgU1FcKZYr3y9s=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/sfP-Q31t_vhikLapsfocUHLN9yln-QP7HJp43kr1DaFwzdgZ1Jnajx9L5QobNiGfVw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/TRDiS6TnTYlTh22jlfwJQZymr4BIvapPfP41yJDEwKVhPdCxM8Lk4lk77CiSZekU6pg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/9mqHHfNATqUt9BmsQfiRQ_8yGNGmKZaujwZTBfUtWOTdBGkLvEheuDJwIW0qj1X4iQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/iPAhdi4NeRK0KGUHqBMvLbNZQtAdDhbLCoydja7dkqHuTeZtHfK5Vs5cwqe92_e7ljGH=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/_Ti5mzpfpnXzUxb6ZBHkCwAk1_mR2o7CqdxqJ3DWdccCB5GUap8rFEBP5dAFJV5NaA=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "37",
+    name: "Hollow Knight MOD",
+    slug: "hollow-knight",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "39M",
+    size: "1 GB",
+    version: "1.0",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://apkmody.com/wp-content/uploads/2022/10/Hollow-Knight-icon.png",
+   description: "Hollow Knight experience has opened my eyes wide, not daring to take lightly indie platformer games. This classic horizontal scrolling role-playing game with great aesthetics and gameplay deserves to be on the list of the best indie games for many years.",
+    downloadUrl: "https://s1.1phut.io/v2/R7Ml",
+    videoUrls: ["https://youtube.com/watch?v=6XGeJwsUP9c"], // Converted to array support
+    screenshots: [
+      "https://apkmody.com/wp-content/uploads/2022/10/Hollow-Knight-screenshot.jpg",
+      "https://apkmody.com/wp-content/uploads/2022/10/Hollow-Knight-on-APKMODY.COM_.jpg",
+      "https://apkmody.com/wp-content/uploads/2022/10/Hollow-Knight-APKdownload.jpg",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "38",
+    name: "Rain World",
+    slug: "rain-world",
+    developer: "Imaanshu N",
+    rating: "4.9",
+    downloads: "58M",
+    size: "2 GB",
+    version: "1.1.1",
+    category: "Tools",
+    type: "Game",
+    updatedAt: "24/04/2026",
+    icon: "https://apkmody.com/wp-content/uploads/2022/09/Rain-World-icon.png",
+   description: "Rain World is classified as an Indie adventure, survival game with 16-bit pixel design style, minimalism but not easy to play. You will often be angry with the slimy laziness of the animal you are controlling.",
+    downloadUrl: "https://s1.1phut.io/v2/mpya",
+    videoUrls: ["https://youtube.com/watch?v=kxbQy0U92R4"], // Converted to array support
+    screenshots: [
+      "https://apkmody.com/wp-content/uploads/2022/09/Rain-World-screenshot.jpg",
+      "https://apkmody.com/wp-content/uploads/2022/09/Rain-World-APK-download.jpg",
+      "https://apkmody.com/wp-content/uploads/2022/09/Rain-World-for-Android.jpg",
+      "https://apkmody.com/wp-content/uploads/2022/09/Rain-World-gameplay.jpg",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "39",
+    name: "MT Manager",
+    slug: "mt-manager",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "300M",
+    size: "32 MB",
+    version: "2.26.8",
+    category: "Tools",
+    type: "App",
+    updatedAt: "05/04/2026",
+    icon: "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2025/10/MT-Manager-mod-logo-media.webp&width=160",
+   description: "A powerful tool to edit, customize, and manage APK files on Android devices with ease.",
+    downloadUrl: "https://cdn902.onehost.io/2023/Mt_Manager_2.26.8_1785878914_latestmodapks.com.apk",
+    videoUrls: ["https://youtube.com/watch?v=2oN6ioYSXR8"], // Converted to array support
+    screenshots: [
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2025/10/MT-Manager-mod-1-media.png",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2025/10/MT-Manager-mod-2-media.png",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2025/10/MT-Manager-mod-3-media.png",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2025/10/MT-Manager-mod-4-media.png",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2025/10/MT-Manager-mod-5-media.png",
+      "https://imgcdn.latestmodapks.com/api/resize?url=https://www.latestmodapks.com/wp-content/uploads/2025/10/MT-Manager-mod-6-media.png",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "40",
+    name: "Weezer MOD",
+    slug: "weezer",
+    developer: "Imaanshu N",
+    rating: "4.8",
+    downloads: "38k",
+    size: "37 MB",
+    version: "3.7.2",
+    category: "Tools",
+    type: "App",
+    updatedAt: "18/07/2025",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/niz_bqwNH7jHmfj0u1B7rq2h1xaqQlCo6xE7hNzHXyIDK4IZCERwJ9bF_tEWBa9AEg=s150-rw",
+   description: "What’s better than listening to your favorite songs anytime, anywhere, right? However, unfortunately, some music applications on mobile require an Internet connection to listen to music. But your phone doesn’t always have Wifi or 4G, right? If so, download Weezer right away, this application will help you listen to music even when you’re offline.",
+    downloadUrl: "https://s1.1phut.io/v2/e9O1",
+    videoUrls: ["https://youtube.com/watch?v=Od60EckY-Zw"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/cZJMLrO-2xYXXzCP0QLOzA5sLoXSNrmscKZNUCHy3xz1O8V9wmsRaArNHSCU4vnmZtM=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/aZFH-1TZpcOA0fstPZK1Y4FDq5Poiiun6lynWugq7tgiwmscYD9eCP7J8qJMmr_FWoHi=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/g3dWNsQKeHWcv8Mk0qSPrs_pEdr6luw6yvrCcQZQlZO4PSthGg_NDPJo8MmH8pkTBDs=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/aIQcgOHWzeSWDJeDXlbUZbSOEW5q_fW_h85JAzwxrhSLhF7v_f3NWSHvG-lta2rrkAYp=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/r1dtH7meU0OiQuokVb0QNmF2MZGFXSdNUlDQRT9JuI1f4T_9BNYJG_gQ8OjDJb3cMJI=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "41",
+    name: "Shizuku",
+    slug: "shizuku",
+    developer: "Imaanshu N",
+    rating: "5.0",
+    downloads: "4k",
+    size: "10 MB",
+    version: "13.6.0.r1091.b844bc49",
+    category: "Tools",
+    type: "App",
+    updatedAt: "06/07/2025",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/KVK7u_AKusImrcj3i0HanLxIbCzrpIEm7BgmB1TXwZHe2SXAUGHOe6bLISO-x5xR0E0=s150-rw",
+    description: "In the Android world, power doesn’t come from the device you own but from how much control you have over it. Some people spend their lives just “allowing access” and think that certain tasks, which seem exclusive to root, require some grand, highly technical process. But then, Shizuku comes along, no root needed, no unlocked bootloader required, yet it enables a slew of apps to perform feats that seem almost impossible.",
+    downloadUrl: "https://s1.1phut.io/v2/yp0o",
+    videoUrls: ["https://youtube.com/watch?v=hGsPpd0uIco"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/XxB_t5QecCx0Sf0jBP-kjqGWF_b-2BOX19h-WLxuOcHBovPQz7fc4fVPq_wxnsJiWulm=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/CthQRWQ22rhJST1gZ099IEwkUaN04jgXOtf8nVbUnfQbkCuhRBrK_iTRvXWl7Wp3gg=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "42",
+    name: "Human Anatomy Atlas 2026",
+    slug: "human-anatomy-atlas-2026",
+    developer: "Imaanshu N",
+    rating: "4.6",
+    downloads: "14K+",
+    size: "1.22 GB",
+    version: "2026.005.009",
+    category: "Tools",
+    type: "App",
+    updatedAt: "05/11/2025",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/CjiKO9_64Ar7DBZ0Tfcq-lsNQCZfEticerfN0UD-OfZJR4SfQ8zAp6nVAb27l_a9lF4=s150-rw",
+    description: "Human Anatomy Atlas 2026 is a useful application for students, students, who are doing an in-depth study of anatomy or are studying medical specialties. By building a complete anatomical model of the human body, you will get to interact and gain a deeper understanding of how the human body parts work.",
+    downloadUrl: "https://s1.1phut.io/v2/9kz8",
+    videoUrls: ["https://youtube.com/watch?v=yMhYP7VVxQI",
+    "https://youtube.com/watch?v=QoWSgxzrtjU"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ykBD59NR30FkUgSoRx2Y_3OOnqYvqzZSqbGs2xqusd55EILJ_MX-CQMBZVR1hYIb8SU=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/85VaN54UDSHB1PUUcme2QSSEQhwOtgbfLay8EbbYjWwMEnh--LP6dGGJvYHiF4UrHyk=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/8lZyMuTziHpaAtj7uf9oFZMX4D_aKKRv99tuBGXOth3AsnZ8sOr72kVEC_YGfA_k4lmk=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/LRho-85XFQTR9VwyIhx4V7p3xpuyg5mUCMt7gYvG1XZqI9NFQFkXHtnNf-n8moaMdw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/A85FPvr8s-pmy2NGX1HXcEDKlHGKg1T60SVxjdDk1_eHixslIUwFbia1lL8Bgh0wYA=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: hsiq8ye82g29ge91ge8br8391",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "43",
+    name: "Red Dead Redemption",
+    slug: "rdr-modile",
+    developer: "Rockstar Games",
+    rating: "5.0",
+    downloads: "28K",
+    size: "7.23 GB",
+    version: "1.58.63226194",
+    category: "Action",
+    type: "Game",
+    updatedAt: "04/11/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/CpXqKaUvpsWGAW6jLRH31beZynmzI-VBWQpaplKW508pV0ajMrzn-kwnilYPmuX3Y_XItuKXg5tbI3zeaWZTIw=s150-rw",
+    description: "Red Dead Redemption APK is an action game masterpiece developed by Rockstar San Diego. Red Dead Redemption was released in May 2010 and was one of the most expensive games of that time. Therefore, Red Dead Redemption has a huge amount of content, a large and detailed open world, and an excellent storyline. Red Dead Redemption won many awards, including Game of the Year in 2010 – the most prestigious annual award for video game products. In 2025, Red Dead Redemption continues to be brought to the mobile platform, promising to bring both a new and nostalgic experience to this game that is more than a decade old. The game is currently released for $ 39.99 on Google Play and AppStore. Remember, you can download this game for free on LOOK-MOD.VERCEL.APP.",
+    downloadUrl: "https://s1.1phut.io/v2/6Y05",
+    videoUrls: ["https://youtube.com/watch?v=SlkizyzZ8k4"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/_FyVLKAzPlnFIP0Llmpr67Z_InIVV9n9fZyexqDXbntFKceBYSuDx20AKrp0p3eRKoQqUu9r58ALHpKu8jliQhE=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/hLTyoGDOvp4DHgDR8AU5zNCxlIh6W0wlXHuBFP6wyP6u318YU295fBX66viR8amEaBPwi4rYNe5Bxapr7zugmw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/eZZ1ZzAeeUp9mdfPkJWxe8mJ16OViOO9UIdR6XbDdsuTiASYF_lxVtf3t8cz-rEll5DTMXUKuCf8fLON1bGE4w=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/eK0pv6KzbP_6tC8RIF4hNqOG3b3NFkcs79Vtwr-BnDjTS5yaVv-_HvQxkgVo8FJajPUucIjM0jZCdL5Rk9kRCIo=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/8BQu1Xx7fquBby5ygrhQBrM9eCONEr2IGHNK_68AJR9AWCsTtwgHlTGnYSZVXfAEvAZ4Zyei4gymQV4v4qA8Og=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: RDR-full-game-gw72h282y8wh28.apk",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: true
+  },
+    {
+    id: "44",
+    name: "Grand Theft Auto: Vice City MOD",
+    slug: "gta-vc-mod",
+    developer: "Rockstar Games",
+    rating: "5.0",
+    downloads: "10K",
+    size: "1 GB",
+    version: "1.12.259",
+    category: "Action",
     type: "Game",
     updatedAt: "01/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Run through high-tech lab complexes. Full premium version with infinite armor kits.",
-    longDescription: "Escape procedural research labs with sci-fi gadgets. Premium package unlocks upgrade kits, infinite health boosters, and complete character maneuvers.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Vector_2_Premium_Mod.apk",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/nl1Y6bn06faVBuPEwWh5gInl_Zji3A5wTA4zscKDsJLXpcZ5C35F5zaGzEwCE0bKJ8Jr=s150-rw",
+    description: "Grand Theft Auto: Vice City MOD APK is part of the Grand Theft Auto series (GTA) which is also ranked as a legendary action role-playing game. GTA dominated the PC and console markets first, and to celebrate GTA 10 years, publisher Rockstar Games has released an Android version of this game. And the first game that was selected to put on the smartphone platform was Grand Theft Auto: Vice City (originally played on PlayStation and released in 2002).",
+    downloadUrl: "https://s1.1phut.io/v2/v3lL",
+    videoUrls: ["https://youtube.com/watch?v=f_VBXRZuHTc"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
+      "https://static.apkmody.com/play-lh.googleusercontent.com/soywaPw0kB7fiDHokNdGlxbOijFwLe8XahjnZhJAejpCTcPMdogHEu10hcAF6dBW9LI=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/soywaPw0kB7fiDHokNdGlxbOijFwLe8XahjnZhJAejpCTcPMdogHEu10hcAF6dBW9LI=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/5GfAOqO5td1Qx4hY6V-ggdR24l7wL9bdaSey5fIt8A0QmpaUNV4ki1edC5_y-_8F5Ku-=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/tuYtl9M4l9ukrxKY3e6NZyLlz7iZItE0CgzRuiDBPGNUYnholCnt2HT-73YSQWr3Qjqa=-rw",
     ],
     security: {
-      checksum: "SHA-256: 419d2b882e4d37a1f5927ad81d3542a1",
-      secureToken: "Premium Edition Active",
-      cloudStorage: "Takano3D secure backup servers"
+      checksum: "SHA-256: GTA-VC-full-mod.iw82u38gw82h29y373.apk",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
     },
-    tags: ["Premium Edition", "Infinite Armor Kits", "Fast Upgrades"],
+    tags: ["MOD", "Free"],
     isRecommendation: false,
     isRecent: false
   },
-  {
-    id: "game-27",
-    name: "Jetpack Joyride Mod",
-    slug: "jetpack-joyride",
-    developer: "Halfbrick Studios",
-    rating: "4.6",
-    downloads: "100M",
-    size: "142 MB",
-    version: "1.80.0",
-    category: "Arcade",
-    type: "Game",
-    updatedAt: "10/07/2026",
-    icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-    description: "Fly wacky jetpacks with dynamic coin magnets and complete skin sets.",
-    longDescription: "Escape corporate labs wearing high-flying bullet-powered machinery. Features infinite coins, permanent magnets, and pre-activated scientific shield generators.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Jetpack_Joyride_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: 9d372bb6826bd81d3542a419d69e107d",
-      secureToken: "Magnetic Coins Injector Active",
-      cloudStorage: "Halfbrick direct data mirror"
-    },
-    tags: ["Coin Magnet", "All Jetpacks", "Infinite Gold"],
-    isRecommendation: false,
-    isRecent: true
-  },
-  {
-    id: "game-28",
-    name: "Monument Valley",
-    slug: "monument-valley",
-    developer: "ustwo games",
-    rating: "4.9",
-    downloads: "5M",
-    size: "240 MB",
-    version: "2.5.22",
-    category: "Adventure",
-    type: "Game",
-    updatedAt: "14/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Guide Princess Ida through beautiful optical illusions and isometric geometry castles.",
-    longDescription: "Explore majestic optical architectures. This full premium version includes all additional campaign chapters like Forgotten Shores and Ida's Dream completely free.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Monument_Valley_Premium_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: aa81d3542a419f9c398e4d372fc5927a",
-      secureToken: "All DLC Campaigns Unlocked",
-      cloudStorage: "High-speed secure assets mirror"
-    },
-    tags: ["Paid Version Free", "All DLC Unlocked", "Art Game"],
-    isRecommendation: true,
-    isRecent: true
-  },
-  {
-    id: "game-29",
-    name: "Limbo Premium",
-    slug: "limbo",
-    developer: "Playdead",
-    rating: "4.8",
-    downloads: "5M",
-    size: "130 MB",
-    version: "1.20.1",
-    category: "Adventure",
-    type: "Game",
-    updatedAt: "11/07/2026",
-    icon: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?w=150&auto=format&fit=crop&q=80",
-    description: "Award-winning dark atmospheric monochrome side-scrolling puzzle adventure.",
-    longDescription: "Enter the haunting and silent monochrome forest world of Limbo. This premium version unlocks the complete game without trial limitations, offering flawless resolution graphics optimizations.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Limbo_Premium_v1_Mod.apk",
-    screenshots: [
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=600&auto=format&fit=crop&q=80"
-    ],
-    security: {
-      checksum: "SHA-256: e81d3542a419ab7e810e4d372fc5927a",
-      secureToken: "Full Edition Paid Bypass",
-      cloudStorage: "Secure Redundant Storage Node"
-    },
-    tags: ["Full Version Free", "High HD Graphics", "Atmospheric"],
-    isRecommendation: true,
-    isRecent: false
-  },
-  {
-    id: "game-30",
-    name: "Dead Trigger 2",
-    slug: "dead-trigger-2",
-    developer: "Deca Games",
-    rating: "4.6",
-    downloads: "50M",
-    size: "510 MB",
-    version: "1.10.2",
+    {
+    id: "45",
+    name: "GTA: Vice City – Definitive MOD",
+    slug: "gta-vc-definitive-mod",
+    developer: "Rockstar Games",
+    rating: "4.5",
+    downloads: "358",
+    size: "3.89 GB",
+    version: "1.90.0",
     category: "Action",
     type: "Game",
-    updatedAt: "13/07/2026",
-    icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-    description: "Classic first-person zombie survival shooter with infinite ammo and fast firing mod.",
-    longDescription: "Join the Global Resistance and wipe out zombie plagues. The combat MOD provides you with infinite rifle bullets, zero reload delay intervals, and high firing rates.",
-    downloadUrl: "https://lookmodstore-cdn.takano3d.com/apks/Dead_Trigger_2_v1_Mod.apk",
+    updatedAt: "09/03/2025",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/PMwwyuavLk0Ob6vd8NXYW3yDu-yzQ5T_ZgYe0duQkft0ygCBfNGUCZztAPRcw6H6G1nIkNhB3ImyslXRy-GL=s150-rw",
+    description: "GTA: Vice City – Definitive MOD APK is a mobile port of the remake GTA: Vice City – The Definitive Edition in the GTA: The Trilogy – The Definitive Edition trilogy. Apart from adding virtual buttons for players to control via the touch screen, GTA: Vice City – Definitive is no different from its version on the computer.",
+    downloadUrl: "https://s1.1phut.io/v2/EJ5p",
+    videoUrls: ["https://youtube.com/watch?v=rFGl5neEzK8",
+    "https://youtube.com/watch?v=7FFdtV2ByoU",
+    "https://youtube.com/watch?v=wqXtqFb4FQ0",
+    "https://youtube.com/watch?v=Q-4PyvOIff4",
+    "https://youtube.com/watch?v=3q5pCJGCQXs",
+    "https://youtube.com/watch?v=i971j9yvzFY",
+    "https://youtube.com/watch?v=pTFKQmnUkyk",
+    "https://youtube.com/watch?v=LCrCANWCfmY"], // Converted to array support
     screenshots: [
-      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80"
+      "https://static.apkmody.com/play-lh.googleusercontent.com/aNAmwSXwoeBzVHojshMQVjlI_EAVQq2NWqazKPWcfrDMIXKBpDjuKVysxSzzFAfoplc=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/8853chD8RhUenlKgRSleUeyD84QwWoaVScYPtPUADn6s2pMzVl0YbweeOY1m6tdFtg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/6hRxB1WR6UAxl5mI5uLt2WVq8PNOg8yOTZG9e1jinEjGhdAsZysnWT0JUbPmFikSy9Y=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/MU2_TJK-yLj_BvkacKhC5RRhhBjssJ6Q8iWh_vsFwGp0pD9iZKft8j7vxoDhT7eZSw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/SQeDfHeFB6jUywShrcZSgtBMtfPHzzMHyo0q4IjxeKZXWK47lgDScErcDaNwGthuZg=-rw",
     ],
     security: {
-      checksum: "SHA-256: cb398e4d372fc5927ad81d3542a419f9",
-      secureToken: "Infinite Ammo & Speed Fire Active",
-      cloudStorage: "Deca Games high speed mirror"
+      checksum: "SHA-256: GTA-VCD-full-mod.he87wg273y82v28jw8.apk",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
     },
-    tags: ["Infinite Ammo", "Fast Fire", "God Mode Options"],
+    tags: ["MOD", "Free"],
     isRecommendation: false,
-    isRecent: true
+    isRecent: false
+  },
+    {
+    id: "46",
+    name: "Bully: Anniversary Edition MOD",
+    slug: "bully-anniversry-edition",
+    developer: "Imaanshu N",
+    rating: "4.8",
+    downloads: "5K",
+    size: "3 GB",
+    version: "1.4.311",
+    category: "Action",
+    type: "Game",
+    updatedAt: "01/24/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/I3zJDMIIQ6k_iRCC8LsZJhAKbKC8I7f4Mp1lYdZ8Hxk3hvBS1GLsBsmiG80gk5T0c9Ww=s150-rw",
+    description: "Are you a fan of role-playing games? If so, the publisher Rockstar Games is no longer a strange name for players because all the games belonging to this Game company have attracted a huge amount of downloads on platforms around the world. One of the games of this game company that has attracted a lot of downloads on all different platforms is Bully: Anniversary Edition MOD APK. This is a role-playing game that allows players to go through countless different large and small missions with the character Bully. Then let’s find out what Bully: Anniversary Edition is so special and interesting!",
+    downloadUrl: "https://s1.1phut.io/v2/jA57",
+    videoUrls: ["https://youtube.com/watch?v=w6wXVLrISD0",
+    "https://youtube.com/watch?v=MxkCDeN5Byw",
+    "https://youtube.com/watch?v=OImxuxMcdjw",
+    "https://youtube.com/watch?v=yqkynwFs9Hs",
+    "https://youtube.com/watch?v=88KNf0MtU14"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/XYAODeGMRasiYOy0eOk0TkA5O00Zjp5l3bWPBwLEFB5uEX4ikiidyveF5cmOrqzDcAc=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/FyTWu67PsnoJ0j1qqrxc7C-DxwpWuWIrxITTW8rzu7EDFQhHq7VeIo4rxFIrdmg2aPFm=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/YqiYB9bLLs6cBwRgFUUphQ8gnJQhl_JXZHelxmKKjpdMSSoKxFGfiC8Lj4712WiiLfM=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/yum-mqcpmCwoSDEqAttensnsxIu0j2xbTG2GHAIA4wqxch25nP_Fad4vLeg42JkpVg=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/yZIMf-f4jiwrqQb60pV_5ahMznVvGI7gpz2wNxeVEekX5TAKlAhxUpC_naszsv3X7nM=-rw",
+    ],
+    security: {
+      checksum: "SHA-256: Bully-Anniversary-Edition.jwy28y282k91u293g.apk",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: false
+  },
+    {
+    id: "47",
+    name: "Grand Theft Auto III MOD ",
+    slug: "gta-iii-mod",
+    developer: "Imaanshu N",
+    rating: "4.3",
+    downloads: "3K",
+    size: "1 GB",
+    version: "1.10.106",
+    category: "Action",
+    type: "Game",
+    updatedAt: "04/12/2026",
+    icon: "https://static.apkmody.com/play-lh.googleusercontent.com/6h9kcB0zKQiAezOeM_tqMtjpyFXzxQiuOUy_LBitX3q0LSLCzdzG0dhqAj-DKkrCBQ=s150-rw",
+    description: "Grand Theft Auto III is listed as an ageless game. This game stands out for its unique creativity and attractive missions, but the gameplay is extremely simple and focused. If you want to transform into a real gangster to freely roam around the city, you should try this game right away.",
+    downloadUrl: "https://s1.1phut.io/v2/28oV",
+    videoUrls: ["https://youtube.com/watch?v=0VxoWT0MyLE"], // Converted to array support
+    screenshots: [
+      "https://static.apkmody.com/play-lh.googleusercontent.com/44ZhJFHQQzHSt5HVA7tkNMOAWOnMhYhbpPEQvOZ7dDnVTM8-I-ai55B66mlH9IV_jw=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/Qn5b6PqQSbpHvJzxMgnBB32UEyTwXt39kdzzx17Xuu-98GkjbK27XR5Et_oyKEoyw3c=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/G1-bzIxaWy5DGqv-vlfd7fgWCDmWJhMVIdx8KLSceXqBUGJikqSpD-36lcldpzBaRSU=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/biWCYTThuoay6Gs4aAKBRI5CMFtbC2FezZUWJ0PCskOTgJfSHnUdW6T04JZ3PZb_hQ=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/hW8s3qJdsmYJLfuHV1baq8X5hZp2igbk29mItOosezqxpqzpHrTRnMsu_6bfGJSeoWU=-rw",
+      "https://static.apkmody.com/play-lh.googleusercontent.com/ujih8zF9R2ghF-qx2-gfu9hzDybab_hkmbTcelcS_lipXzbN0Yq9uSjXXNhfMucNqW84=-rw",
+      "",
+    ],
+    security: {
+      checksum: "SHA-256: gta-iii-mod-full-mod.gw72t82v29g182b19.apk",
+      secureToken: "Secure accounts without ban risk",
+      cloudStorage: "Direct connection to Takano3D servers"
+    },
+    tags: ["MOD", "Free"],
+    isRecommendation: false,
+    isRecent: false
   }
+  
 ];
 
-// Let's generate additional mock items to reach exactly 100 apps/games for testing
-const generateMockData = (): AppItem[] => {
-  const data = [...BASE_APPS_DATA];
-  const appCategories = ['Video Editor', 'Music & Audio', 'Social', 'Tools', 'Productivity'];
-  const gameCategories = ['Action', 'Arcade', 'Sports', 'Adventure'];
-  
-  let appCounter = 31;
-  let gameCounter = 31;
-  
-  const appNames = [
-    "VFX Editor Pro", "SoundCloud+ Mod", "InstaView Premium", "Pro Cleaner Premium",
-    "TimeManager VIP", "AdBlock Browser Pro", "VPN Secure Turbo", "PDF Converter Pro",
-    "Subway Tracker Pro", "PhotoEnhance AI", "Weather Live Pro", "FitTracker Premium",
-    "AudioRecorder HQ", "AutoClicker Pro", "AppLock Fingerprint", "FileExplorer VIP",
-    "Launcher Prime", "LanguageLearner VIP", "PasswordManager Safe", "BatterySaver Ultra",
-    "Notepad Premium", "AudioEqualizer Pro", "VideoCompressor HQ", "GPS Navigator Pro",
-    "CloudStorage Backup", "MemeGenerator Pro", "QR Scanner VIP", "ZArchiver Premium"
-  ];
-
-  const gameNames = [
-    "Cyberpunk Run", "Modern Warzones", "Pixel Dungeon RPG", "Shadow Hunter Arena",
-    "Drift Legends", "Street Basketball 3D", "Golf Master VIP", "Temple Escape 3",
-    "Archery Champion", "Chess Pro Master", "Retro Pinball VIP", "Sky Force Reloaded",
-    "Zombie Frontier 4", "Deadly Target 3D", "Traffic Rider Premium", "Hill Climb Legend",
-    "Sonic Dash Mod", "Angry Birds Space", "Fruit Ninja VIP", "Subway Surfers Plus",
-    "Clash of Heroes", "Minecraft PE Mod", "Terraria Unlimited", "Real Boxing Mod",
-    "Table Tennis Elite", "Billiards 3D Mod", "Sudoku King Pro", "Asphalt Legends Mod"
-  ];
-
-  while (data.length < 100) {
-    const isApp = data.length % 2 === 0;
-    if (isApp) {
-      const name = appNames[(appCounter - 31) % appNames.length] + ` (V${appCounter})`;
-      const slug = `app-mock-${appCounter}`;
-      const category = appCategories[appCounter % appCategories.length];
-      data.push({
-        id: `app-mock-${appCounter}`,
-        name: name,
-        slug: slug,
-        developer: `DevStudio AppLab ${appCounter}`,
-        rating: (4.0 + (appCounter % 10) * 0.1).toFixed(1),
-        downloads: `${appCounter * 5}M`,
-        size: `${30 + (appCounter % 80)} MB`,
-        version: `1.${appCounter % 5}.0`,
-        category: category,
-        type: 'App',
-        updatedAt: `${(10 + (appCounter % 20)).toString().padStart(2, '0')}/07/2026`,
-        icon: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&auto=format&fit=crop&q=80",
-        description: `Premium unlocked version of ${name} with fully accessible features and direct high-speed download.`,
-        longDescription: `${name} is a high-performance utility designed to optimize your mobile workspace. The MOD unlocks all paid subscription services, removes tracking services, stops background analytics reporting, and optimizes internal engine configurations for battery savings.`,
-        downloadUrl: `https://lookmodstore-cdn.takano3d.com/apks/mock_app_${appCounter}.apk`,
-        screenshots: ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"],
-        security: {
-          checksum: `SHA-256: mocka3542a419f9c398e4d372fc5927${appCounter}`,
-          secureToken: "Verified Secure APK Signature",
-          cloudStorage: "Secure global download server"
-        },
-        tags: ["MOD", "Premium Unlocked", "Ad-Free"],
-        isRecommendation: appCounter % 5 === 0,
-        isRecent: appCounter % 3 === 0
-      });
-      appCounter++;
-    } else {
-      const name = gameNames[(gameCounter - 31) % gameNames.length] + ` Mod`;
-      const slug = `game-mock-${gameCounter}`;
-      const category = gameCategories[gameCounter % gameCategories.length];
-      data.push({
-        id: `game-mock-${gameCounter}`,
-        name: name,
-        slug: slug,
-        developer: `GameLab Interactive ${gameCounter}`,
-        rating: (4.0 + (gameCounter % 10) * 0.1).toFixed(1),
-        downloads: `${gameCounter * 3}M`,
-        size: `${80 + (gameCounter % 200)} MB`,
-        version: `2.${gameCounter % 4}.1`,
-        category: category,
-        type: 'Game',
-        updatedAt: `${(10 + (gameCounter % 20)).toString().padStart(2, '0')}/07/2026`,
-        icon: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=150&auto=format&fit=crop&q=80",
-        description: `Full MOD version of ${name} with unlimited resources and all levels unlocked.`,
-        longDescription: `Experience the full excitement of ${name}. This modified game injects unlimited money/gold, unlocks all premium character skins, bypasses regional level lock walls, and removes annoying interlude popups completely. Verified safe from any signatures.`,
-        downloadUrl: `https://lookmodstore-cdn.takano3d.com/apks/mock_game_${gameCounter}.apk`,
-        screenshots: ["https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80"],
-        security: {
-          checksum: `SHA-256: mockg3542a419f9c398e4d372fc5927${gameCounter}`,
-          secureToken: "Unlocked Game Package Clean",
-          cloudStorage: "High-speed mirror CDN"
-        },
-        tags: ["Unlimited Money", "MOD", "All Levels Open"],
-        isRecommendation: gameCounter % 5 === 0,
-        isRecent: gameCounter % 3 === 0
-      });
-      gameCounter++;
-    }
-  }
-  return data;
-};
-
-export const APPS_DATA: AppItem[] = generateMockData();
+export const CATEGORIES_DATA: CategoryItem[] = BASE_CATEGORIES.map(category => {
+  const appsCount = APPS_DATA.filter(app => app.category === category.name).length;
+  return {
+    ...category,
+    count: appsCount
+  };
+});
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: "b1",
+  id: "b1",
+  title: "CEO of a Takano3D company",
+  summary: "An exclusive look into the vision, mobile development journey, and independent ecosystem behind Takano3D.",
+  content: "As the founder and lead engineer of Takano3D, every architecture, script, and application layout is built entirely from a mobile workflow. From web infrastructure and modding ecosystems to creating seamless user experiences, this is the story of pushing mobile development limits without relying on a PC.",
+  image: "https://6a900b5efbbe2019f0957b40.imgix.net/sandbox/1000043555.png?auto=format&dpr=1",
+  date: "11 July, 2026",
+  author: "Takano3D"
+  },
+  {
+    id: "b2",
     title: "Top 5 Android MODs of the Month",
     summary: "Discover modified apps and games with the most outstanding features unlocked completely free of charge.",
-    content: "Android stands out over other mobile ecosystems for its versatility and freedom of installation. In this article, we delve into five exceptional modifications that will allow you to optimize your applications and expand your entertainment limits. From Spotify Premium to professional video editors without watermarks, we explain how to install them safely on your smartphone using the clean and pre-verified files available on MOD Hub.",
+    content: "Android stands out over other mobile ecosystems for its versatility and freedom of installation. In this article, we delve into five exceptional modifications that will allow you to optimize your applications and expand your entertainment limits. From Spotify Premium to professional video editors without watermarks, we explain how to install them safely on your smartphone using the clean and pre-verified files available on Look Mod Store.",
     image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&auto=format&fit=crop&q=80",
     date: "11 July, 2026",
     author: "Takano3D"
   },
   {
-    id: "b2",
+    id: "b3",
     title: "How to Safely Install an APK / OBB File",
     summary: "Step-by-step guide for beginners and advanced users on how to enable unknown sources without compromising your phone.",
     content: "Manual installation of APK files is a simple task but requires attention to certain critical security details. First, you must go to Settings > Security and enable 'Install applications from unknown sources'. In this guide, we show you how to use our integrated SHA-256 validator to confirm that no files have been tampered with, protecting your personal information at all times.",
