@@ -77,7 +77,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
       const timer = setTimeout(() => {
         setDownloadCountdown(prev => prev - 1);
       }, 1000);
-      return () => clearTimeout(timer);
+      return () => clearInterval(timer);
     } else if (downloading && downloadCountdown === 0) {
       try {
         const iframe = document.createElement('iframe');
@@ -87,9 +87,8 @@ export const AppDetail: React.FC<AppDetailProps> = ({
         setTimeout(() => {
           document.body.removeChild(iframe);
         }, 12000);
-        console.log(`Successfully queued secure background download for: ${app.downloadUrl}`);
       } catch (error) {
-        console.error("Iframe download failed, using standard anchor fallback:", error);
+        console.error("Download fallback error:", error);
         const link = document.createElement('a');
         link.href = app.downloadUrl;
         link.setAttribute('download', `${app.slug}-modhub.apk`);
@@ -118,7 +117,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Clipboard copy fallback failed:", err);
+      console.error("Copy fallback failed:", err);
     }
   };
 
@@ -130,15 +129,11 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
           })
-          .catch((err) => {
-            console.error("Clipboard API rejected operation, using fallback:", err);
-            fallbackCopy();
-          });
+          .catch(() => fallbackCopy());
       } else {
         fallbackCopy();
       }
     } catch (e) {
-      console.error("Clipboard API access failed:", e);
       fallbackCopy();
     }
   };
@@ -154,13 +149,9 @@ export const AppDetail: React.FC<AppDetailProps> = ({
   useEffect(() => {
     if (!lightboxOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight') {
-        handleNextLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        handlePrevLightbox();
-      } else if (e.key === 'Escape') {
-        setLightboxOpen(false);
-      }
+      if (e.key === 'ArrowRight') handleNextLightbox();
+      else if (e.key === 'ArrowLeft') handlePrevLightbox();
+      else if (e.key === 'Escape') setLightboxOpen(false);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -175,36 +166,26 @@ export const AppDetail: React.FC<AppDetailProps> = ({
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!e.changedTouches || !e.changedTouches[0]) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
-    
-    const diffX = touchEndX - touchStartX;
-    const diffY = touchEndY - touchStartY;
+    const diffX = e.changedTouches[0].clientX - touchStartX;
+    const diffY = e.changedTouches[0].clientY - touchStartY;
     
     if (Math.abs(diffX) > Math.abs(diffY)) {
       if (Math.abs(diffX) > 40) {
-        if (diffX > 0) {
-          handlePrevLightbox();
-        } else {
-          handleNextLightbox();
-        }
+        if (diffX > 0) handlePrevLightbox();
+        else handleNextLightbox();
       }
     } else {
-      if (Math.abs(diffY) > 80) {
-        setLightboxOpen(false);
-      }
+      if (Math.abs(diffY) > 80) setLightboxOpen(false);
     }
   };
 
   const getContextAwareRelated = () => {
     const baseList = APPS_DATA.filter((item) => item.id !== app.id);
     const sameTypeList = baseList.filter((item) => item.type === app.type);
-    
     const sameCategory = sameTypeList.filter((item) => item.category === app.category);
     const otherCategories = sameTypeList.filter((item) => item.category !== app.category);
     
     const combined = [...sameCategory, ...otherCategories];
-    
     let seedNum = app.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
     const shuffled = [...combined];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -214,7 +195,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
       shuffled[i] = shuffled[j];
       shuffled[j] = temp;
     }
-    
     return shuffled.slice(0, 18);
   };
 
@@ -253,8 +233,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
         darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
       }`}>
         <div className="flex flex-col sm:flex-row gap-5 items-center">
-          
-          {/* Large App Icon */}
           <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-slate-700/20 shadow-xl shrink-0 mx-auto">
             <img 
               src={app.icon} 
@@ -264,7 +242,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             />
           </div>
 
-          {/* Central Title Details */}
           <div className="flex-1 text-center min-w-0">
             <div className="flex flex-wrap items-center justify-center gap-2 mb-1.5">
               <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
@@ -296,7 +273,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             </div>
           </div>
 
-          {/* Action Callouts */}
           <div className="w-full sm:w-auto shrink-0 flex flex-col gap-2">
             <button
               onClick={triggerDownload}
@@ -316,7 +292,6 @@ export const AppDetail: React.FC<AppDetailProps> = ({
               <span>SHA-256 Secured</span>
             </div>
           </div>
-
         </div>
 
         {downloading && (
@@ -328,7 +303,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
               Generating Secure Download Link...
             </h4>
             <p className="text-xs text-slate-500 mt-1">
-              Your download will begin automatically in <strong className="text-store-accent">{downloadCountdown} seconds</strong>. MOD Hub protects your device by encrypting the download on high-fidelity redundant servers.
+              Your download will begin automatically in <strong className="text-store-accent">{downloadCountdown} seconds</strong>.
             </p>
             <div className="w-full bg-slate-800 rounded-full h-1.5 mt-3 overflow-hidden">
               <div 
@@ -367,7 +342,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
             </div>
           )}
 
-          {/* Screenshots Gallery - FIXED WITH object-contain */}
+          {/* Screenshots Gallery - DYNAMIC ASPECT RATIO & AUTO-ADJUST */}
           <div className={`p-5 rounded-2xl border ${
             darkMode ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-slate-100'
           }`}>
@@ -378,7 +353,7 @@ export const AppDetail: React.FC<AppDetailProps> = ({
               <span>Screenshots Gallery</span>
             </h3>
 
-            <div className="flex gap-3.5 overflow-x-auto pb-2 snap-x scroll-smooth no-scrollbar">
+            <div className="flex gap-4 overflow-x-auto pb-3 snap-x scroll-smooth no-scrollbar items-center">
               {app.screenshots.map((src, idx) => (
                 <div 
                   key={idx} 
@@ -386,15 +361,15 @@ export const AppDetail: React.FC<AppDetailProps> = ({
                     setLightboxIndex(idx);
                     setLightboxOpen(true);
                   }}
-                  className="w-44 sm:w-52 h-[340px] sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer shrink-0 snap-start border border-slate-200/10 dark:border-slate-800/60 transition-all hover:scale-[1.02] hover:border-store-accent/50 group relative shadow-md bg-black/40 flex items-center justify-center p-2"
+                  className="w-[240px] sm:w-[280px] rounded-2xl overflow-hidden cursor-pointer shrink-0 snap-start border border-slate-200/10 dark:border-slate-800/60 transition-all hover:scale-[1.02] hover:border-store-accent/50 group relative shadow-md bg-black/50 flex items-center justify-center p-2"
                 >
                   <img 
                     src={src} 
                     alt={`${app.name} screenshot ${idx + 1}`} 
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 rounded-xl select-none"
+                    className="w-full h-auto max-h-[360px] object-contain transition-transform duration-300 group-hover:scale-105 rounded-xl select-none"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-200 flex items-center justify-center pointer-events-none">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-all duration-200 flex items-center justify-center pointer-events-none rounded-2xl">
                     <Maximize2 className="w-7 h-7 text-white opacity-0 group-hover:opacity-100 transition-all scale-75 group-hover:scale-100" />
                   </div>
                 </div>
